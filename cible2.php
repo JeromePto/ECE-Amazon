@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 	try
 	{
@@ -17,7 +17,7 @@
 	if (isset($_POST['mail']) && isset($_POST['mdp'])) {
 
 
-		$req = $bdd->prepare('SELECT NOM, PRENOM, MAIL, ADRESSE, MDP FROM  acheteur WHERE MAIL = ?');
+		$req = $bdd->prepare('SELECT ID, NOM, PRENOM, MAIL, ADRESSE, MDP FROM  acheteur WHERE MAIL = ?');
 		$req->execute(array($_POST['mail']));
 		$donnees = $req->fetch();
 
@@ -33,13 +33,14 @@
 		{
 			session_start ();
 			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+			$_SESSION['id'] = $donnees['ID'];
 			$_SESSION['mail'] = $donnees['MAIL'];
 			$_SESSION['nom'] = $donnees['NOM'];
 			$_SESSION['prenom'] = $donnees['PRENOM'];
 			$_SESSION['adresse'] = $donnees['ADRESSE'];
 
 			// on redirige notre visiteur vers une page de notre section membre
-			//header ('location: espace.php');
+			header ('location: Acheteur.php');
 
 		}
 		else

@@ -33,7 +33,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 	$_SESSION['adresse'] = $_POST['adresse'];
 
 			// on redirige notre visiteur vers une page de notre section membre
-	header ('location: espace.php');
+	header ('location: Acheteur.php');
 
 }
 ?>
