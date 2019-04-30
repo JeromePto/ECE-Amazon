@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 	try
 	{
@@ -39,7 +39,7 @@
 			$_SESSION['adresse'] = $donnees['ADRESSE'];
 
 			// on redirige notre visiteur vers une page de notre section membre
-			//header ('location: espace.php');
+			header ('location: Acheteur.php');
 
 		}
 		else

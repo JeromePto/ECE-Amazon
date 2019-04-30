@@ -1,3 +1,8 @@
+<?php
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,7 +109,7 @@
                   <i class="fas fa-user-circle"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                  <h6 class="dropdown-header">Mon profil</h6>
+                  <h6 class="dropdown-header">Mon profil: <?php echo $_SESSION['prenom']; ?></h6>
                   <a class="dropdown-item" href="#">
                     <i class="fas fa-user"></i>Mon compte
                   </a>
