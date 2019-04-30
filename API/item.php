@@ -1,6 +1,6 @@
 <?php
 
-function ajouterItem($nom, $stock, $categorie, $prix, $description, $photo = NULL, $variationId = NULL, $variationParam = NULL) {
+function newItem($nom, $stock, $categorie, $prix, $description, $photo = NULL, $variationId = NULL, $variationParam = NULL) {
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
@@ -51,7 +51,25 @@ function ajouterItem($nom, $stock, $categorie, $prix, $description, $photo = NUL
 		echo "erreur d'ajout";
 		exit(1);
 	}
-	
+	return $bdd->query("SELECT * FROM item ORDER BY ID DESC")->fetch()["ID"];
 }
+
+function deleteItem($id) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare('DELETE FROM item WHERE ID = :id');
+	$req->execute(array(
+	'id' => $id
+	)) or die(print_r($bdd->errorInfo()));
+}
+
+deleteItem(30);
 
 ?>
