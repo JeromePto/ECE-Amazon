@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 29 avr. 2019 à 10:39
+-- Généré le :  mar. 30 avr. 2019 à 12:23
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -36,9 +36,9 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `MAIL` varchar(255) NOT NULL,
   `MDP` text NOT NULL,
   `ADRESSE` varchar(255) NOT NULL,
-  `PANIER` int(11) NOT NULL,
+  `PANIER` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -49,14 +49,28 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
 DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `STOCK` int(11) NOT NULL,
   `NOM` varchar(255) NOT NULL,
-  `PHOTO` text NOT NULL,
-  `DESCRIPTION` text NOT NULL,
+  `STOCK` int(11) NOT NULL,
   `CATEGORIE` int(11) NOT NULL,
+  `DESCRIPTION` text NOT NULL,
   `PRIX` int(11) NOT NULL,
-  `VARIATION` int(11) NOT NULL,
+  `PHOTO` text NOT NULL,
+  `VARIATION` json DEFAULT NULL,
   PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+DROP TABLE IF EXISTS `panier`;
+CREATE TABLE IF NOT EXISTS `panier` (
+  `ACHETEUR` int(11) NOT NULL,
+  `ITEM` int(11) NOT NULL,
+  `QUANTITE` int(11) NOT NULL,
+  PRIMARY KEY (`ACHETEUR`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
