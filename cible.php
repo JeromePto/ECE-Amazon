@@ -15,14 +15,30 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 {
 	$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-	$req = $bdd->prepare('INSERT INTO acheteur(NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(:nom, :prenom, :mail, :mdp, :adresse)');
-	$req->execute(array(
-		'nom' => $_POST['nom'], 
-		'prenom' => $_POST['prenom'],
-		'mail' => $_POST['mail'],
-		'mdp' => $pass_hache,
-		'adresse' => $_POST['adresse'],
-	));
+	if($_POST['choix']==1)
+	{
+		echo "c'est un acheteur";
+		$req = $bdd->prepare('INSERT INTO acheteur(NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(:nom, :prenom, :mail, :mdp, :adresse)');
+		$req->execute(array(
+			'nom' => $_POST['nom'], 
+			'prenom' => $_POST['prenom'],
+			'mail' => $_POST['mail'],
+			'mdp' => $pass_hache,
+			'adresse' => $_POST['adresse'],
+		));
+	}
+	if($_POST['choix']==2)
+	{
+		$req = $bdd->prepare('INSERT INTO vendeur(NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(:nom, :prenom, :mail, :mdp, :adresse)');
+		$req->execute(array(
+			'nom' => $_POST['nom'], 
+			'prenom' => $_POST['prenom'],
+			'mail' => $_POST['mail'],
+			'mdp' => $pass_hache,
+			'adresse' => $_POST['adresse'],
+		));
+		echo "c'est un vendeur";
+	}
 
 
 	session_start ();
@@ -33,7 +49,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 	$_SESSION['adresse'] = $_POST['adresse'];
 
 			// on redirige notre visiteur vers une page de notre section membre
-	header ('location: Acheteur.php');
+	//header ('location: Acheteur.php');
 
 }
 ?>
