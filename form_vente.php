@@ -3,7 +3,7 @@
 
 <?php 
 //session_start();
-$_SESSION['id'] = $_GET['id']; 
+//$_SESSION['id'] = $_GET['id']; 
 ?>
 
 Cette ligne de code sert à communiquer les informations de sessions à la page php de traitement de données. 
@@ -53,49 +53,54 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
               </div>
               <span class="clearfix"></span>                    <!-- identification, son nom, sa/ses photo/s, ses descriptions, sa vidéo (si disponible), sa catégorie et son prix à l’unité -->
               <form role="form" action="cible4.php" method="post">
-                <label class="form-control-label">Identification</label>
-                <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="identification" placeholder="id" required="">
-                </div>
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
                 </div>
-                <label class="form-control-label">Prénom</label>
+                <label class="form-control-label">Vendeur</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="prenom" placeholder="Jean Pierre" required="">
+                  <input type="number" class="form-control" name="vendeur" placeholder="Jean Pierre" required="">
                 </div>
+                <label class="form-control-label">Nombre de produits</label>
+                <div class="input-group input-group-merge">
+                  <input type="number" class="form-control" name="stock" placeholder="C'est un super produit !"required="">
+                </div>                
                 <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
                   <input type="file" class="form-control" name="photo" required="">
                 </div>                  
                 <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="description" placeholder="C'est un super produit !">
+                  <input type="text" class="form-control" name="description" placeholder="C'est un super produit !" required="">
                 </div>
+                <label class="form-control-label">Prix</label>
+                <div class="input-group input-group-merge">
+                  <input type="number" class="form-control" name="prix" placeholder="C'est un super produit !" required="">
+                </div>
+                <label class="form-control-label">Variation</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !" required="">
+                </div>                                                
                 Catégorie: 
                 <div>
-                  <input type="radio"  name="choix" value="1" required="" >
+                  <input type="radio"  name="categorie" value="1" required="" >
                   <label >Livre</label>
                 </div>
                 <div>
-                  <input type="radio"  name="choix" value="2" required="" >
+                  <input type="radio"  name="categorie" value="2" required="" >
                   <label >Musique</label>
                 </div>
                 <div>
-                  <input type="radio"  name="choix" value="3" required="" >
+                  <input type="radio"  name="categorie" value="3" required="" >
                   <label >Vêtement</label>
                 </div>
                 <div>
-                  <input type="radio"  name="choix" value="4" required="" >
+                  <input type="radio"  name="categorie" value="4" required="" >
                   <label >Sport et loisir</label>
                 </div>
                 <div class="mt-4">
                   <button type="submit" class="btn btn-block btn-primary">Vendre mon item</button></div>
                 </form>
-                <div class="mt-4 text-center"><small>Vous avez déjà un compte ?</small>
-                  <a href="form_connexion.html" class="small font-weight-bold">Connectez-vous !</a></div>
-                </div>
               </div>
             </div>
           </div>

@@ -22,6 +22,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 			if ($donnees['NOM']==$_POST['nom']) 
 			{
 				$verif=2;
+				break;
 			}
 		}
 
@@ -29,13 +30,17 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 
 		if ($verif==1) 
 		{
-			$req = $bdd->prepare('INSERT INTO item(NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(:nom, :prenom, :mail, :mdp, :adresse)');
+			$req = $bdd->prepare('INSERT INTO item(NOM, VENDEUR, STOCK, CATEGORIE, DESCRIPTION, PRIX, PHOTO, VARIATION) 
+				VALUES(:nom, :vendeur, :stock, :categorie, :description, :prix, :photo, :variation)');
 			$req->execute(array(
-				'identification' => $_POST['identification'], 				
-				'nom' => $_POST['nom'], 
-				'prenom' => $_POST['prenom'],
-				'mail' => $_POST['photo'],
-				'adresse' => $_POST['description'],
+				'nom' => $_POST['nom'], 				
+				'vendeur' => $_POST['vendeur'], 
+				'stock' => $_POST['stock'],
+				'photo' => $_POST['photo'],
+				'categorie' => $_POST['categorie'],
+				'description' => $_POST['description'],
+				'prix' => $_POST['prix'],
+				'variation' => $_POST['variation'],
 			));
 
 			header ('location: Vendeur.php');
