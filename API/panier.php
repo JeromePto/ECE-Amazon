@@ -3,7 +3,7 @@
 function ajouterPanier($item, $acheteur, $quantite) {
 	try
 	{
-		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
 	}
 	catch (Exception $e)
 	{
@@ -64,14 +64,103 @@ function ajouterPanier($item, $acheteur, $quantite) {
 			exit(1);
 		}
 		$req = $bdd->prepare("UPDATE `panier` SET `QUANTITE` = :quantite WHERE `panier`.`ACHETEUR` = :acheteur AND `panier`.`ITEM` = :item");
-		$resultat = $req->execute(array(
-			"acheteur" => "a",
+		$req->execute(array(
+			"acheteur" => $acheteur,
 			"item" => $item,
 			"quantite" => ($quantite + $donnees['QUANTITE'])));
-		echo $resultat;
 	}
 }
 
-ajouterPanier(24, 4, 1);
+function deleteItemPanier($acheteur, $item, $quantite) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare("SELECT * FROM item WHERE ID = ?");
+	$req->execute(array($item));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur : Item inconnu";
+		exit(1);
+	}
+
+	$req = $bdd->prepare("SELECT * FROM acheteur WHERE ID = ?");
+	$req->execute(array($acheteur));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur : Acheteur inconnu";
+		exit(1);
+	}
+
+	$req = $bdd->prepare("SELECT * FROM panier WHERE ACHETEUR = ? and ITEM = ?");
+	$req->execute(array($acheteur, $item));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur : Item pas dans le panier";
+		exit(1);
+	}
+	if ($quantite > $donnees['QUANTITE']) {
+		echo "Erreur : quantite trop importante";
+		exit(1);
+	} else if ($quantite == $donnees['QUANTITE']) {
+		$req = $bdd->prepare('DELETE FROM panier WHERE ACHETEUR = ? and ITEM = ?');
+		$req->execute(array($acheteur, $item));
+	} else {
+		$req = $bdd->prepare("UPDATE panier SET QUANTITE = ? WHERE ACHETEUR = ? and ITEM = ?");
+		$req->execute(array($donnees['QUANTITE'] - $quantite, $acheteur, $item));
+	}
+}
+
+function deletePanier($acheteur) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare("SELECT * FROM acheteur WHERE ID = ?");
+	$req->execute(array($acheteur));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if(!$donnees) {
+		echo "Erreur : acheteur inconnu";
+		exit(1);
+	}
+
+	$req = $bdd->prepare('DELETE FROM panier WHERE ACHETEUR = ?');
+	$req->execute(array($acheteur));
+}
+
+function getItemNumberPanier($acheteur, $item) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare("SELECT * FROM panier WHERE ACHETEUR = ? and ITEM = ?");
+	$req->execute(array($acheteur, $item));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur item ou acheteur inconnu<br>";
+		exit(1);
+	}
+	return $donnees['QUANTITE'];
+}
 
 ?>
