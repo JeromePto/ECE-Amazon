@@ -100,7 +100,7 @@ session_start();
               <div class="ml-auto">
                 <ul class="nav">             
                   <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
-                  <a class="nav-link" href="Compte.php">
+                  <a class="nav-link" href="#">
                     <i class="fas fa-user-circle"></i>Mon compte
                   </a>
                   <a class="nav-link" href="shop-landing.html">
@@ -123,69 +123,12 @@ session_start();
             }
           </style>
         <!-- Features (v1) -->
+        <div class="container">
         <section id="sct-page-examples" class="slice bg-section-secondary">
-          <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
-          <h4 class="vente" class="blink"><strong>Ventes Flash :</strong></h4></li>
-          <style type="text/css">
-          h4.vente{
-           padding-left:30px; 
-           margin-left:10% auto;
-         }
-       </style>
-       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-6">
-            <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-              <div class="px-4 py-5">
-                <img alt="Image placeholder" src="bootstrap/assets/img/Produits/iphone.png" class="svg-inject" style="height: 180px;">
-              </div>
-              <div class="px-4 pb-5">
-                <h5>Iphone X</h5>
-                <p class="text-muted">999€ </p>
-                <div class="mt-5">
-                  <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                    <span class="btn-inner--text">Consulter l'article</span>
-                    <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-                  </a> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-              <div class="px-4 py-5">
-                <img alt="Image placeholder" src="bootstrap/assets/img/Produits/macbook.jpg" class="svg-inject" style="height: 180px;">
-              </div>
-              <div class="px-4 pb-5">
-                <h5>Macbook Air</h5>
-                <p class="text-muted">2000€</p>
-                <div class="mt-5">
-                  <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                    <span class="btn-inner--text">Consulter l'article</span>
-                    <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-                  </a> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-              <div class="px-4 py-5">
-                <img alt="Image placeholder" src="bootstrap/assets/img/Produits/ipad.png" class="svg-inject" style="height: 180px;">
-              </div>
-              <div class="px-4 pb-5">
-                <h5>Ipad</h5>
-                <p class="text-muted">599€</p>
-                <div class="mt-5">
-                  <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                    <span class="btn-inner--text">Consulter l'article</span>
-                    <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-                  </a> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <h4>Prenom : <?php echo $_SESSION['prenom'] ?></h4>
+          <h4>Nom : <?php echo $_SESSION['nom'] ?></h4>
+          <h4>Adresse e-mail : <?php echo $_SESSION['mail'] ?></h4>
+          <h4>Adresse postale : <?php echo $_SESSION['adresse'] ?></h4>    
       </div>
     </div>
     <footer id="footer-main">
