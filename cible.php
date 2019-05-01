@@ -15,7 +15,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 {
 	$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-	$req = $bdd->prepare('INSERT INTO acheteur(NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(:nom, :prenom, :mail, :mdp, :adresse)');
+	$req = $bdd->prepare('INSERT INTO acheteur(ID, NOM, PRENOM, MAIL, MDP, ADRESSE) VALUES(NULL, :nom, :prenom, :mail, :mdp, :adresse)');
 	$req->execute(array(
 		'nom' => $_POST['nom'], 
 		'prenom' => $_POST['prenom'],
@@ -27,6 +27,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 
 	session_start ();
 			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+	$_SESSION['id'] = $bdd->query("SELECT * FROM acheteur ORDER BY ID DESC")->fetch()["ID"];
 	$_SESSION['mail'] = $_POST['mail'];
 	$_SESSION['nom'] = $_POST['nom'];
 	$_SESSION['prenom'] = $_POST['prenom'];
