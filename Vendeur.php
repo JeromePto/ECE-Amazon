@@ -18,30 +18,6 @@ session_start();
   <!-- Purpose CSS -->
   <link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
 
-  <style>
-  * {
-    margin: 0;
-  }
-  html, body {
-    height: 100%;
-  }
-  .wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto 142px; 
-  }
-  .footer, .push {
-    height: 142px; 
-  }
-  .footer {
-    margin: 0 auto;
-    position: relative;
-    width: 700px;
-    height: 142px;
-    background-color: salmon;
-  }
-</style>
 </head>
 
 <body>
@@ -51,8 +27,8 @@ session_start();
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
-            <a class="navbar-brand mr-lg-5" href="Acheteur.html">
-              <img src="images/white.png" height="50" width="110">
+            <a class="navbar-brand mr-lg-5" href="Vendeur.php">
+              <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
               <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vendre</a>
@@ -63,8 +39,9 @@ session_start();
               <a class="nav-link" href="#">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="shop-landing.html">
                 <i class="fas fa-sign-out-alt"></i>Se deconnecter
+                <?php session_destroy();?>
               </a>
             </ul>
           </div>
@@ -77,16 +54,13 @@ session_start();
     <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
       <div class="section-inner bg-gradient-primary"></div>
       <style type="text/css">
-      .section-inner{
-        top:0;
-        left:0;
-        width:100%; 
-        height:60% !important;  
-        z-index:-2
+      .section-inner{ 
+        height:100% !important;  
       }
     </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
+      <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
       <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
       <style type="text/css">
       h4.vente{
@@ -166,26 +140,53 @@ session_start();
     </div>
   </div>
 </section>
-<footer>
-  <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-    <div class="col-md-6">
-      <div class="copyright text-sm font-weight-bold text-center text-md-left">
-        &copy; 2019 <a href="https://ece.fr" class="font-weight-bold" target="_blank">ECE Paris</a>. Tous droits reservés.
+<footer id="footer-main">
+    <div class="footer footer-dark bg-dark">
+      <div class="container">
+        <div class="row pt-md">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <a href="bootstrap/index.html">
+              <img src="images/white.png" alt="Footer logo" style="height: 70px;">
+            </a>
+            <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+            <h6 class="heading mb-3">Compte</h6>
+            <ul class="list-unstyled">
+              <li><a href="form_inscription.html">Mon profil</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+            <h6 class="heading mb-3">A propos</h6>
+            <ul class="list-unstyled text-small">
+              <li><a href="shop-landing.html">Accueil</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#avis">Avis</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+          <div class="col-md-6">
+            <div class="copyright text-sm font-weight-bold text-center text-md-left">
+              &copy; 2018-2019 <a href="https://www.ece.fr" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon/" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.facebook.com/ECE.Paris/" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </li>
-      </ul>
     </div>
   </footer>
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->

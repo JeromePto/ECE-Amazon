@@ -2,7 +2,7 @@
 try
 {
 				// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
@@ -80,7 +80,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 				'prenom' => $_POST['prenom'],
 				'mail' => $_POST['mail'],
 				'mdp' => $pass_hache,
-				'adresse' => $_POST['adresse'],
+				'adresse' => $_POST['adresse']
 			));
 
 			session_start ();
