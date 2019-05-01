@@ -20,22 +20,21 @@ session_start();
 </head>
 
 <body>
-  <div class="page-wrap">
     <header class="header header-transparent" id="header-main">
       <!-- Topbar -->
       <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
         <div class="container px-0">
           <div class="navbar-nav align-items-center">
             <div class="d-none d-lg-inline-block">
-              <a class="navbar-brand mr-lg-5" href="Acheteur.html">
-                <img src="images/white.png" height="50" width="110">
+              <a class="navbar-brand mr-lg-5" href="Acheteur.php">
+                <img src="images/white.png" id="navbar-logo" style="height: 50px;">
               </a>
               <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
                 <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acheter</a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow p-0">
                   <ul class="list-group list-group-flush">
                     <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                      <a href="bootstrap/pages/utility/support.html" class="list-group-item list-group-item-action" role="button">
+                      <a href="Livre.php" class="list-group-item list-group-item-action" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -50,7 +49,7 @@ session_start();
                       </a>
                     </li>
                     <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                      <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a href="Musique.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -65,7 +64,7 @@ session_start();
                       </a>
                     </li>
                     <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                      <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a href="Vetement.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -80,7 +79,7 @@ session_start();
                       </a>
                     </li>
                     <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                      <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a href="Sport.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
                         <div class="media d-flex align-items-center">
                           <!-- SVG icon -->
                           <figure style="width: 50px;">
@@ -118,14 +117,10 @@ session_start();
         <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
           <div class="section-inner bg-gradient-primary"></div>
           <style type="text/css">
-          .section-inner{
-            top:0;
-            left:0;
-            width:100%; 
-            height:60% !important;  
-            z-index:-2
-          }
-        </style>
+            .section-inner{ 
+              height:100% !important;  
+            }
+          </style>
         <!-- Features (v1) -->
         <section id="sct-page-examples" class="slice bg-section-secondary">
           <h4 class="vente" class="blink"><strong>Ventes Flash :</strong></h4></li>
@@ -191,49 +186,55 @@ session_start();
         </div>
       </div>
     </div>
-    <footer>
-      <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-        <div class="col-md-6">
-          <div class="copyright text-sm font-weight-bold text-center text-md-left">
-            &copy; 2019 <a href="https://ece.fr" class="font-weight-bold" target="_blank">ECE Paris</a>. Tous droits reservés.
+    <footer id="footer-main">
+    <div class="footer footer-dark bg-dark">
+      <div class="container">
+        <div class="row pt-md">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <a href="bootstrap/index.html">
+              <img src="images/white.png" alt="Footer logo" style="height: 70px;">
+            </a>
+            <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+            <h6 class="heading mb-3">Compte</h6>
+            <ul class="list-unstyled">
+              <li><a href="form_inscription.html">Mon profil</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+            <h6 class="heading mb-3">A propos</h6>
+            <ul class="list-unstyled text-small">
+              <li><a href="shop-landing.html">Accueil</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#avis">Avis</a></li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-6">
-          <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon/" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/ECE.Paris/" target="_blank">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-          </ul>
+        <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+          <div class="col-md-6">
+            <div class="copyright text-sm font-weight-bold text-center text-md-left">
+              &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </footer>
-      <style type="text/css">
-      * {
-        margin: 0;
-      }
-      html, body {
-        height: 100%;
-      }
-      .page-wrap {
-        min-height: 100%;
-        /* equal to footer height */
-        margin-bottom: -142px;  
-      }
-      .page-wrap:after {
-        content: "";
-        display: block;
-      }
-      .site-footer, .page-wrap:after {
-        /* .push must be the same height as footer */
-        height: 142px; 
-      }
-    </style>
+      </div>
+    </div>
+  </footer>
   </section>
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
   <script src="bootstrap/assets/js/purpose.core.js"></script>
