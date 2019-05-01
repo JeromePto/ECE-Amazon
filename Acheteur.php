@@ -103,8 +103,9 @@ session_start();
                   <a class="nav-link" href="#">
                     <i class="fas fa-user-circle"></i>Mon compte
                   </a>
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="shop-landing.html">
                     <i class="fas fa-sign-out-alt"></i>Se deconnecter
+                    <?php session_destroy();?>
                   </a>
                 </ul>
               </div>
@@ -123,6 +124,7 @@ session_start();
           </style>
         <!-- Features (v1) -->
         <section id="sct-page-examples" class="slice bg-section-secondary">
+          <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
           <h4 class="vente" class="blink"><strong>Ventes Flash :</strong></h4></li>
           <style type="text/css">
           h4.vente{
@@ -191,7 +193,7 @@ session_start();
       <div class="container">
         <div class="row pt-md">
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <a href="bootstrap/index.html">
+            <a href="Acheteur.php">
               <img src="images/white.png" alt="Footer logo" style="height: 70px;">
             </a>
             <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>

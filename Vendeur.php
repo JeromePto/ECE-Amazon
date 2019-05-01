@@ -39,8 +39,9 @@ session_start();
               <a class="nav-link" href="#">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="shop-landing.html">
                 <i class="fas fa-sign-out-alt"></i>Se deconnecter
+                <?php session_destroy();?>
               </a>
             </ul>
           </div>
@@ -59,6 +60,7 @@ session_start();
     </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
+      <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
       <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
       <style type="text/css">
       h4.vente{

@@ -103,9 +103,10 @@ session_start();
 								<a class="nav-link" href="#">
 									<i class="fas fa-user-circle"></i>Mon compte
 								</a>
-								<a class="nav-link" href="#">
-									<i class="fas fa-sign-out-alt"></i>Se deconnecter
-								</a>
+								<a class="nav-link" href="shop-landing.html">
+				                    <i class="fas fa-sign-out-alt"></i>Se deconnecter
+				                    <?php session_destroy();?>
+                  				</a>
 							</ul>
 						</div>
 					</div>
