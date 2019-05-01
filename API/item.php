@@ -64,12 +64,10 @@ function deleteItem($id) {
 		die('Erreur : ' . $e->getMessage());
 	}
 
-	$req = $bdd->prepare('DELETE FROM item WHERE ID = :id');
-	$req->execute(array(
-	'id' => $id
-	)) or die(print_r($bdd->errorInfo()));
+	$req = $bdd->prepare('DELETE FROM item WHERE ID = ?');
+	$req->execute(array($id));
 }
 
-deleteItem(30);
+deleteItem(26);
 
 ?>
