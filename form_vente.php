@@ -1,3 +1,17 @@
+
+<!--
+
+<?php 
+//session_start();
+$_SESSION['id'] = $_GET['id']; 
+?>
+
+Cette ligne de code sert à communiquer les informations de sessions à la page php de traitement de données. 
+
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +29,18 @@
 </head>
 
 <body>
+  <?php 
+  if (isset($_GET['erreur']))
+  {
+  if ($_GET['erreur']==10) {
+    ?>
+    <div class="alert alert-danger" role="alert">
+      <strong>Attention !</strong> <a href="#" class="alert-link">L'item est déjà présent dans la collection</a>.
+    </div>
+    <?php
+  }
+}
+  ?>
   <div class="main-content">
     <div class="container min-vh-100 d-flex align-items-center">
       <div class="col py-5">
@@ -22,11 +48,15 @@
           <div class="col-md-8 col-lg-6">
             <div>
               <div class="mb-5 text-center">
-                <h6 class="h3">Créer un compte</h6>
+                <h6 class="h3">Vendre un item</h6>
                 <p class="text-muted mb-0">Fait à l'ECE !</p>
               </div>
-              <span class="clearfix"></span>
-              <form role="form" action="cible.php" method="post">
+              <span class="clearfix"></span>                    <!-- identification, son nom, sa/ses photo/s, ses descriptions, sa vidéo (si disponible), sa catégorie et son prix à l’unité -->
+              <form role="form" action="cible4.php" method="post">
+                <label class="form-control-label">Identification</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control" name="identification" placeholder="id" required="">
+                </div>
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
@@ -35,37 +65,33 @@
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="prenom" placeholder="Jean Pierre" required="">
                 </div>
-                <label class="form-control-label">Adresse</label>
+                <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="adresse" placeholder="ECE Paris pour la vie" required="">
+                  <input type="file" class="form-control" name="photo" required="">
                 </div>                  
-                <label class="form-control-label">Adresse mail</label>
+                <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">
-                  <input type="email" class="form-control" name="mail" placeholder="JP@segadolemeilleur.com">
+                  <input type="text" class="form-control" name="description" placeholder="C'est un super produit !">
                 </div>
-                <div class="form-group mb-4">
-                  <label class="form-control-label">Mot de passe</label>
-                  <div class="input-group input-group-merge">
-                    <input type="password" class="form-control" name="mdp" placeholder="********" required="">
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="fas fa-eye"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                Vous êtes un: 
+                Catégorie: 
                 <div>
                   <input type="radio"  name="choix" value="1" required="" >
-                  <label for="huey">Acheteur</label>
+                  <label >Livre</label>
                 </div>
-
                 <div>
-                  <input type="radio"  name="choix" value="2" >
-                  <label for="dewey">Vendeur</label>
+                  <input type="radio"  name="choix" value="2" required="" >
+                  <label >Musique</label>
+                </div>
+                <div>
+                  <input type="radio"  name="choix" value="3" required="" >
+                  <label >Vêtement</label>
+                </div>
+                <div>
+                  <input type="radio"  name="choix" value="4" required="" >
+                  <label >Sport et loisir</label>
                 </div>
                 <div class="mt-4">
-                  <button type="submit" class="btn btn-block btn-primary">Créer mon compte !</button></div>
+                  <button type="submit" class="btn btn-block btn-primary">Vendre mon item</button></div>
                 </form>
                 <div class="mt-4 text-center"><small>Vous avez déjà un compte ?</small>
                   <a href="form_connexion.html" class="small font-weight-bold">Connectez-vous !</a></div>
