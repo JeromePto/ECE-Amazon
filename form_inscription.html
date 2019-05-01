@@ -29,15 +29,15 @@
               <form role="form" action="cible.php" method="post">
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="nom" placeholder="Segado">
+                  <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
                 </div>
                 <label class="form-control-label">Prénom</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="prenom" placeholder="Jean Pierre">
+                  <input type="text" class="form-control" name="prenom" placeholder="Jean Pierre" required="">
                 </div>
                 <label class="form-control-label">Adresse</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="adresse" placeholder="ECE Paris pour la vie">
+                  <input type="text" class="form-control" name="adresse" placeholder="ECE Paris pour la vie" required="">
                 </div>                  
                 <label class="form-control-label">Adresse mail</label>
                 <div class="input-group input-group-merge">
@@ -46,13 +46,23 @@
                 <div class="form-group mb-4">
                   <label class="form-control-label">Mot de passe</label>
                   <div class="input-group input-group-merge">
-                    <input type="password" class="form-control" name="mdp" placeholder="********">
+                    <input type="password" class="form-control" name="mdp" placeholder="********" required="">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="fas fa-eye"></i>
                       </span>
                     </div>
                   </div>
+                </div>
+                Vous êtes un: 
+                <div>
+                  <input type="radio"  name="choix" value="1" required="" >
+                  <label for="huey">Acheteur</label>
+                </div>
+
+                <div>
+                  <input type="radio"  name="choix" value="2" >
+                  <label for="dewey">Vendeur</label>
                 </div>
                 <div class="mt-4">
                   <button type="submit" class="btn btn-block btn-primary">Créer mon compte !</button></div>
