@@ -1,6 +1,9 @@
 <?php
 session_start();
-echo print_r($_SESSION)
+
+if (!isset($_SESSION['id'])) {
+  header("location: shop-landing.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +107,7 @@ echo print_r($_SESSION)
                   <a class="nav-link" href="Compte.php">
                     <i class="fas fa-user-circle"></i>Mon compte
                   </a>
-                  <a class="nav-link" href="shop-landing.html">
+                  <a class="nav-link" href="Deconnexion.php">
                     <i class="fas fa-sign-out-alt"></i>Se deconnecter
                   </a>
                 </ul>
