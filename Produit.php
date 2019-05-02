@@ -13,6 +13,7 @@ catch(Exception $e)
 }
 
 $reponse = $bdd->query('SELECT * FROM item');
+$reponse2 = $bdd->query('SELECT * FROM item');
 
 while ($donnees = $reponse->fetch())
 {
@@ -167,11 +168,11 @@ $reponse->closeCursor();
           <div class="row row-grid">
             <div class="col-lg-6">
               <div data-toggle="sticky" data-sticky-offset="30">
-                <a href="bootstrap/assets/img/theme/light/shop-product-lg-2.jpg" data-fancybox>
-                  <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/shop-product-lg-2.jpg" class="img-fluid">
+                <a href=<?php echo($photo)?> data-fancybox>
+                  <img alt="Image placeholder" src=<?php echo($photo)?> class="img-fluid">
                 </a>
                 <div class="mt-4 text-center">
-                  <a href="bootstrap/assets/img/theme/light/shop-product-lg-2.jpg" data-fancybox>Voir les images</a>
+                  <a href="" data-fancybox>Voir les images</a>
                 </div>
               </div>
             </div>
@@ -257,7 +258,7 @@ $reponse->closeCursor();
                       </div>
                       <div class="col-sm-6 text-sm-right">
                         <!-- Add to cart -->
-                          <a class="btn btn-primary" href="cible6.php" role="button">Ajouter au panier</a>                      
+                        <a class="btn btn-primary" href=<?php echo "actionPanier.php?action=2&param1=".$id;?> role="button">Ajouter au panier</a>                      
                       </div>
                     </div>
                   </div>
@@ -272,90 +273,41 @@ $reponse->closeCursor();
               <h3 class="h6">Produits similaires<i class="fas fa-angle-down text-xs ml-3"></i></h3>
             </div>
             <div class="row">
-              <div class="col-lg-3 col-sm-6">
-                <div class="card card-product">
-                  <div class="card-image">
-                    <a href="#">
-                      <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-1.png" class="img-center img-fluid">
-                    </a>
+
+              <?php
+              while ($donnees2 = $reponse2->fetch())
+              { 
+                if (($donnees2['CATEGORIE']==$categorie) && ($donnees2['ID']!=$id) ) 
+                {
+
+                  ?>
+                  <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="card card-product">
+                      <div class="card-image">
+                        <a href=<?php echo("produit.php?id=".$donnees2['ID'])?>>
+                          <img alt="Image placeholder" src=<?php echo($donnees2['PHOTO'])?> class="img-center img-fluid">
+                        </a>
+                      </div>
+                      <div class="card-body text-center pt-0">
+                        <h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees2['NOM']; ?></a></h6>
+                        <p class="text-sm">
+                          <?php echo $donnees2['DESCRIPTION']; ?> 
+                        </p>
+                        <span class="card-price"><?php echo $donnees2['PRIX']; ?>€</span>
+                      </div>
+                      <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
+                        <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
+                          <i class="fas fa-shopping-bag"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="#">Nom produit</a></h6>
-                    <p class="text-sm">
-                      Description produit.
-                    </p>
-                    <span class="card-price">20€</span>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="card card-product">
-                  <div class="card-image">
-                    <a href="#">
-                      <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-2.png" class="img-center img-fluid">
-                    </a>
-                  </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="#">Nom produit</a></h6>
-                    <p class="text-sm">
-                      Description Produit.
-                    </p>
-                    <span class="card-price">20€</span>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="card card-product">
-                  <div class="card-image">
-                    <a href="#">
-                      <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-3.png" class="img-center img-fluid">
-                    </a>
-                  </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="#">Nom produit</a></h6>
-                    <p class="text-sm">
-                      Description produit.
-                    </p>
-                    <span class="card-price">20€</span>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="card card-product">
-                  <div class="card-image">
-                    <a href="#">
-                      <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-4.png" class="img-center img-fluid">
-                    </a>
-                  </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="#">Nom produit</a></h6>
-                    <p class="text-sm">
-                      Description produit.
-                    </p>
-                    <span class="card-price">20€</span>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+
+                  <?php
+                }
+              }
+              $reponse2->closeCursor();
+              ?>
             </div>
           </div>
         </section>
