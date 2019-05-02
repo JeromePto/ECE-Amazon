@@ -114,7 +114,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 						<div class="ml-auto">
 							<ul class="nav">             
 								<a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="Compte.php">
 									<i class="fas fa-user-circle"></i>Mon compte
 								</a>
 								<a class="nav-link" href="shop-landing.html">
@@ -145,17 +145,20 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 						<!-- Produit -->
 						<div class="row">
 							<?php
+							$id=0;
 							while ($donnees = $reponse->fetch())
-								{ ?>
+							{ 
+								$id=$donnees['ID'];
+									?>
 									<div class="col-xl-3 col-lg-4 col-sm-6">
 										<div class="card card-product">
 											<div class="card-image">
-												<a href="form_inscription.html">
-													<img alt="Image placeholder" src="images\$donnees['PHOTO']" class="img-center img-fluid">
+												<a href=<?php echo("produit.php?id=".$id)?>>
+													<img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
 												</a>
 											</div>
 											<div class="card-body text-center pt-0">
-												<h6><a href="form_inscription.html"><?php echo $donnees['NOM']; ?></a></h6>
+												<h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
 												<p class="text-sm">
 													<?php echo $donnees['DESCRIPTION']; ?> 
 												</p>
@@ -169,9 +172,9 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 										</div>
 									</div>
 									<?php
-								}
-								$reponse->closeCursor();
-								?>
+							}
+							$reponse->closeCursor();
+							?>		
 						</div>
 					</section>
 				</div>

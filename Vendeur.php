@@ -40,7 +40,7 @@ if (!isset($_SESSION['id'])) {
           </div>
           <div class="ml-auto">
             <ul class="nav">                          
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="Compte.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
               <a class="nav-link" href="Deconnexion.php">
