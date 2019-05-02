@@ -36,7 +36,7 @@ function newItem($nom, $vendeur, $stock, $categorie, $prix, $description, $photo
 	}
 
 
-	$req = $bdd->prepare("INSERT INTO `item` (`ID`, `VENDEUR`, `NOM`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, :nom, :vendeur, :stock, :categorie, :description, :prix, :photo, :variation)");
+	$req = $bdd->prepare("INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, :nom, :vendeur, :stock, :categorie, :description, :prix, :photo, :variation)");
 	$result = $req->execute(array(
 	"nom" => $nom,
 	"vendeur" => $vendeur,
