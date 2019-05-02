@@ -188,7 +188,28 @@ function editItem($id, $nom, $categorie, $prix, $description, $photo = NULL, $va
 	}
 }
 
-function getItemNumber($id) {
+// function getItemNumber($id) {
+// 	try
+// 	{
+// 		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+// 	}
+// 	catch (Exception $e)
+// 	{
+// 		die('Erreur : ' . $e->getMessage());
+// 	}
+
+// 	$req = $bdd->prepare("SELECT * FROM item WHERE ID = ?");
+// 	$req->execute(array($id));
+// 	$donnees = $req->fetch();
+// 	$res->closeCursor();
+// 	if (!$donnees) {
+// 		echo "Erreur item inconnu<br>";
+// 		exit(1);
+// 	}
+// 	return $donnees['STOCK'];
+// }
+
+function getItemInfo($id) {
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
@@ -206,7 +227,7 @@ function getItemNumber($id) {
 		echo "Erreur item inconnu<br>";
 		exit(1);
 	}
-	return $donnees['STOCK'];
+	return $donnees;
 }
 
 ?>

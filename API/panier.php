@@ -142,7 +142,7 @@ function deletePanier($acheteur) {
 	$req->execute(array($acheteur));
 }
 
-function getItemNumberPanier($acheteur, $item) {
+function getItemInfoPanier($acheteur, $item) {
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
@@ -160,7 +160,49 @@ function getItemNumberPanier($acheteur, $item) {
 		echo "Erreur item ou acheteur inconnu<br>";
 		exit(1);
 	}
-	return $donnees['QUANTITE'];
+	return $donnees;
 }
 
+function getIdByPos($acheteur, $pos) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+	$req = $bdd->prepare("SELECT * FROM panier WHERE ACHETEUR = ?");
+	$req->execute(array($acheteur));
+	$i = 0;
+	while($donnees = $req->fetch()) {
+		if($i == $pos) {
+			return $donnees['ITEM'];
+		}
+		$i++;
+	}
+	echo ("Erreur : out of array");
+	exit(1);
+}
+
+function getItemNumberInPanier($acheteur) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare("SELECT COUNT(*) FROM panier WHERE ACHETEUR = ?");
+	$req->execute(array($acheteur));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur item ou acheteur inconnu<br>";
+		exit(1);
+	}
+	return $donnees[0];
+}
 ?>
