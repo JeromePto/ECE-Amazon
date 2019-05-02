@@ -1,6 +1,5 @@
 <?php
-
-include "API/item.php";
+session_start();
 
 try
 {
@@ -13,7 +12,7 @@ catch(Exception $e)
 	die('Erreur : '.$e->getMessage());
 }
 
-if (isset($_POST['nom']) && isset($_POST['vendeur'])&& isset($_POST['prix'])&& isset($_POST['stock'])&& isset($_POST['description']))
+if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& isset($_POST['nom'])&& isset($_POST['adresse']))
 {
 
 		$reponse = $bdd->query('SELECT * FROM item');
@@ -33,7 +32,7 @@ if (isset($_POST['nom']) && isset($_POST['vendeur'])&& isset($_POST['prix'])&& i
 
 		if ($verif==1) 
 		{
-			/*$req = $bdd->prepare('INSERT INTO item(NOM, VENDEUR, STOCK, CATEGORIE, DESCRIPTION, PRIX, PHOTO, VARIATION) 
+			$req = $bdd->prepare('INSERT INTO item(NOM, VENDEUR, STOCK, CATEGORIE, DESCRIPTION, PRIX, PHOTO, VARIATION) 
 				VALUES(:nom, :vendeur, :stock, :categorie, :description, :prix, :photo, :variation)');
 			$req->execute(array(
 				'nom' => $_POST['nom'], 				
@@ -45,10 +44,6 @@ if (isset($_POST['nom']) && isset($_POST['vendeur'])&& isset($_POST['prix'])&& i
 				'prix' => $_POST['prix'],
 				'variation' => $_POST['variation'],
 			));
-
-			*/
-
-			newItem($_POST['nom'], $_POST['vendeur'],$_POST['stock'],$_POST['categorie'],$_POST['prix'],$_POST['description'],NULL,$_POST['variation']);
 
 			header ('location: Vendeur.php');
 		}

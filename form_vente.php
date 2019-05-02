@@ -57,8 +57,9 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
                 </div>
+                <label class="form-control-label">Vendeur</label>
                 <div class="input-group input-group-merge">
-                  <input type="hidden" class="form-control" name="vendeur" value="" placeholder="Jean Pierre" required="">
+                  <input type="number" class="form-control" name="vendeur" placeholder="Jean Pierre" required="">
                 </div>
                 <label class="form-control-label">Nombre de produits</label>
                 <div class="input-group input-group-merge">
@@ -66,7 +67,7 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
                 </div>                
                 <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
-                  <input type="file" class="form-control" name="photo">
+                  <input type="file" class="form-control" name="photo" required="">
                 </div>                  
                 <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">
@@ -78,7 +79,7 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
                 </div>
                 <label class="form-control-label">Variation</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !" required="">
+                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !">
                 </div>                                                
                 Catégorie: 
                 <div>

@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_start(); 
+echo print_r($_SESSION); 
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ session_start();
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
+  <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="bootstrap/assets/libs/swiper/dist/css/swiper.min.css">
   <!-- Purpose CSS -->
   <link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
@@ -105,7 +106,6 @@ session_start();
                   </a>
                   <a class="nav-link" href="shop-landing.html">
                     <i class="fas fa-sign-out-alt"></i>Se deconnecter
-                    <?php session_destroy();?>
                   </a>
                 </ul>
               </div>
