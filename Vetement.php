@@ -105,7 +105,6 @@ session_start();
 								</a>
 								<a class="nav-link" href="shop-landing.html">
 				                    <i class="fas fa-sign-out-alt"></i>Se deconnecter
-				                    <?php session_destroy();?>
 				                </a>
 							</ul>
 						</div>
