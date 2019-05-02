@@ -2,6 +2,8 @@
 
 include "API/item.php";
 
+session_start();
+
 try
 {
 				// On se connecte à MySQL
@@ -47,7 +49,7 @@ if (isset($_POST['nom']) && isset($_POST['vendeur'])&& isset($_POST['prix'])&& i
 			));
 
 			*/
-
+			echo print_r($_SESSION);
 			newItem($_POST['nom'], $_POST['vendeur'],$_POST['stock'],$_POST['categorie'],$_POST['prix'],$_POST['description'],NULL,$_POST['variation']);
 
 			header ('location: Vendeur.php');

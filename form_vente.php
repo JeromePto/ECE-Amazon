@@ -78,7 +78,7 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
                 </div>
                 <label class="form-control-label">Variation</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !" required="">
+                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !">
                 </div>                                                
                 Catégorie: 
                 <div>
