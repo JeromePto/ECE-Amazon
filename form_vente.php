@@ -25,21 +25,21 @@ session_start();
   <?php 
   if (isset($_GET['erreur']))
   {
-  if ($_GET['erreur']==10) {
-    ?>
-    <div class="alert alert-danger" role="alert">
-      <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
-    </div>
-    <?php
+    if ($_GET['erreur']==10) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+        <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
+      </div>
+      <?php
+    }
+    if ($_GET['erreur']==5) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+        <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
+      </div>
+      <?php
+    }
   }
-  if ($_GET['erreur']==5) {
-    ?>
-    <div class="alert alert-danger" role="alert">
-      <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
-    </div>
-    <?php
-  }
-}
   ?>
   <div class="main-content">
     <div class="container min-vh-100 d-flex align-items-center">
@@ -95,19 +95,20 @@ session_start();
                   <label >Sport et loisir</label>
                 </div>
                 <div class="mt-4">
-                  <button type="submit" class="btn btn-block btn-primary">Vendre mon item</button></div>
-                </form>
-              </div>
+                  <button type="submit" class="btn btn-block btn-primary">Vendre mon item</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-      <script src="bootstrap/assets/js/purpose.core.js"></script>
-      <!-- Purpose JS -->
-      <script src="bootstrap/assets/js/purpose.js"></script>
-      <!-- Demo JS - remove it when starting your project -->
-      <script src="bootstrap/assets/js/demo.js"></script>
-    </body>
+    </div>
+    <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+    <script src="bootstrap/assets/js/purpose.core.js"></script>
+    <!-- Purpose JS -->
+    <script src="bootstrap/assets/js/purpose.js"></script>
+    <!-- Demo JS - remove it when starting your project -->
+    <script src="bootstrap/assets/js/demo.js"></script>
+  </body>
 
-    </html>
+  </html>
