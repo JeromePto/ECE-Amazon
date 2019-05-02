@@ -21,7 +21,7 @@ session_start();
 
 <body>
 	<header class="header header-transparent" id="header-main">
-		<!-- Topbar -->
+		<!-- En-tete principal -->
 		<div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
 			<div class="container px-0">
 				<div class="navbar-nav align-items-center">
@@ -36,11 +36,11 @@ session_start();
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="Livre.php" class="list-group-item list-group-item-action" role="button">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
+												<!-- Icone -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/livre.jpg" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
+												<!-- Nom -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Livres</h6>
 													<p class="mb-0">Collection de livres et BD</p>
@@ -51,11 +51,11 @@ session_start();
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="Musique.php" class="list-group-item list-group-item-action dropdown-toggle">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
+												<!-- Icone -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/musique.png" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
+												<!-- nom -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Musique</h6>
 													<p class="mb-0">La musique de votre choix</p>
@@ -66,11 +66,11 @@ session_start();
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="Vetement.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
+												<!-- Icone -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/vetement.png" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
+												<!-- Nom -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Vetements</h6>
 													<p class="mb-0">Notre collection de vetements</p>
@@ -81,11 +81,11 @@ session_start();
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="Sport.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
+												<!-- Icone -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/sport.png" class=svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
+												<!-- Nom -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Sports et Loisirs</h6>
 													<p class="mb-0">Notre collection d'equipements sportifs</p>
@@ -105,7 +105,6 @@ session_start();
 								</a>
 								<a class="nav-link" href="shop-landing.html">
 				                    <i class="fas fa-sign-out-alt"></i>Se deconnecter
-				                    <?php session_destroy();?>
 				                </a>
 							</ul>
 						</div>
@@ -114,22 +113,22 @@ session_start();
 			</div>
 		</header>
 		<div class="main-content">
-			<!-- Header (v1) -->
+			<!-- Arriere plan de l'en-tete (couleur mauve degradée) -->
 			<section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
 				<div class="section-inner bg-gradient-primary"></div>
 				<style type="text/css">
 				.section-inner{ 
 					height:100% !important;  
 				}
-			</style>
+			</style> <!-- On modifie la taille de cet en-tete coloré afin d'eviter des probleme d'affichage--> 
 			<div class="main-content">
 				<section class="slice slice-lg delimiter-top" id="sct-products">
 					<div class="container">
-						<!-- Title -->
+						<!-- Titre -->
 						<div class="mb-5 text-center">
 							<h3 class="h6">Notre sélection de vêtments<i class="fas fa-angle-down text-xs ml-3"></i></h3>
 						</div>
-						<!-- Products -->
+						<!-- Produit -->
 						<div class="row">
 							<div class="col-xl-3 col-lg-4 col-sm-6">
 								<div class="card card-product">
