@@ -100,7 +100,6 @@ if (!isset($_SESSION['id'])) {
                   </ul>
                 </li>
               </div>
-
               <div class="ml-auto">
                 <ul class="nav">             
                   <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
@@ -122,7 +121,7 @@ if (!isset($_SESSION['id'])) {
           <div class="section-inner bg-gradient-primary"></div>
           <style type="text/css">
             .section-inner{ 
-              height:100% !important;  
+              height:100% !important; 
             }
           </style>
         <!-- Features (v1) -->
