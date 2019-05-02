@@ -11,8 +11,6 @@ catch(Exception $e)
 	die('Erreur : '.$e->getMessage());
 }
 
-	//echo "string";
-echo $_POST['mail'];
 
 if (isset($_POST['mail']) && isset($_POST['mdp'])) 
 {
@@ -23,10 +21,12 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 		$req = $bdd->prepare('SELECT ID, NOM, PRENOM, MAIL, ADRESSE, MDP FROM  acheteur WHERE MAIL = ?');
 		$req->execute(array($_POST['mail']));
 		$donnees = $req->fetch();
-
+		$req->closeCursor(); 
+		
 		if(!$donnees)
 		{
-			echo 'Mauvais identifiant ou mot de passe !';
+			$erreur=5;
+			header("location: form_connexion.php?erreur={$erreur}");
 		}
 
 		else
@@ -49,7 +49,8 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 		}
 		else
 		{
-			echo 'Mauvais identifiant ou mot de passe !';
+			$erreur=10;
+			header("location: form_connexion.php?erreur={$erreur}");			
 		}
 	}
 
@@ -64,7 +65,8 @@ if ($_POST['choix']==2)
 
 	if(!$donnees)
 	{
-		echo 'Mauvais identifiant ou mot de passe !';
+			$erreur=6;
+			header("location: form_connexion.php?erreur={$erreur}");
 	}
 
 	else
@@ -86,7 +88,8 @@ if ($_POST['choix']==2)
 		}
 		else
 		{
-			echo 'Mauvais identifiant ou mot de passe !';
+			$erreur=10;
+			header("location: form_connexion.php?erreur={$erreur}");			
 		}
 	}
 

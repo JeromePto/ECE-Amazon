@@ -18,12 +18,29 @@
   <?php 
   if (isset($_GET['erreur']))
   {
-  if ($_GET['erreur']==10) {
+  if ($_GET['erreur']==10) 
+  {
     ?>
     <div class="alert alert-danger" role="alert">
-      <strong>Attention !</strong> <a href="#" class="alert-link">Cette adresse mail est déjà utilisée</a>, recommencer avec un autre mail.
+      <strong>Attention !</strong> <a href="#" class="alert-link">Mot de passe incorrect</a>, recommencer avec un autre mail.
     </div>
     <?php
+  }
+  elseif ($_GET['erreur']==5) 
+  {
+  ?>
+    <div class="alert alert-danger" role="alert">
+    <strong>Attention !</strong> <a href="#" class="alert-link">Vous n'êtes pas reconnus en tant qu'acheteur</a>.
+    </div>
+  <?php
+  }
+  elseif ($_GET['erreur']==6) 
+  { ?>
+    <div class="alert alert-danger" role="alert">
+    <strong>Attention !</strong> <a href="#" class="alert-link">Vous n'êtes pas reconnus en tant qu'vendeur</a>.
+    </div>
+  <?php
+
   }
 }
   ?>
