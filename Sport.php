@@ -155,11 +155,11 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=3 ');
 										<div class="card card-product">
 											<div class="card-image">
 												<a href=<?php echo("produit.php?id=".$id)?>>
-													<img alt="Image placeholder" src="$donnees['PHOTO']" class="img-center img-fluid">
+													<img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
 												</a>
 											</div>
 											<div class="card-body text-center pt-0">
-												<h6><a href="form_inscription.html"><?php echo $donnees['NOM']; ?></a></h6>
+												<h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
 												<p class="text-sm">
 													<?php echo $donnees['DESCRIPTION']; ?> 
 												</p>
@@ -173,7 +173,6 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=3 ');
 										</div>
 									</div>
 									<?php
-									$id=$id+1;
 							}
 							$reponse->closeCursor();
 							?>							

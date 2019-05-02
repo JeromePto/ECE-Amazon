@@ -144,34 +144,37 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=1 ');
         </div>
         <!-- Products -->
         <div class="row">
-          <?php
-          while ($donnees = $reponse->fetch())
-            { ?>
-              <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="card card-product">
-                  <div class="card-image">
-                    <a href="form_inscription.html">
-                      <img alt="Image placeholder" src="images\$donnees['PHOTO']" class="img-center img-fluid">
-                    </a>
-                  </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="form_inscription.html"><?php echo $donnees['NOM']; ?></a></h6>
-                    <p class="text-sm">
-                      <?php echo $donnees['DESCRIPTION']; ?> 
-                    </p>
-                    <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
               <?php
-            }
-            $reponse->closeCursor();
-            ?>
+              $id=0;
+              while ($donnees = $reponse->fetch())
+              { 
+                $id=$donnees['ID'];
+                  ?>
+                  <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="card card-product">
+                      <div class="card-image">
+                        <a href=<?php echo("produit.php?id=".$id)?>>
+                          <img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
+                        </a>
+                      </div>
+                      <div class="card-body text-center pt-0">
+                        <h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
+                        <p class="text-sm">
+                          <?php echo $donnees['DESCRIPTION']; ?> 
+                        </p>
+                        <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+                      </div>
+                      <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
+                        <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
+                          <i class="fas fa-shopping-bag"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <?php
+              }
+              $reponse->closeCursor();
+              ?>    
           </div>
         </section>
       </div>
