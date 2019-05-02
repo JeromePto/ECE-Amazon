@@ -5,6 +5,7 @@ include("API/item.php");
 
 if (!isset($_SESSION['id'])) {
   header("location: shop-landing.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -789,20 +790,21 @@ if (!isset($_SESSION['id'])) {
             </thead>
             <tbody class="list">
 
-            
+            <?php
+            for($i = 0 ; $i < getItemNumberInPanier($_SESSION['id']) ; $i++) {?>
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
-                    <img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-1.png" class="" style="width: 80px;">
+                    <img alt="Image placeholder" src=<?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?> class="" style="width: 80px;">
                     <div class="media-body pl-3">
                       <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">Home Base</span>
+                        <span class="text-dark font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></span>
                       </div>
                     </div>
                   </div>
                 </th>
                 <td class="price">
-                  $129 USD
+                  <?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €
                 </td>
                 <td>
                   <div class="lh-100">
@@ -811,18 +813,18 @@ if (!isset($_SESSION['id'])) {
                   <span class="text-dark font-weight-bold mb-0">Couleur: bleu</span>
                 </td>
                 <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
+                  <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>
                 </td>
                 <td class="total">
-                  $129 USD
+                  <?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €
                 </td>
                 <td class="text-right">
                   <!-- Actions -->
                   <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <a href=<?php echo "Produit.php?id=".getIdByPos($_SESSION['id'], $i);?> class="action-item mr-2" data-toggle="tooltip" title="Quick view">
                       <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <a href=<?php echo "actionPanier.php?action=1&param1=".$i;?>, class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
                       <i class="fas fa-times"></i>
                     </a>
                   </div>
@@ -830,6 +832,7 @@ if (!isset($_SESSION['id'])) {
               </tr>
               <tr class="table-divider"></tr>
 
+            <?php }?>
 
             </tbody>
           </table>

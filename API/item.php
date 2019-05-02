@@ -201,7 +201,7 @@ function editItem($id, $nom, $categorie, $prix, $description, $photo = NULL, $va
 // 	$req = $bdd->prepare("SELECT * FROM item WHERE ID = ?");
 // 	$req->execute(array($id));
 // 	$donnees = $req->fetch();
-// 	$res->closeCursor();
+// 	$req->closeCursor();
 // 	if (!$donnees) {
 // 		echo "Erreur item inconnu<br>";
 // 		exit(1);
@@ -222,7 +222,7 @@ function getItemInfo($id) {
 	$req = $bdd->prepare("SELECT * FROM item WHERE ID = ?");
 	$req->execute(array($id));
 	$donnees = $req->fetch();
-	$res->closeCursor();
+	$req->closeCursor();
 	if (!$donnees) {
 		echo "Erreur item inconnu<br>";
 		exit(1);

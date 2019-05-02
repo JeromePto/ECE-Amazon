@@ -71,7 +71,7 @@ function ajouterPanier($item, $acheteur, $quantite) {
 	}
 }
 
-function deleteItemPanier($acheteur, $item, $quantite) {
+function changeQuantiteItemPanier($acheteur, $item, $quantite) {
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
@@ -79,6 +79,11 @@ function deleteItemPanier($acheteur, $item, $quantite) {
 	catch (Exception $e)
 	{
 		die('Erreur : ' . $e->getMessage());
+	}
+
+	if ($quantite < 0) {
+		echo "Erreur quantite negative";
+		exit(1);
 	}
 
 	$req = $bdd->prepare("SELECT * FROM item WHERE ID = ?");
@@ -89,6 +94,7 @@ function deleteItemPanier($acheteur, $item, $quantite) {
 		echo "Erreur : Item inconnu";
 		exit(1);
 	}
+	$quantiteMax = $donnees['STOCK'];
 
 	$req = $bdd->prepare("SELECT * FROM acheteur WHERE ID = ?");
 	$req->execute(array($acheteur));
@@ -107,15 +113,15 @@ function deleteItemPanier($acheteur, $item, $quantite) {
 		echo "Erreur : Item pas dans le panier";
 		exit(1);
 	}
-	if ($quantite > $donnees['QUANTITE']) {
+	if ($quantite > $quantiteMax) {
 		echo "Erreur : quantite trop importante";
 		exit(1);
-	} else if ($quantite == $donnees['QUANTITE']) {
+	} else if ($quantite == 0) {
 		$req = $bdd->prepare('DELETE FROM panier WHERE ACHETEUR = ? and ITEM = ?');
 		$req->execute(array($acheteur, $item));
 	} else {
 		$req = $bdd->prepare("UPDATE panier SET QUANTITE = ? WHERE ACHETEUR = ? and ITEM = ?");
-		$req->execute(array($donnees['QUANTITE'] - $quantite, $acheteur, $item));
+		$req->execute(array($quantite, $acheteur, $item));
 	}
 }
 

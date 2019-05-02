@@ -1,5 +1,37 @@
 <?php
 session_start();
+
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item');
+
+while ($donnees = $reponse->fetch())
+{
+  if ($donnees['ID']==$_GET['id']) 
+  {
+    $id=$donnees['ID'];
+    $nom=$donnees['NOM'];
+    $vendeur=$donnees['VENDEUR'];
+    $stock=$donnees['STOCK'];
+    $categorie=$donnees['CATEGORIE'];
+    $description=$donnees['DESCRIPTION'];
+    $prix=$donnees['PRIX'];
+    $photo=$donnees['PHOTO'];
+    $variation=$donnees['VARIATION'];
+  }
+}
+
+$reponse->closeCursor();
+
 ?>
 
 <!DOCTYPE html>
@@ -125,7 +157,7 @@ session_start();
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <h6 class="mb-0">Nom du produit</h6>
+              <h6 class="mb-0"></h6>
             </div>
           </div>
         </div>
@@ -146,8 +178,8 @@ session_start();
             <div class="col-lg-6">
               <div class="pl-lg-5">
                 <!-- Nom du produit -->
-                <h5 class="h4">Nom du produit</h5>
-                <h6 class="text-sm">Description breve des composants</h6>
+                <h5 class="h4"><?php echo $nom; ?></h5>
+                <h6 class="text-sm">Description breve du produit</h6>
                 <!-- Note du produit -->
                 <div class="row align-items-center">
                   <div class="col-6">
@@ -160,32 +192,33 @@ session_start();
                     <div class="col-6 text-right">
                       <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                          <span class="badge badge-pill badge-soft-info">ID: #548970</span>
+                          <span class="badge badge-pill badge-soft-info"><?php echo "ID:".$id.""; ?></span>
                         </li>
                         <li class="list-inline-item">
-                          <span class="badge badge-pill badge-soft-success">En stock</span>
-                        </li>
-                      </ul>
-                    </div>
+                          <span class="badge badge-pill badge-soft-success"><?php echo "".$stock. " ".$nom." en réserve"; ?>
+                        </span>
+                      </li>
+                    </ul>
                   </div>
-                  <!-- Description -->
-                  <div class="py-4 my-4 border-top border-bottom">
-                    <h6 class="text-sm">Description :</h6>
-                    <p class="text-sm mb-0">
-                      Description du produit.
-                    </p>
-                  </div>
-                  <!-- information supplementaires sur le produit ex: taille, couleur... -->
-                  <dl class="row">
-                    <dt class="col-sm-3"><span class="h6 text-sm mb-0">Taille</span></dt>
-                    <dd class="col-sm-9"><span class="text-sm">34x35 cm</span></dd>
-                    <dt class="col-sm-3"><span class="h6 text-sm mb-0">Hauteur</span></dt>
-                    <dd class="col-sm-9"><span class="text-sm">15 cm</span></dd>
-                  </dl>
-                  <!-- Taille -->
-                  <div class=" py-4 my-4 border-top border-bottom">
-                    <!-- Choix multiple pour variation : pointure pour des chaussures, couleurs... -->
-                    <h6 class="mt-5">Pointure</h6>
+                </div>
+                <!-- Description -->
+                <div class="py-4 my-4 border-top border-bottom">
+                  <h6 class="text-sm">Description :</h6>
+                  <p class="text-sm mb-0">
+                    <?php echo $description; ?>.
+                  </p>
+                </div>
+                <!-- information supplementaires sur le produit ex: taille, couleur... -->
+                <dl class="row">
+                  <dt class="col-sm-3"><span class="h6 text-sm mb-0">Taille</span></dt>
+                  <dd class="col-sm-9"><span class="text-sm">34x35 cm</span></dd>
+                  <dt class="col-sm-3"><span class="h6 text-sm mb-0">Hauteur</span></dt>
+                  <dd class="col-sm-9"><span class="text-sm">15 cm</span></dd>
+                </dl>
+                <!-- Taille -->
+                <div class=" py-4 my-4 border-top border-bottom">
+                  <!-- Choix multiple pour variation : pointure pour des chaussures, couleurs... -->
+                    <!--<h6 class="mt-5">Pointure</h6>
                     <a href="#" class="text-sm">Quelle est vote pointure ?</a>
                     <div class="btn-group-toggle btn-group-options row mx-0 mt-3 mb-5" data-toggle="buttons">
                       <label class="btn btn-lg btn-neutral col-12 mb-2 text-left text-sm">
@@ -196,9 +229,9 @@ session_start();
                         <input type="radio" name="radio-memory" value="2">
                         40
                       </label>
-                    </div>
+                    </div>-->
                     <!-- Choix multiple pour variation -->
-                    <h6 class="mt-5">Couleur</h6>
+                    <!--<h6 class="mt-5">Couleur</h6>
                     <a href="#" class="text-sm">Quelle couleur souhaitez-vous ?</a>
                     <div class="btn-group-toggle btn-group-options row mx-0 mt-3 mb-5" data-toggle="buttons">
                       <label class="btn btn-lg btn-neutral col-12 mb-2 text-left text-sm active">
@@ -217,18 +250,14 @@ session_start();
                         <input type="radio" name="radio-storage" value="4">
                         Jaune
                       </label>
-                    </div>
+                    </div>-->
                     <div class="row align-items-center">
                       <div class="col-sm-6 mb-4 mb-sm-0">
-                        <span class="d-block h3 mb-0">200€</span> <!--prix-->
-                        <a href="#" class="text-sm">Choisissez un moyen de paiment</a>
+                        <span class="d-block h3 mb-0">Prix: <?php echo "".$prix."€"; ?></span> <!--prix-->
                       </div>
                       <div class="col-sm-6 text-sm-right">
                         <!-- Add to cart -->
-                        <button type="button" class="btn btn-primary btn-icon">
-                          <span class="btn-inner--icon"><i class="fas fa-shopping-bag"></i></span>
-                          <span class="btn-inner--text">Ajouter au panier</span>
-                        </button>
+                          <a class="btn btn-primary" href="cible6.php" role="button">Ajouter au panier</a>                      
                       </div>
                     </div>
                   </div>
