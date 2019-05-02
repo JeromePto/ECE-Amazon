@@ -99,4 +99,5 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 		}
 	}
 }	
+
 ?>
