@@ -1,15 +1,8 @@
 
-<!--
-
 <?php 
-//session_start();
+session_start();
 //$_SESSION['id'] = $_GET['id']; 
 ?>
-
-Cette ligne de code sert à communiquer les informations de sessions à la page php de traitement de données. 
-
--->
-
 
 
 <!DOCTYPE html>
@@ -35,7 +28,14 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
   if ($_GET['erreur']==10) {
     ?>
     <div class="alert alert-danger" role="alert">
-      <strong>Attention !</strong> <a href="#" class="alert-link">L'item est déjà présent dans la collection</a>.
+      <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
+    </div>
+    <?php
+  }
+  if ($_GET['erreur']==5) {
+    ?>
+    <div class="alert alert-danger" role="alert">
+      <strong>Attention !</strong> <a href="#" class="alert-link">Le prix ne peut être négatif !</a>.
     </div>
     <?php
   }

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include"API/item.php";
 
 try
 {
@@ -12,8 +13,23 @@ catch(Exception $e)
 	die('Erreur : '.$e->getMessage());
 }
 
-if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& isset($_POST['nom'])&& isset($_POST['adresse']))
-{
+echo $_SESSION['id'];
+
+if ($_POST['stock'] > 0 ) {
+
+	if ($_POST['prix'] >= 0) {
+		newitem($_POST['nom'], $_SESSION['id'], $_POST['stock'], $_POST['categorie'], $_POST['prix'], $_POST['description']);
+	}
+
+	else{
+			$erreur=10;
+			header("location: form_vente.php?erreur={$erreur}");		
+	}
+}
+else{
+		$erreur=5;
+		header("location: form_vente.php?erreur={$erreur}");	
+}
 
 		$reponse = $bdd->query('SELECT * FROM item');
 
@@ -27,6 +43,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 				break;
 			}
 		}
+
 
 		$reponse->closeCursor();
 
@@ -52,5 +69,4 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 			$erreur=10;
 			header("location: form_vente.php?erreur={$erreur}");
 		}
-}	
 ?>
