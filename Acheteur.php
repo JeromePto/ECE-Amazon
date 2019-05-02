@@ -132,7 +132,7 @@ $reponse = $bdd->query('SELECT * FROM item');
         <div class="section-inner bg-gradient-primary"></div>
         <style type="text/css">
         .section-inner{ 
-          height:100% !important;  
+          height:60% !important;  
         }
       </style>
       <div class="main-content">
@@ -186,33 +186,33 @@ $reponse = $bdd->query('SELECT * FROM item');
         </div>
       </div>
       <footer id="footer-main">
-        <div class="footer footer-dark bg-dark">
+        <div class="footer bg-gradient-primary">
           <div class="container">
             <div class="row pt-md">
               <div class="col-lg-4 mb-5 mb-lg-0">
                 <a href="bootstrap/index.html">
                   <img src="images/white.png" alt="Footer logo" style="height: 70px;">
                 </a>
-                <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
+                <p style="color:white;">ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
               </div>
               <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                <h6 class="heading mb-3">Compte</h6>
+                <h6 class="heading mb-3" style="color:white;">Compte</h6>
                 <ul class="list-unstyled">
-                  <li><a href="form_inscription.html">Mon profil</a></li>
+                  <li><a href="form_inscription.html" style="color:white;">Mon profil</a></li>
                 </ul>
               </div>
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                <h6 class="heading mb-3">A propos</h6>
+                <h6 class="heading mb-3" style="color:white;">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.html">Accueil</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                  <li><a href="#avis">Avis</a></li>
+                  <li><a href="shop-landing.html" style="color:white;">Accueil</a></li>
+                  <li><a href="#contact" style="color:white;">Contact</a></li>
+                  <li><a href="#avis" style="color:white;">Avis</a></li>
                 </ul>
               </div>
             </div>
             <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
               <div class="col-md-6">
-                <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                <div class="copyright text-sm font-weight-bold text-center ">
                   &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
                 </div>
               </div>
@@ -234,7 +234,6 @@ $reponse = $bdd->query('SELECT * FROM item');
           </div>
         </div>
       </footer>
-    </section>
     <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
     <script src="bootstrap/assets/js/purpose.core.js"></script>
     <!-- Page JS -->
