@@ -57,17 +57,13 @@ Cette ligne de code sert à communiquer les informations de sessions à la page 
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
                 </div>
-                <label class="form-control-label">Vendeur</label>
-                <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="vendeur" placeholder="Jean Pierre" required="">
-                </div>
                 <label class="form-control-label">Nombre de produits</label>
                 <div class="input-group input-group-merge">
                   <input type="number" class="form-control" name="stock" placeholder="C'est un super produit !"required="">
                 </div>                
                 <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
-                  <input type="file" class="form-control" name="photo" required="">
+                  <input type="file" class="form-control" name="photo">
                 </div>                  
                 <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">

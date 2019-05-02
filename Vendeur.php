@@ -31,7 +31,7 @@ session_start();
               <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vendre</a>
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="form_vente.php" role="button">Vendre</a>
             </li> 
           </div>
           <div class="ml-auto">

@@ -37,7 +37,7 @@
   elseif ($_GET['erreur']==6) 
   { ?>
     <div class="alert alert-danger" role="alert">
-    <strong>Attention !</strong> <a href="#" class="alert-link">Vous n'êtes pas reconnus en tant qu'vendeur</a>.
+    <strong>Attention !</strong> <a href="#" class="alert-link">Vous n'êtes pas reconnus en tant que vendeur</a>.
     </div>
   <?php
 
@@ -62,7 +62,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="email" name="mail" class="form-control" id="input-email" placeholder="name@example.com">
+                    <input type="email" name="mail" class="form-control" id="input-email" placeholder="name@example.com" required="">
                   </div>
                 </div>
                 <div class="form-group mb-4">
@@ -78,7 +78,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
-                    <input type="password" name="mdp" class="form-control" id="input-password" placeholder="Password">
+                    <input type="password" name="mdp" class="form-control" id="input-password" placeholder="Password" required="">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="fas fa-eye"></i>
@@ -100,7 +100,7 @@
                   <button href="Acheteur.html" type="submit" class="btn btn-block btn-primary">Connexion</button></div>
               </form>
               <div class="mt-4 text-center"><small>Pas encore inscrit ?</small>
-                <a href="form_inscription.html" class="small font-weight-bold">Créer un compte</a></div>
+                <a href="form_inscription.php" class="small font-weight-bold">Créer un compte</a></div>
             </div>
           </div>
         </div>
