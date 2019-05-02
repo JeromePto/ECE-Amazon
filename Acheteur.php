@@ -1,6 +1,9 @@
 <?php
 session_start();
-echo print_r($_SESSION)
+
+if (!isset($_SESSION['id'])) {
+  header("location: shop-landing.html");
+}
 ?>
 
 <!DOCTYPE html>
