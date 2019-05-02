@@ -1,5 +1,19 @@
 <?php
 session_start();
+
+try
+{
+        // On se connecte à MySQL
+	$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+	die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=3 ');
+
 ?>
 
 <!DOCTYPE html>
@@ -104,8 +118,8 @@ session_start();
 									<i class="fas fa-user-circle"></i>Mon compte
 								</a>
 								<a class="nav-link" href="shop-landing.html">
-				                    <i class="fas fa-sign-out-alt"></i>Se deconnecter
-                  				</a>
+									<i class="fas fa-sign-out-alt"></i>Se deconnecter
+								</a>
 							</ul>
 						</div>
 					</div>
@@ -126,31 +140,43 @@ session_start();
 					<div class="container">
 						<!-- Title -->
 						<div class="mb-5 text-center">
-							<h3 class="h6">Notre sélection de'équipements sportif<i class="fas fa-angle-down text-xs ml-3"></i></h3>
+							<h3 class="h6">Notre sélection d'équipements sportif<i class="fas fa-angle-down text-xs ml-3"></i></h3>
 						</div>
 						<!-- Products -->
+
 						<div class="row">
-							<div class="col-xl-3 col-lg-4 col-sm-6">
-								<div class="card card-product">
-									<div class="card-image">
-										<a href="form_inscription.html">
-											<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-1.png" class="img-center img-fluid">
-										</a>
+							<?php
+							$id=0;
+							while ($donnees = $reponse->fetch())
+							{ 
+								$id=$donnees['ID'];
+									?>
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+										<div class="card card-product">
+											<div class="card-image">
+												<a href=<?php echo("produit.php?id=".$id)?>>
+													<img alt="Image placeholder" src="$donnees['PHOTO']" class="img-center img-fluid">
+												</a>
+											</div>
+											<div class="card-body text-center pt-0">
+												<h6><a href="form_inscription.html"><?php echo $donnees['NOM']; ?></a></h6>
+												<p class="text-sm">
+													<?php echo $donnees['DESCRIPTION']; ?> 
+												</p>
+												<span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+											</div>
+											<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
+												<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
+													<i class="fas fa-shopping-bag"></i>
+												</button>
+											</div>
+										</div>
 									</div>
-									<div class="card-body text-center pt-0">
-										<h6><a href="form_inscription.html">Nom produit</a></h6>
-										<p class="text-sm">
-											Description produit. 
-										</p>
-										<span class="card-price">50€</span>
-									</div>
-									<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-										<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-											<i class="fas fa-shopping-bag"></i>
-										</button>
-									</div>
-								</div>
-							</div>
+									<?php
+									$id=$id+1;
+							}
+							$reponse->closeCursor();
+							?>							
 						</div>
 					</section>
 				</div>
@@ -204,16 +230,16 @@ session_start();
 					</div>
 				</div>
 			</footer>
-	</section>
-	<!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-	<script src="bootstrap/assets/js/purpose.core.js"></script>
-	<!-- Page JS -->
-	<script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
-	<!-- Purpose JS -->
-	<script src="bootstrap/assets/js/purpose.js"></script>
-	<!-- Demo JS - remove it when starting your project -->
-	<script src="bootstrap/assets/js/demo.js"></script>
-</body>
+		</section>
+		<!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+		<script src="bootstrap/assets/js/purpose.core.js"></script>
+		<!-- Page JS -->
+		<script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
+		<!-- Purpose JS -->
+		<script src="bootstrap/assets/js/purpose.js"></script>
+		<!-- Demo JS - remove it when starting your project -->
+		<script src="bootstrap/assets/js/demo.js"></script>
+	</body>
 
-</html>
+	</html>
 
