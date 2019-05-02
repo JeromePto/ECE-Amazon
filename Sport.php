@@ -137,6 +137,11 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=3 ');
 			</style>
 			<div class="main-content">
 				<section class="slice slice-lg delimiter-top" id="sct-products">
+					<style type="text/css">
+						.container{
+							background-image: url(images/sport.png);
+						}
+					</style>
 					<div class="container">
 						<!-- Title -->
 						<div class="mb-5 text-center">

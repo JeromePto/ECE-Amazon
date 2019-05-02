@@ -1,6 +1,5 @@
 <?php
 session_start(); 
-echo print_r($_SESSION); 
 ?>
 
 <!DOCTYPE html>
@@ -123,13 +122,21 @@ echo print_r($_SESSION);
             }
           </style>
         <!-- Features (v1) -->
-        <div class="container">
-        <section id="sct-page-examples" class="slice bg-section-secondary">
-          <h4>Prenom : <?php echo $_SESSION['prenom'] ?></h4>
-          <h4>Nom : <?php echo $_SESSION['nom'] ?></h4>
-          <h4>Adresse e-mail : <?php echo $_SESSION['mail'] ?></h4>
-          <h4>Adresse postale : <?php echo $_SESSION['adresse'] ?></h4>    
+        <div class="container"><br>
+          <h3 class="info"><strong>Votre Profil :</strong></h4><br> 
+          <h5 class="info">Prenom : <?php echo $_SESSION['prenom'] ?></h5>
+          <h5 class="info">Nom : <?php echo $_SESSION['nom'] ?></h5>
+          <h5 class="info">Adresse e-mail : <?php echo $_SESSION['mail'] ?></h5>
+          <h5 class="info">Adresse postale : <?php echo $_SESSION['adresse'] ?></h5>    
       </div>
+      <style type="text/css">
+        h3.info{
+          color:white; 
+        }
+        h5.info{
+          color: white; 
+        }
+      </style>
     </div>
     <footer id="footer-main">
     <div class="footer footer-dark bg-dark">
