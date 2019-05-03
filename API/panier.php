@@ -110,7 +110,7 @@ function changeQuantiteItemPanier($acheteur, $item, $quantite) {
 	$donnees = $req->fetch();
 	$req->closeCursor();
 	if (!$donnees) {
-		echo "Erreur : Item pas dans le panier";²
+		echo "Erreur : Item pas dans le panier";
 		exit(1);
 	}
 	if ($quantite > $quantiteMax) {
