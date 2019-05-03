@@ -4,6 +4,23 @@ session_start();
 if (!isset($_SESSION['id'])) {
   header("location: shop-landing.html");
 }
+
+$vendeur=$_SESSION['id'];
+
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -62,51 +79,52 @@ if (!isset($_SESSION['id'])) {
         height:100% !important;  
       }
     </style>
-    <section class="slice slice-lg delimiter-top" id="sct-products">
-     <div class="container">
-      <div class="mb-5">
-        <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
-        <h3 class="h3">Vos produits en vente<i class="fas fa-angle-down text-xs ml-3"></i></h3>
-      </div>
-      <div class="row">
-        <?php
-        $id=0;
-        $compteur=0;
-        while ($donnees = $reponse->fetch())
-        { 
-          $id=$donnees['ID'];
-          ?>
+    <!-- Features (v1) -->
+    <section id="sct-page-examples" class="slice bg-section-secondary">
+      <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
+      <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+      <style type="text/css">
+      h4.vente{
+       padding-left:30px; 
+       margin-left:10% auto;
+     }
+   </style>
+   <div class="row">
+    <?php
+    while ($donnees = $reponse->fetch())
+    { 
+      if ($vendeur==$donnees['VENDEUR']) 
+        {?>
           <div class="col-xl-3 col-lg-4 col-sm-6">
             <div class="card card-product">
               <div class="card-image">
-                <a href=<?php echo("produit.php?id=".$id)?>>
+                <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
                   <img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
                 </a>
               </div>
               <div class="card-body text-center pt-0">
-                <h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
-                <p class="text-sm">
+                <h6><a href=<?php echo("produit.php?id=".$donnees['ID'])?>><?php echo $donnees['NOM']; ?></a></h6>
                   <?php echo $donnees['DESCRIPTION']; ?> 
-                </p>
                 <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
               </div>
+              <div class="mt-4 pt-4 delimiter-top">
+                <a href=<?php echo("form_modif.php?id=".$donnees['ID'])?> class="btn btn-sm btn-light btn-icon-only">
+                  <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                </a>
+                <a href=<?php echo("cible6.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
+                  <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                </a>
+              </div>
             </div>
-          </div>
+          </div>                
           <?php
-          $compteur++;
-
-          if ($compteur==4) {
-            break;
-          }
         }
-        $reponse->closeCursor();
-        ?>              
-      </div>
-    </section>
-  </div>
-</div>
-</section>
-<footer id="footer-main">
+      }
+      $reponse->closeCursor();
+      ?>              
+    </div>
+  </section>
+  <footer id="footer-main">
   <div class="footer footer-dark bg-dark">
     <div class="container">
       <div class="row pt-md">
