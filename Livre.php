@@ -129,7 +129,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=0 ');
 		<div class="main-content">
 			<!-- Header (v1) -->
 			<section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-				<div class="section-inner bg-gradient-primary"></div>
+				<div class="section-inner bg-dark"></div>
 				<style type="text/css">
 				.section-inner{ 
 					height:100% !important;  

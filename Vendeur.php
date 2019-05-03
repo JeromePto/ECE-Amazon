@@ -40,7 +40,7 @@ if (!isset($_SESSION['id'])) {
           </div>
           <div class="ml-auto">
             <ul class="nav">                          
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="Compte.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
               <a class="nav-link" href="Deconnexion.php">
@@ -55,7 +55,7 @@ if (!isset($_SESSION['id'])) {
   <div class="main-content">
     <!-- Header (v1) -->
     <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-      <div class="section-inner bg-gradient-primary"></div>
+      <div class="section-inner bg-dark"></div>
       <style type="text/css">
       .section-inner{ 
         height:100% !important;  

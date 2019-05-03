@@ -114,7 +114,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 						<div class="ml-auto">
 							<ul class="nav">             
 								<a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
-								<a class="nav-link" href="#">
+								<a class="nav-link" href="Compte.php">
 									<i class="fas fa-user-circle"></i>Mon compte
 								</a>
 								<a class="nav-link" href="shop-landing.html">
@@ -129,7 +129,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 		<div class="main-content">
 			<!-- Arriere plan de l'en-tete (couleur mauve degradée) -->
 			<section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-				<div class="section-inner bg-gradient-primary"></div>
+				<div class="section-inner bg-dark"></div>
 				<style type="text/css">
 				.section-inner{ 
 					height:100% !important;  

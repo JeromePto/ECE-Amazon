@@ -147,7 +147,7 @@ $reponse->closeCursor();
     <div class="main-content">
       <!-- en tete coloré -->
       <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-gradient-primary"></div>
+        <div class="section-inner bg-dark"></div>
         <style type="text/css">
         .section-inner{ 
           height:100% !important;  
@@ -258,7 +258,7 @@ $reponse->closeCursor();
                       </div>
                       <div class="col-sm-6 text-sm-right">
                         <!-- Add to cart -->
-                        <a class="btn btn-primary" href=<?php echo "actionPanier.php?action=2&param1=".$id;?> role="button">Ajouter au panier</a>                      
+                        <a class="btn btn-dark" href=<?php echo "actionPanier.php?action=2&param1=".$id;?> role="button">Ajouter au panier</a>                      
                       </div>
                     </div>
                   </div>
