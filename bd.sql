@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 01 mai 2019 à 13:16
+-- Généré le :  ven. 03 mai 2019 à 09:19
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -41,7 +41,18 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `ADRESSE` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `MAIL` (`MAIL`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `acheteur`
+--
+
+INSERT INTO `acheteur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`) VALUES
+(1, 'an1', 'ap1', 'am1@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'aa1'),
+(3, 'an2', 'ap2', 'am2@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'aa2'),
+(4, 'an3', 'ap3', 'am3@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'aa3'),
+(5, 'an4', 'ap4', 'am4@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'aa4'),
+(6, 'an5', 'ap5', 'am5@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'aa5');
 
 -- --------------------------------------------------------
 
@@ -59,6 +70,15 @@ CREATE TABLE IF NOT EXISTS `banque` (
   PRIMARY KEY (`NUMERO`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `banque`
+--
+
+INSERT INTO `banque` (`CARTE`, `NUMERO`, `NOM`, `DATE`, `CODE`) VALUES
+('Visa', '1111', 'nom1', '2021-05-03', 111),
+('MasterCard', '2222', 'nom2', '2021-05-03', 222),
+('American Express', '3333', 'nom3', '2021-05-03', 333);
+
 -- --------------------------------------------------------
 
 --
@@ -73,12 +93,31 @@ CREATE TABLE IF NOT EXISTS `item` (
   `STOCK` int(11) UNSIGNED NOT NULL,
   `CATEGORIE` int(11) UNSIGNED NOT NULL,
   `DESCRIPTION` text NOT NULL,
-  `PRIX` int(11) UNSIGNED NOT NULL,
+  `PRIX` float UNSIGNED NOT NULL,
   `PHOTO` text NOT NULL,
   `VARIATION` json DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_vendeur_id` (`VENDEUR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `item`
+--
+
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES
+(1, 'item1', 1, 20, 0, 'item1desc', 19.6, 'defautItem', NULL),
+(2, 'item2', 2, 20, 1, 'item2desc', 14.32, 'defautItem', NULL),
+(3, 'item3', 3, 1000, 3, 'item3desc', 12.5, 'defautItem', NULL),
+(4, 'item4', 4, 20, 0, 'item4desc', 3, 'defautItem', NULL),
+(5, 'item5', 5, 30, 2, 'item5desc', 4.96, 'defautItem', NULL),
+(7, 'item2', 2, 20, 1, 'item2desc', 105.3, 'defautItem', NULL),
+(8, 'item3', 3, 1000, 3, 'item3desc', 12, 'defautItem', NULL),
+(9, 'item4', 4, 20, 0, 'item4desc', 3, 'defautItem', NULL),
+(10, 'item5', 5, 30, 2, 'item5desc', 5, 'defautItem', NULL),
+(11, 'item6', 1, 12, 2, 'item6desc', 20, 'defautItem', NULL),
+(12, 'item7', 1, 450, 1, 'item7desc', 16.95, 'defautItem', NULL),
+(13, 'item8', 2, 13, 3, 'item8desc', 81.99, 'defautItem', NULL),
+(14, 'item9', 4, 264, 0, 'item9desc', 99.95, 'defautItem', NULL);
 
 -- --------------------------------------------------------
 
@@ -113,7 +152,18 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `IMGFOND` varchar(255) NOT NULL DEFAULT '"\\images\\defautBack.png"',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `MAIL` (`MAIL`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES
+(1, 'vn1', 'vp1', 'vm1@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va1', '\"defautProfil.png\"', '\"defautBack.png\"'),
+(2, 'vn2', 'vp2', 'vm2@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va2', '\"defautProfil.png\"', '\"defautBack.png\"'),
+(3, 'vn3', 'vp3', 'vm3@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va3', '\"defautProfil.png\"', '\"defautBack.png\"'),
+(4, 'vn4', 'vp4', 'vm4@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va4', '\"defautProfil.png\"', '\"defautBack.png\"'),
+(5, 'vn5', 'vp5', 'vm5@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va5', '\"defautProfil.png\"', '\"defautBack.png\"');
 
 --
 -- Contraintes pour les tables déchargées

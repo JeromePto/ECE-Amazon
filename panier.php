@@ -170,7 +170,7 @@ if (!isset($_SESSION['id'])) {
                 </td>
                 <td>
                   <!-- <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?> -->
-                  <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="3" onchange="change()">
+                  <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="<?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>" onchange="change()">
                 </td>
                 <td class="total">
                   <?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €
