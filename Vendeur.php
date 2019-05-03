@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$vendeur=$_SESSION['VENDEUR'];
-
 if (!isset($_SESSION['id'])) {
   header("location: shop-landing.html");
 }
+
+$vendeur=$_SESSION['id'];
 
 try
 {
@@ -98,14 +98,12 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="card card-product">
               <div class="card-image">
                 <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
-                  <img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
+                  <img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
                 </a>
               </div>
               <div class="card-body text-center pt-0">
-                <h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
-                <p class="text-sm">
+                <h6><a href=<?php echo("produit.php?id=".$donnees['ID'])?>><?php echo $donnees['NOM']; ?></a></h6>
                   <?php echo $donnees['DESCRIPTION']; ?> 
-                </p>
                 <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
               </div>
               <div class="mt-4 pt-4 delimiter-top">

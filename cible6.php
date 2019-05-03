@@ -13,4 +13,5 @@ die('Erreur : '.$e->getMessage());
 
 		$req = $bdd->prepare('DELETE FROM item WHERE ID=?');
 		$req->execute(array($_GET['id']));
+			header ('location: Vendeur.php');
 ?>

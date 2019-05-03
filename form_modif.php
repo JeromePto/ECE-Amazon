@@ -17,6 +17,8 @@ catch(Exception $e)
 $reponse = $bdd->prepare('SELECT * FROM item WHERE ID=?');
 $reponse->execute(array($_GET['id']));
 
+$donnees = $reponse->fetch();
+
 ?>
 
 
@@ -63,18 +65,19 @@ $reponse->execute(array($_GET['id']));
           <div class="col-md-8 col-lg-6">
             <div>
               <div class="mb-5 text-center">
-                <h6 class="h3">Vendre un item</h6>
+                <h6 class="h3">Changer un item</h6>
+                <?php echo($donnees['NOM'])?>
                 <p class="text-muted mb-0">Fait à l'ECE !</p>
               </div>
               <span class="clearfix"></span>                    <!-- identification, son nom, sa/ses photo/s, ses descriptions, sa vidéo (si disponible), sa catégorie et son prix à l’unité -->
-              <form role="form" action="cible4.php" method="post">
+              <form role="form" action="cible7.php" method="post">
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="nom" placeholder=<?php echo($reponse['NOM'])?> required="">
+                  <input type="text" class="form-control" name="nom" placeholder=<?php echo($donnees['NOM'])?> value=<?php echo($donnees['NOM'])?> required="">
                 </div>
                 <label class="form-control-label">Nombre de produits</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="stock" placeholder=<?php echo($reponse['STOCK'])?> required="">
+                  <input type="number" class="form-control" name="stock" placeholder=<?php echo($donnees['STOCK'])?> value=<?php echo($donnees['STOCK'])?> required="">
                 </div>                
                 <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
@@ -82,17 +85,14 @@ $reponse->execute(array($_GET['id']));
                 </div>                  
                 <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="description" placeholder=<?php echo($reponse['DESCRIPTION'])?> required="">
+                  <input type="text" class="form-control" name="description" placeholder=<?php echo($donnees['DESCRIPTION'])?> value=<?php echo($donnees['DESCRIPTION'])?> required="">
                 </div>
                 <label class="form-control-label">Prix</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="prix" placeholder=<?php echo($reponse['PRIX'])?> required="">
-                </div>
-                <label class="form-control-label">Variation</label>
-                <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !">
-                </div>                                                
-                <input type="hidden" name="categorie" value=<?php echo($reponse['CATEGORIE'])?> />
+                  <input type="number" class="form-control" name="prix" placeholder=<?php echo($donnees['PRIX'])?> value=<?php echo($donnees['PRIX'])?> required="">
+                </div>                                             
+                <input type="hidden" name="categorie" value=<?php echo($donnees['CATEGORIE'])?>  />
+                <input type="hidden" name="id" value=<?php echo($donnees['ID'])?>  />                
                 <div class="mt-4">
                   <button type="submit" class="btn btn-block btn-primary">Modifier mon item</button>
                 </div>
