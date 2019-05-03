@@ -169,7 +169,7 @@ $reponse->closeCursor();
             <div class="col-lg-6">
               <div data-toggle="sticky" data-sticky-offset="30">
                 <a href=<?php echo($photo)?> data-fancybox>
-                  <img alt="Image placeholder" src=<?php echo($photo)?> class="img-fluid">
+                  <img alt="Image placeholder" src="<?php echo('images/'.$photo)?>" class="img-fluid">
                 </a>
                 <div class="mt-4 text-center">
                   <a href="" data-fancybox>Voir les images</a>
@@ -250,6 +250,11 @@ $reponse->closeCursor();
                       <div class="col-sm-6 mb-4 mb-sm-0">
                         <span class="d-block h3 mb-0">Prix: <?php echo "".$prix."€"; ?></span> <!--prix-->
                       </div>
+                      <div class="col-sm-6 text-sm-right">
+                        <!-- Add to cart -->
+                        <a class="btn btn-dark" href=<?php echo "actionPanier.php?action=2&param1=".$id;?> role="button">Ajouter au panier</a>                      
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -274,7 +279,7 @@ $reponse->closeCursor();
                     <div class="card card-product">
                       <div class="card-image">
                         <a href=<?php echo("produit.php?id=".$donnees2['ID'])?>>
-                          <img alt="Image placeholder" src=<?php echo($donnees2['PHOTO'])?> class="img-center img-fluid">
+                          <img alt="Image placeholder" src=<?php echo('images/'.$donnees2['PHOTO'])?> class="img-center img-fluid">
                         </a>
                       </div>
                       <div class="card-body text-center pt-0">
