@@ -152,7 +152,7 @@ $reponse = $bdd->query('SELECT * FROM item');
                     <div class="card card-product">
                       <div class="card-image">
                         <a href=<?php echo("produit.php?id=".$id)?>>
-                          <img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
+                          <img alt="Image placeholder" src="<?php echo('images/'.$donnees['PHOTO'])?>" class="img-center img-fluid">
                         </a>
                       </div>
                       <div class="card-body text-center pt-0">
