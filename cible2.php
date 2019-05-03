@@ -14,6 +14,10 @@ catch(Exception $e)
 
 if (isset($_POST['mail']) && isset($_POST['mdp'])) 
 {
+	$admin=0;
+	if ($_POST['mail']=="admin1@admin.fr" || $_POST['mail']=="admin2@admin.fr" || $_POST['mail']=="admin3@admin.fr") {
+		$admin=1;		
+	}
 	if($_POST['choix']==1)
 	{
 		$req = $bdd->prepare('SELECT ID, NOM, PRENOM, MAIL, ADRESSE, MDP FROM  acheteur WHERE MAIL = ?');
@@ -54,7 +58,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 
 	}
 
-	if ($_POST['choix']==2) 
+	if ($_POST['choix']==2 || $_POST['choix']==3 ) 
 	{
 		$req = $bdd->prepare('SELECT ID, NOM, PRENOM, MAIL, ADRESSE, MDP FROM vendeur WHERE MAIL = ?');
 		$req->execute(array($_POST['mail']));
@@ -79,10 +83,15 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 				$_SESSION['mail'] = $donnees['MAIL'];
 				$_SESSION['nom'] = $donnees['NOM'];
 				$_SESSION['prenom'] = $donnees['PRENOM'];
-				$_SESSION['adresse'] = $donnees['ADRESSE'];
-
+				$_SESSION['adresse'] = $donnees['ADRESSE'];	
 				// on redirige notre visiteur vers une page de notre section membre
+				if ($admin==1) {
+				header ('location: Admin.php');
+				}
+				elseif ($admin==0) {
 				header ('location: Vendeur.php');
+				}
+
 
 			}
 			else
@@ -92,7 +101,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 			}
 		}
 
-	}
+	}	
 }
 else {
 	echo 'Les variables du formulaire ne sont pas déclarées.';

@@ -5,8 +5,6 @@ if (!isset($_SESSION['id'])) {
   header("location: shop-landing.html");
 }
 
-$vendeur=$_SESSION['id'];
-
 try
 {
         // On se connecte à MySQL
@@ -18,7 +16,7 @@ catch(Exception $e)
   die('Erreur : '.$e->getMessage());
 }
 
-$reponse = $bdd->query('SELECT * FROM item');
+$reponse = $bdd->query('SELECT * FROM vendeur');
 
 
 ?>
@@ -30,7 +28,7 @@ $reponse = $bdd->query('SELECT * FROM item');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Groupe13">
-  <title>Accueil Vendeur</title>
+  <title>Accueil Administrateur</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
@@ -54,12 +52,21 @@ $reponse = $bdd->query('SELECT * FROM item');
             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
               <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="form_vente.php" role="button">Vendre</a>
             </li> 
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="liste_vendeurs.php" role="button">Les vendeurs</a>
+            </li>
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="Admin.php" role="button">Les artciles</a>
+            </li>            
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="ajout_vendeur.php" role="button">Ajouter un vendeur</a>
+            </li>                         
           </div>
           <div class="ml-auto">
-            <ul class="nav">         
+            <ul class="nav">                          
               <a class="nav-link">
                 Bienvenue <?php echo $_SESSION['prenom'] ?> !
-              </a>                             
+              </a>
               <a class="nav-link" href="Compte.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
@@ -83,7 +90,7 @@ $reponse = $bdd->query('SELECT * FROM item');
     </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
-      <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+      <h4 class="vente" class="blink"><strong>Tous les vendeurs :</strong></h4></li>
       <style type="text/css">
       h4.vente{
        padding-left:30px; 
@@ -94,35 +101,27 @@ $reponse = $bdd->query('SELECT * FROM item');
     <?php
     while ($donnees = $reponse->fetch())
     { 
-      if ($vendeur==$donnees['VENDEUR']) 
-        {?>
+      if ($donnees['MAIL']!="admin1@admin.fr" && $donnees['MAIL']!="admin2@admin.fr" && $donnees['MAIL']!="admin3@admin.fr") {
+
+      ?>
           <div class="col-xl-3 col-lg-4 col-sm-6">
             <div class="card card-product">
               <div class="card-image">
-                <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
-                  <img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
-                </a>
+                  <img alt="Image placeholder" src=<?php echo('images/'.$donnees['PHOTO'])?> class="img-center img-fluid">
               </div>
               <div class="card-body text-center pt-0">
-                <h6><a href=<?php echo("produit.php?id=".$donnees['ID'])?>><?php echo $donnees['NOM']; ?></a></h6>
-                <p class="text-sm">
-                  <?php echo $donnees['DESCRIPTION']; ?> 
-                </p>
-                <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+                  <?php echo $donnees['NOM']; ?>
               </div>
               <div class="mt-4 pt-4 delimiter-top">
-                <a href=<?php echo("form_modif.php?id=".$donnees['ID'])?> class="btn btn-sm btn-light btn-icon-only">
-                  <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
-                </a>
-                <a href=<?php echo("cible6.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
+                <a href=<?php echo("cible8.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
                   <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                 </a>
               </div>
             </div>
           </div>                
           <?php
-        }
       }
+        }
       $reponse->closeCursor();
       ?>              
     </div>

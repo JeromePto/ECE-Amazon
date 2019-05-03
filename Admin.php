@@ -30,7 +30,7 @@ $reponse = $bdd->query('SELECT * FROM item');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Groupe13">
-  <title>Accueil Vendeur</title>
+  <title>Accueil Administrateur</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
@@ -54,12 +54,21 @@ $reponse = $bdd->query('SELECT * FROM item');
             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
               <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="form_vente.php" role="button">Vendre</a>
             </li> 
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="liste_vendeurs.php" role="button">Les vendeurs</a>
+            </li>
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="Admin.php" role="button">Les artciles</a>
+            </li>            
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="ajout_vendeur.php" role="button">Ajouter un vendeur</a>
+            </li>                         
           </div>
           <div class="ml-auto">
-            <ul class="nav">         
+            <ul class="nav">      
               <a class="nav-link">
                 Bienvenue <?php echo $_SESSION['prenom'] ?> !
-              </a>                             
+              </a>
               <a class="nav-link" href="Compte.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
@@ -83,7 +92,7 @@ $reponse = $bdd->query('SELECT * FROM item');
     </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
-      <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+      <h4 class="vente" class="blink"><strong>Tous les produits :</strong></h4></li>
       <style type="text/css">
       h4.vente{
        padding-left:30px; 
@@ -94,8 +103,7 @@ $reponse = $bdd->query('SELECT * FROM item');
     <?php
     while ($donnees = $reponse->fetch())
     { 
-      if ($vendeur==$donnees['VENDEUR']) 
-        {?>
+      ?>
           <div class="col-xl-3 col-lg-4 col-sm-6">
             <div class="card card-product">
               <div class="card-image">
@@ -122,7 +130,6 @@ $reponse = $bdd->query('SELECT * FROM item');
           </div>                
           <?php
         }
-      }
       $reponse->closeCursor();
       ?>              
     </div>

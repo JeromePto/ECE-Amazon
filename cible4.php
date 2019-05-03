@@ -20,15 +20,23 @@ if ($_POST['stock'] > 0 ) {
 	}
 
 	else{
-			$erreur=10;
-			header("location: form_vente.php?erreur={$erreur}");
-			return 1;	
+		$erreur=10;
+		header("location: form_vente.php?erreur={$erreur}");
+		return 1;	
 	}
 }
 else{
-		$erreur=5;
-		header("location: form_vente.php?erreur={$erreur}");
-		return 1;
+	$erreur=5;
+	header("location: form_vente.php?erreur={$erreur}");
+	return 1;
 }
-header("location: Vendeur.php");
+
+if ($donnees['MAIL']!="admin1@admin.fr" && $donnees['MAIL']!="admin2@admin.fr" && $donnees['MAIL']!="admin3@admin.fr")
+{
+	header("location: Vendeur.php");	
+}
+else
+{
+	header("location: Admin.php");
+}
 ?>

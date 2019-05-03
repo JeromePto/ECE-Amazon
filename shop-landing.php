@@ -1,3 +1,20 @@
+<?php
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +57,7 @@
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow p-0">
 								<ul class="list-group list-group-flush">
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-										<a href="bootstrap/pages/utility/support.html" class="list-group-item list-group-item-action" role="button">
+										<a href="form_inscription.php" class="list-group-item list-group-item-action" role="button">
 											<div class="media d-flex align-items-center">
 												<!-- SVG icon -->
 												<figure style="width: 50px;">
@@ -55,7 +72,7 @@
 										</a>
 									</li>
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-										<a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
 												<!-- SVG icon -->
 												<figure style="width: 50px;">
@@ -70,7 +87,7 @@
 										</a>
 									</li>
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-										<a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
 												<!-- SVG icon -->
 												<figure style="width: 50px;">
@@ -85,7 +102,7 @@
 										</a>
 									</li>
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-										<a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
 												<!-- SVG icon -->
 												<figure style="width: 50px;">
@@ -103,12 +120,11 @@
 							</li>
 						</div>
 					</li>
-					<!-- Sections menu -->
-					<li class="nav-item d-lg-none d-xl-block">
-						<a class="nav-link" href="#avis">Nos avis</a>
-					</li>
 				</ul>
 				<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+					<li class="nav-item d-lg-none d-xl-block">
+						<a class="nav-link" href="#avis">Avis</a>
+					</li>
 					<li class="nav-item d-lg-none d-xl-block">
 						<a class="nav-link" href="form_connexion.php">Se connnecter</a>
 					</li>
@@ -210,181 +226,31 @@
 			</div>
 			<!-- Products -->
 			<div class="row">
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-1.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">bonjour</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$129 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-2.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Home Controller</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$49 USD</span>
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-3.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Adapt Earphones</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$65 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-4.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Smart Pixel 3</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$299 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-5.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">TV Chromecast</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$39 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-6.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Ear Buds</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$150 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-7.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Fitness leggings</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$70 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-sm-6">
-					<div class="card card-product">
-						<div class="card-image">
-							<a href="form_inscription.html">
-								<img alt="Image placeholder" src="bootstrap/assets/img/theme/light/product-4.png" class="img-center img-fluid">
-							</a>
-						</div>
-						<div class="card-body text-center pt-0">
-							<h6><a href="form_inscription.html">Long sleeved shirt</a></h6>
-							<p class="text-sm">
-								Customize your home experience with this product.
-							</p>
-							<span class="card-price">$65 USD</span>
-							
-						</div>
-						<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-							<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-								<i class="fas fa-shopping-bag"></i>
-							</button>
-						</div>
-					</div>
-				</div>
+    <?php
+    while ($donnees = $reponse->fetch())
+    { 
+      ?>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="card card-product">
+              <div class="card-image">
+                <a href="form_inscription.php" >
+                  <img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
+                </a>
+              </div>
+              <div class="card-body text-center pt-0">
+                <h6><a href="form_inscription.php" ></a></h6>
+                <p class="text-sm">
+                  <?php echo $donnees['DESCRIPTION']; ?> 
+                </p>
+                <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+              </div>
+            </div>
+          </div>                
+          <?php
+        }
+      $reponse->closeCursor();
+      ?>
+
 			</div>
 			<!-- Load more -->
 			<div class="mt-4 text-center">
@@ -425,7 +291,7 @@
 														<small class="d-block text-muted">Super professeur</small>
 													</div>
 												</div>
-												<p class="mt-4 lh-180">"Honnêtement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommance à tous. JP"</p>
+												<p class="mt-4 lh-180">"Franchement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommance à tous. JP"</p>
 												<span class="static-rating static-rating-sm">
 													<i class="star fas fa-star voted"></i>
 													<i class="star fas fa-star voted"></i>
@@ -473,7 +339,7 @@
 														<small class="d-block text-muted">Soldat de la Légion d'Honneur</small>
 													</div>
 												</div>
-												<p class="mt-4 lh-180">"Honnêtement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommande à tous. JP"</p>
+												<p class="mt-4 lh-180">"Franchement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommande à tous. JP"</p>
 												<span class="static-rating static-rating-sm">
 													<i class="star fas fa-star voted"></i>
 													<i class="star fas fa-star voted"></i>

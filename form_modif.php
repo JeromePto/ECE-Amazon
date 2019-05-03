@@ -92,7 +92,7 @@ $donnees = $reponse->fetch();
                   <input type="number" class="form-control" name="prix" placeholder=<?php echo($donnees['PRIX'])?> value=<?php echo($donnees['PRIX'])?> required="">
                 </div>                                             
                 <input type="hidden" name="categorie" value=<?php echo($donnees['CATEGORIE'])?>  />
-                <input type="hidden" name="id" value=<?php echo($donnees['ID'])?>  />                
+                <input type="hidden" name="id" value=<?php echo($donnees['ID'])?>/>                
                 <div class="mt-4">
                   <button type="submit" class="btn btn-block btn-primary">Modifier mon item</button>
                 </div>
