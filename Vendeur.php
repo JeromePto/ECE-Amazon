@@ -1,9 +1,26 @@
 <?php
 session_start();
 
+$vendeur=$_SESSION['VENDEUR'];
+
 if (!isset($_SESSION['id'])) {
   header("location: shop-landing.html");
 }
+
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,79 +88,44 @@ if (!isset($_SESSION['id'])) {
        margin-left:10% auto;
      }
    </style>
-   <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-6">
-        <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-          <div class="px-4 py-5">
-            <img alt="Image placeholder" src="bootstrap/assets/img/Produits/iphone.png" class="svg-inject" style="height: 180px;">
-          </div>
-          <div class="px-4 pb-5">
-            <h5>Iphone X</h5>
-            <p class="text-muted">999€ </p>
-            <div class="mt-5">
-              <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                <span class="btn-inner--text">Consulter l'article</span>
-                <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-              </a> 
+   <div class="row">
+    <?php
+    while ($donnees = $reponse->fetch())
+    { 
+      if ($vendeur==$donnees['VENDEUR']) 
+        {?>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="card card-product">
+              <div class="card-image">
+                <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
+                  <img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
+                </a>
+              </div>
+              <div class="card-body text-center pt-0">
+                <h6><a href=<?php echo("produit.php?id=".$id)?>><?php echo $donnees['NOM']; ?></a></h6>
+                <p class="text-sm">
+                  <?php echo $donnees['DESCRIPTION']; ?> 
+                </p>
+                <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+              </div>
+              <div class="mt-4 pt-4 delimiter-top">
+                <a href=<?php echo("form_modif.php?id=".$donnees['ID'])?> class="btn btn-sm btn-light btn-icon-only">
+                  <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                </a>
+                <a href=<?php echo("cible6.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
+                  <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-          <div class="px-4 py-5">
-            <img alt="Image placeholder" src="bootstrap/assets/img/Produits/macbook.jpg" class="svg-inject" style="height: 180px;">
-          </div>
-          <div class="px-4 pb-5">
-            <h5>Macbook Air</h5>
-            <p class="text-muted">2000€</p>
-            <div class="mt-5">
-              <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                <span class="btn-inner--text">Consulter l'article</span>
-                <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-              </a> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-          <div class="px-4 py-5">
-            <img alt="Image placeholder" src="bootstrap/assets/img/Produits/ipad.png" class="svg-inject" style="height: 180px;">
-          </div>
-          <div class="px-4 pb-5">
-            <h5>Ipad</h5>
-            <p class="text-muted">599€</p>
-            <div class="mt-5">
-              <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                <span class="btn-inner--text">Consulter l'article</span>
-                <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-              </a> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-          <div class="px-4 py-5">
-            <img alt="Image placeholder" src="bootstrap/assets/img/Produits/iphone.png" class="svg-inject" style="height: 180px;">
-          </div>
-          <div class="px-4 pb-5">
-            <h5>Iphone X</h5>
-            <p class="text-muted">999€ </p>
-            <div class="mt-5">
-              <a href="#sct-page-examples" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon mr-sm-4 scroll-me">
-                <span class="btn-inner--text">Consulter l'article</span>
-                <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-              </a> 
-            </div>
-          </div>
-        </div>
-      </div>
+          </div>                
+          <?php
+        }
+      }
+      $reponse->closeCursor();
+      ?>              
     </div>
-  </div>
-</section>
-<footer id="footer-main">
+  </section>
+  <footer id="footer-main">
     <div class="footer footer-dark bg-dark">
       <div class="container">
         <div class="row pt-md">

@@ -1,7 +1,22 @@
 
 <?php 
 session_start();
-//$_SESSION['id'] = $_GET['id']; 
+
+$id=$_GET['id'];
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->prepare('SELECT * FROM item WHERE ID=?');
+$reponse->execute(array($_GET['id']));
+
 ?>
 
 
@@ -55,11 +70,11 @@ session_start();
               <form role="form" action="cible4.php" method="post">
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
+                  <input type="text" class="form-control" name="nom" placeholder=<?php echo($reponse['NOM'])?> required="">
                 </div>
                 <label class="form-control-label">Nombre de produits</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="stock" placeholder="C'est un super produit !"required="">
+                  <input type="number" class="form-control" name="stock" placeholder=<?php echo($reponse['STOCK'])?> required="">
                 </div>                
                 <label class="form-control-label">Photo</label>
                 <div class="input-group input-group-merge">
@@ -67,35 +82,19 @@ session_start();
                 </div>                  
                 <label class="form-control-label">Description</label>
                 <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="description" placeholder="C'est un super produit !" required="">
+                  <input type="text" class="form-control" name="description" placeholder=<?php echo($reponse['DESCRIPTION'])?> required="">
                 </div>
                 <label class="form-control-label">Prix</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="prix" placeholder="C'est un super produit !" required="">
+                  <input type="number" class="form-control" name="prix" placeholder=<?php echo($reponse['PRIX'])?> required="">
                 </div>
                 <label class="form-control-label">Variation</label>
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !">
                 </div>                                                
-                Catégorie: 
-                <div>
-                  <input type="radio"  name="categorie" value="1" required="" >
-                  <label >Livre</label>
-                </div>
-                <div>
-                  <input type="radio"  name="categorie" value="2" required="" >
-                  <label >Musique</label>
-                </div>
-                <div>
-                  <input type="radio"  name="categorie" value="3" required="" >
-                  <label >Vêtement</label>
-                </div>
-                <div>
-                  <input type="radio"  name="categorie" value="4" required="" >
-                  <label >Sport et loisir</label>
-                </div>
+                <input type="hidden" name="categorie" value=<?php echo($reponse['CATEGORIE'])?> />
                 <div class="mt-4">
-                  <button type="submit" class="btn btn-block btn-primary">Vendre mon item</button>
+                  <button type="submit" class="btn btn-block btn-primary">Modifier mon item</button>
                 </div>
               </form>
             </div>
