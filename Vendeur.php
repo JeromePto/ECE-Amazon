@@ -81,8 +81,10 @@ $reponse = $bdd->query('SELECT * FROM item');
     </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
-      <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
-      <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+      <div class="mb-5">
+        <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
+        <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+    </div>
       <style type="text/css">
       h4.vente{
        padding-left:30px; 

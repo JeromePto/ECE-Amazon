@@ -1,11 +1,19 @@
 <?php
 session_start();
-include("API/panier.php");
-include("API/item.php");
 
-if (!isset($_SESSION['id'])) {
-  header("location: shop-landing.html");
+try
+{
+        // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
+catch(Exception $e)
+{
+        // En cas d'erreur, on affiche un message et on arrête tout
+  die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM item');
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +23,7 @@ if (!isset($_SESSION['id'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Groupe13">
-  <title>Paiement</title>
+  <title>Equipements sportif en vente</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
@@ -27,6 +35,7 @@ if (!isset($_SESSION['id'])) {
 
 <body>
   <header class="header header-transparent" id="header-main">
+    <!-- Topbar -->
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
@@ -103,149 +112,50 @@ if (!isset($_SESSION['id'])) {
             </div>
 
             <div class="ml-auto">
-              <ul class="nav">             
-                <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
-                <a class="nav-link" href="Compte.php">
-                  <i class="fas fa-user-circle"></i>Mon compte
-                </a>
-                <a class="nav-link" href="shop-landing.html">
-                  <i class="fas fa-sign-out-alt"></i>Se deconnecter
-                </a>
+              <ul class="nav">       
+                <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
+                <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
+                <a class="nav-link" href="shop-landing.html"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </header>
-  <div class="main-content">
-     <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
+    <div class="main-content">
+      <!-- Header (v1) -->
+      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
         <div class="section-inner bg-dark"></div>
         <style type="text/css">
         .section-inner{ 
-          height:60% !important;  
+          height:100% !important;  
         }
       </style>
-    <!-- Header (account) -->
-    <section class="slice">
-      <div class="container">
-        <div class="row row-grid">
-          <div class="col-lg-8">
-            <form>
-              <div class="card">
-                <div class="card-header">
-                  <div class="row">
-                    <div class="col-12">
-                      <label class="h6 mb-0 lh-180">Information de paiement</label>
-                      <p class="text-muted mt-2 mb-0">Saisissez vos information de paiment parmis Visa, MasterCard et AmericanExpress</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="row mt-3">
-                    <div class="col-md-8">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="0000 0000 0000 0000" placeholder="4789 5697 0541 7546">
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <select class="form-control" data-toggle="select" title="Type dde carte">
-                        <option selected disabled>Type de carte</option>
-                        <option value="1">Visa</option>
-                        <option value="2">MasterCard</option>
-                        <option value="3">American Express<option>
-                      </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="control-label">Nom sur la carte</label>
-                        <input type="text" class="form-control" placeholder="Jean-Pierre Segado">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label class="control-label">Date d'expiration</label>
-                        <input type="text" class="form-control" data-mask="00/00" placeholder="MM/AA">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label class="control-label">code CVC</label>
-                        <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="000" placeholder="746">
-                          <div class="input-group-append" data-toggle="popover" data-container="body" data-placement="top" data-content="It is a three digit code that can be found only on the back of your card. Be carefull so no one sees it." data-title="What is a CVV code?">
-                            <span class="input-group-text"><i class="fas fa-question-circle"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 text-right">
-                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à l'accueil</a>
-                <a href="Validation.php"><button type="button" class="btn btn-sm btn-success">Finaliser le paiement</button></a>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-4">
-            <div data-toggle="sticky" data-sticky-offset="30">
-              <div class="card" id="card-summary">
-                <div class="card-header py-3">
-                  <div class="row align-items-center">
-                    <div class="col-6">
-                      <span class="h6">Résumé</span>
-                    </div>
-                    <div class="col-6 text-right">
-                      <span class="badge badge-pill badge-soft-success"><?php echo getItemNumberInPanier($_SESSION['id']).' aticles';?></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <?php for($i = 0 ; $i < getItemNumberInPanier($_SESSION['id']) ; $i++) {?>
-                  <div class="<?php echo($i==0 ? 'row' : 'row mt-3 pt-3 delimiter-top');?>">
-                    <div class="col-8">
-                      <div class="media align-items-center">
-                        <img alt="Image placeholder" class="mr-2" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" style="width: 42px;">
-                        <div class="media-body">
-                          <div class="text-limit lh-100">
-                            <small class="font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></small>
-                          </div>
-                          <small class="text-muted"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'].' x '.getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-4 text-right lh-100">
-                      <small class="text-dark"><?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €</small>
-                    </div>
-                  </div>
-                  <?php }?>
-                  <!-- total -->
-                  <div class="row mt-3 pt-3 border-top">
-                    <div class="col-8 text-right">
-                      <small class="text-uppercase font-weight-bold">Total:</small>
-                    </div>
-                    <div class="col-4 text-right">
-                      <span class="text-sm font-weight-bold"><?php echo getTotalPrix($_SESSION['id']).' €';?></span>
-                    </div>
-                  </div>
-                </div>
+
+      <section class="slice slice-lg vh-100 bg-light overflow-hidden" data-offset-top="#header-main">
+        <div class="bg-absolute-cover vh-100 overflow-hidden">
+        </div>
+        <div class="container h-100 d-flex align-items-center position-relative zindex-100">
+          <div class="col">
+            <div class="row justify-content-center">
+              <div class="col-lg-7 text-center">
+                <h6 class="h1 mb-5 font-weight-400 text-dark">Votre achat a bien été confirmé !</h6>
+                <a href="shop-landing.html" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3">
+                  <span class="btn-inner--icon"><i class="fas fa-home"></i></span>
+                  <span class="btn-inner--text">Accueil</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-      <footer id="footer-main">
+        <div class="position-absolute bottom-0 right-4 overflow-hidden">
+          <figure class="w-50">
+            <img alt="Image placeholder" src="../../assets/img/svg/illustrations/design-thinking.svg" class="svg-inject opacity-2">
+          </figure>
+        </div>
+      </section>
+    </div>
+    <footer id="footer-main">
       <div class="footer footer-dark bg-dark">
         <div class="container">
           <div class="row pt-md">
@@ -294,15 +204,14 @@ if (!isset($_SESSION['id'])) {
         </div>
       </div>
     </footer>
-  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-  <script src="bootstrap/assets/js/purpose.core.js"></script>
-  <!-- Page JS -->
-  <script src="bootstrap/assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
-  <script src="bootstrap/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-  <!-- Purpose JS -->
-  <script src="bootstrap/assets/js/purpose.js"></script>
-  <!-- Demo JS - remove it when starting your project -->
-  <script src="bootstrap/assets/js/demo.js"></script>
-</body>
+    <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+    <script src="bootstrap/assets/js/purpose.core.js"></script>
+    <!-- Page JS -->
+    <script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
+    <!-- Purpose JS -->
+    <script src="bootstrap/assets/js/purpose.js"></script>
+    <!-- Demo JS - remove it when starting your project -->
+    <script src="bootstrap/assets/js/demo.js"></script>
+  </body>
 
-</html>
+  </html>

@@ -14,20 +14,20 @@ if (!isset($_SESSION['id'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.">
-  <meta name="author" content="Webpixels">
-  <title>Purpose Website UI Kit - Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.</title>
+  <meta name="author" content="Groupe13">
+  <title>Livraison</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
   <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-  <link type="text/css" href="bootstrap/assets/libs/select2/dist/css/select2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap/assets/libs/swiper/dist/css/swiper.min.css">
   <!-- Purpose CSS -->
   <link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
 </head>
 
 <body>
   <header class="header header-transparent" id="header-main">
+    <!-- Topbar -->
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
@@ -120,8 +120,13 @@ if (!isset($_SESSION['id'])) {
     </header>
   <div class="main-content">
     <!-- Header (account) -->
-    <header class="header-account-page bg-primary d-flex align-items-end">
-    </header>
+    <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
+        <div class="section-inner bg-dark"></div>
+        <style type="text/css">
+        .section-inner{ 
+          height:60% !important;  
+        }
+      </style>
     <section class="slice">
       <div class="container">
         <div class="row row-grid">
@@ -131,20 +136,20 @@ if (!isset($_SESSION['id'])) {
                 <!-- Title -->
                 <div class="actions-toolbar py-2 mb-4">
                   <h5 class="mb-1">Saisissez votre adresse</h5>
-                  <p class="text-sm text-muted mb-0">Fill in your address info for upcoming orders or payments.</p>
+                  <p class="text-sm text-muted mb-0">Remplissez les champs pour le paiment.</p>
                 </div>
                 <!-- New address form -->
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="form-control-label">First name</label>
-                      <input class="form-control" type="text" placeholder="Enter your first name">
+                      <label class="form-control-label">Prénom</label>
+                      <input class="form-control" type="text" placeholder="Prénom">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="form-control-label">Last name</label>
-                      <input class="form-control" type="text" placeholder="Also your last name">
+                      <label class="form-control-label">Nom</label>
+                      <input class="form-control" type="text" placeholder="Nom">
                     </div>
                   </div>
                 </div>
@@ -186,8 +191,8 @@ if (!isset($_SESSION['id'])) {
                 </div>
               </div>
               <div class="mt-4 text-right">
-                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Return to shop</a>
-                <button type="submit" class="btn btn-sm btn-success">Next step</button>
+                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à l'accueil</a>
+                <button type="submit" class="btn btn-sm btn-success">Etape suivante</button>
               </div>
             </form>
           </div>
@@ -246,61 +251,40 @@ if (!isset($_SESSION['id'])) {
         <div class="row pt-md">
           <div class="col-lg-4 mb-5 mb-lg-0">
             <a href="bootstrap/index.html">
-              <img src="bootstrap/assets/img/brand/white.png" alt="Footer logo" style="height: 70px;">
+              <img src="images/white.png" alt="Footer logo" style="height: 70px;">
             </a>
-            <p>Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.</p>
+            <p style="color:white;">ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
           </div>
           <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-            <h6 class="heading mb-3">Account</h6>
+            <h6 class="heading mb-3" style="color:white;">Compte</h6>
             <ul class="list-unstyled">
-              <li><a href="bootstrap/pages/account-profile.html">Profile</a></li>
-              <li><a href="bootstrap/pages/account-settings.html">Settings</a></li>
-              <li><a href="bootstrap/pages/account-billing.html">Billing</a></li>
-              <li><a href="bootstrap/pages/account-notifications.html">Notifications</a></li>
+              <li><a href="form_inscription.html" style="color:white;">Mon profil</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-            <h6 class="heading mb-3">About</h6>
+            <h6 class="heading mb-3" style="color:white;">A propos</h6>
             <ul class="list-unstyled text-small">
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-sm-4 mb-5 mb-lg-0">
-            <h6 class="heading mb-3">Company</h6>
-            <ul class="list-unstyled">
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Support</a></li>
+              <li><a href="shop-landing.html" style="color:white;">Accueil</a></li>
+              <li><a href="#contact" style="color:white;">Contact</a></li>
+              <li><a href="#avis" style="color:white;">Avis</a></li>
             </ul>
           </div>
         </div>
         <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
           <div class="col-md-6">
             <div class="copyright text-sm font-weight-bold text-center text-md-left">
-              &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">Webpixels</a>. All rights reserved.
+              &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
             </div>
           </div>
           <div class="col-md-6">
             <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="https://dribbble.com/webpixels" target="_blank">
-                  <i class="fab fa-dribbble"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/webpixelsofficial" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/webpixels" target="_blank">
+                <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
+                <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
                   <i class="fab fa-facebook"></i>
                 </a>
               </li>

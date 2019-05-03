@@ -23,7 +23,7 @@ $reponse = $bdd->query('SELECT * FROM item');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Groupe13">
-  <title>Equipements sportif en vente</title>
+  <title>Page acheteur</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
