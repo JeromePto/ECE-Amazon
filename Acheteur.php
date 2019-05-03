@@ -112,16 +112,18 @@ $reponse = $bdd->query('SELECT * FROM item');
             </div>
 
             <div class="ml-auto">
-              <ul class="nav">       
+              <ul class="nav"> 
+              <a class="nav-link">Bienvenue <?php echo $_SESSION['prenom'] ?> !</a>      
                 <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
                 <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
-                <a class="nav-link" href="shop-landing.html"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
+                <a class="nav-link" href="shop-landing.php"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </header>
+
     <div class="main-content">
       <!-- Header (v1) -->
       <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
@@ -136,7 +138,6 @@ $reponse = $bdd->query('SELECT * FROM item');
           <div class="container">
             <!-- Title -->
             <div class="mb-5">
-              <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
               <h3 class="h3">Ventes flash<i class="fas fa-angle-down text-xs ml-3"></i></h3>
             </div>
             <!-- Products -->
@@ -174,7 +175,6 @@ $reponse = $bdd->query('SELECT * FROM item');
               $reponse->closeCursor();
               ?>              
             </div>
-          </section>
         </div>
       </div>
       <footer id="footer-main">
@@ -196,7 +196,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                 <h6 class="heading mb-3" style="color:white;">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.html" style="color:white;">Accueil</a></li>
+                  <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
                   <li><a href="#contact" style="color:white;">Contact</a></li>
                   <li><a href="#avis" style="color:white;">Avis</a></li>
                 </ul>

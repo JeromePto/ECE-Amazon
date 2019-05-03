@@ -115,7 +115,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               <ul class="nav">       
                 <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
                 <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
-                <a class="nav-link" href="shop-landing.html"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
+                <a class="nav-link" href="shop-landing.php"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
               </ul>
             </div>
           </div>
@@ -140,7 +140,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="row justify-content-center">
               <div class="col-lg-7 text-center">
                 <h6 class="h1 mb-5 font-weight-400 text-dark">Votre achat a bien été confirmé !</h6>
-                <a href="shop-landing.html" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3">
+                <a href="shop-landing.php" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3">
                   <span class="btn-inner--icon"><i class="fas fa-home"></i></span>
                   <span class="btn-inner--text">Accueil</span>
                 </a>
@@ -174,7 +174,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
               <h6 class="heading mb-3" style="color:white;">A propos</h6>
               <ul class="list-unstyled text-small">
-                <li><a href="shop-landing.html" style="color:white;">Accueil</a></li>
+                <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
                 <li><a href="#contact" style="color:white;">Contact</a></li>
                 <li><a href="#avis" style="color:white;">Avis</a></li>
               </ul>

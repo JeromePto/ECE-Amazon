@@ -4,7 +4,7 @@ include("API/panier.php");
 include("API/item.php");
 
 if (!isset($_SESSION['id'])) {
-  header("location: shop-landing.html");
+  header("location: shop-landing.php");
 }
 ?>
 
@@ -108,7 +108,7 @@ if (!isset($_SESSION['id'])) {
                 <a class="nav-link" href="Compte.php">
                   <i class="fas fa-user-circle"></i>Mon compte
                 </a>
-                <a class="nav-link" href="shop-landing.html">
+                <a class="nav-link" href="shop-landing.php">
                   <i class="fas fa-sign-out-alt"></i>Se deconnecter
                 </a>
               </ul>
@@ -210,7 +210,7 @@ if (!isset($_SESSION['id'])) {
                     <i class="fas fa-shopping-cart"></i>
                   </span>
                 </button>
-                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
+                <a href="shop-landing.php" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@ if (!isset($_SESSION['id'])) {
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                 <h6 class="heading mb-3">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.html">Accueil</a></li>
+                  <li><a href="shop-landing.php">Accueil</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li><a href="#avis">Avis</a></li>
                 </ul>

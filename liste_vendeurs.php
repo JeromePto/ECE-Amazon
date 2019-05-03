@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['id'])) {
-  header("location: shop-landing.html");
+  header("location: shop-landing.php");
 }
 
 try
@@ -145,7 +145,7 @@ $reponse = $bdd->query('SELECT * FROM vendeur');
           <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
             <h6 class="heading mb-3">A propos</h6>
             <ul class="list-unstyled text-small">
-              <li><a href="shop-landing.html">Accueil</a></li>
+              <li><a href="shop-landing.php">Accueil</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="#avis">Avis</a></li>
             </ul>
