@@ -53,7 +53,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 
 						<!-- Pages menu -->
 						<li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-							<a class="nav-link dropdown-toggle" href="form_inscription.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos produits</a>
+							<a class="nav-link dropdown-toggle" href="form_connexion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos produits</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow p-0">
 								<ul class="list-group list-group-flush">
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
@@ -284,7 +284,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="../../assets/img/theme/light/team-1-800x800.jpg" class="avatar  rounded-circle">
+														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Jean Pierre</h5>
@@ -308,14 +308,14 @@ $reponse = $bdd->query('SELECT * FROM item');
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="../../assets/img/theme/light/team-2-800x800.jpg" class="avatar  rounded-circle">
+														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Hina</h5>
 														<small class="d-block text-muted">Chercheur de renom</small>
 													</div>
 												</div>
-												<p class="mt-4 lh-180">"It's been 10 years i'm working on the web, i've never seen that. Try it !"</p>
+												<p class="mt-4 lh-180">"It's been 10 years i'm working on the web, i've never seen that. Try it !"</p><br>
 												<span class="static-rating static-rating-sm">
 													<i class="star fas fa-star voted"></i>
 													<i class="star fas fa-star voted"></i>
@@ -332,7 +332,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="../../assets/img/theme/light/team-3-800x800.jpg" class="avatar  rounded-circle">
+														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Jean Pierre</h5>
@@ -353,7 +353,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 								</div>
 								<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 								<!-- Add Pagination -->
-								<div class="swiper-pagination w-100 pt-4 d-flex align-items-center justify-content-center swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+								<div class="swiper-pagination w-100 pt-4 d-flex align-items-center justify-content-center swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="1" role="button" aria-label="Go to slide 2"></span></div>
 							</div>
 						</div>
 					</div>

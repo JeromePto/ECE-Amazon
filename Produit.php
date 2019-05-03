@@ -169,7 +169,7 @@ $reponse->closeCursor();
             <div class="col-lg-6">
               <div data-toggle="sticky" data-sticky-offset="30">
                 <a href=<?php echo($photo)?> data-fancybox>
-                  <img alt="Image placeholder" src=<?php echo($photo)?> class="img-fluid">
+                  <img alt="Image placeholder" src="<?php echo('images/'.$photo)?>" class="img-fluid">
                 </a>
                 <div class="mt-4 text-center">
                   <a href="" data-fancybox>Voir les images</a>
@@ -180,15 +180,9 @@ $reponse->closeCursor();
               <div class="pl-lg-5">
                 <!-- Nom du produit -->
                 <h5 class="h4"><?php echo $nom; ?></h5>
-                <h6 class="text-sm">Description breve du produit</h6>
                 <!-- Note du produit -->
                 <div class="row align-items-center">
                   <div class="col-6">
-                    <span class="static-rating static-rating-sm d-block"><i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star"></i></span>
                     </div>
                     <div class="col-6 text-right">
                       <ul class="list-inline mb-0">
@@ -285,7 +279,7 @@ $reponse->closeCursor();
                     <div class="card card-product">
                       <div class="card-image">
                         <a href=<?php echo("produit.php?id=".$donnees2['ID'])?>>
-                          <img alt="Image placeholder" src=<?php echo($donnees2['PHOTO'])?> class="img-center img-fluid">
+                          <img alt="Image placeholder" src=<?php echo('images/'.$donnees2['PHOTO'])?> class="img-center img-fluid">
                         </a>
                       </div>
                       <div class="card-body text-center pt-0">
@@ -294,11 +288,6 @@ $reponse->closeCursor();
                           <?php echo $donnees2['DESCRIPTION']; ?> 
                         </p>
                         <span class="card-price"><?php echo $donnees2['PRIX']; ?>€</span>
-                      </div>
-                      <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                        <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-                          <i class="fas fa-shopping-bag"></i>
-                        </button>
                       </div>
                     </div>
                   </div>

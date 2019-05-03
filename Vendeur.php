@@ -73,6 +73,7 @@ $reponse = $bdd->query('SELECT * FROM item');
     </div>
   </header>
   <div class="main-content">
+
     <!-- Header (v1) -->
     <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
       <div class="section-inner bg-dark"></div>
@@ -100,7 +101,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="card card-product">
               <div class="card-image">
                 <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
-                  <img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
+                  <img alt="Image placeholder" src=<?php echo('images/'.$donnees['PHOTO'])?> class="img-center img-fluid">
                 </a>
               </div>
               <div class="card-body text-center pt-0">
@@ -112,7 +113,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               </div>
               <div class="mt-4 pt-4 delimiter-top">
                 <a href=<?php echo("form_modif.php?id=".$donnees['ID'])?> class="btn btn-sm btn-light btn-icon-only">
-                  <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                  <span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
                 </a>
                 <a href=<?php echo("cible6.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
                   <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
@@ -128,62 +129,62 @@ $reponse = $bdd->query('SELECT * FROM item');
     </div>
   </section>
   <footer id="footer-main">
-    <div class="footer footer-dark bg-dark">
-      <div class="container">
-        <div class="row pt-md">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <a href="bootstrap/index.html">
-              <img src="images/white.png" alt="Footer logo" style="height: 70px;">
-            </a>
-            <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
-          </div>
-          <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-            <h6 class="heading mb-3">Compte</h6>
-            <ul class="list-unstyled">
-              <li><a href="form_inscription.html">Mon profil</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-            <h6 class="heading mb-3">A propos</h6>
-            <ul class="list-unstyled text-small">
-              <li><a href="shop-landing.html">Accueil</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#avis">Avis</a></li>
-            </ul>
+  <div class="footer footer-dark bg-dark">
+    <div class="container">
+      <div class="row pt-md">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <a href="bootstrap/index.html">
+            <img src="images/white.png" alt="Footer logo" style="height: 70px;">
+          </a>
+          <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+          <h6 class="heading mb-3">Compte</h6>
+          <ul class="list-unstyled">
+            <li><a href="form_inscription.html">Mon profil</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+          <h6 class="heading mb-3">A propos</h6>
+          <ul class="list-unstyled text-small">
+            <li><a href="shop-landing.html">Accueil</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#avis">Avis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+        <div class="col-md-6">
+          <div class="copyright text-sm font-weight-bold text-center text-md-left">
+            &copy; 2018-2019 <a href="https://www.ece.fr" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
           </div>
         </div>
-        <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-          <div class="col-md-6">
-            <div class="copyright text-sm font-weight-bold text-center text-md-left">
-              &copy; 2018-2019 <a href="https://www.ece.fr" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
-            </div>
-          </div>
-          <div class="col-md-6">
-            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="col-md-6">
+          <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </footer>
-  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-  <script src="bootstrap/assets/js/purpose.core.js"></script>
-  <!-- Page JS -->
-  <script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
-  <!-- Purpose JS -->
-  <script src="bootstrap/assets/js/purpose.js"></script>
-  <!-- Demo JS - remove it when starting your project -->
-  <script src="bootstrap/assets/js/demo.js"></script>
+  </div>
+</footer>
+<!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+<script src="bootstrap/assets/js/purpose.core.js"></script>
+<!-- Page JS -->
+<script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
+<!-- Purpose JS -->
+<script src="bootstrap/assets/js/purpose.js"></script>
+<!-- Demo JS - remove it when starting your project -->
+<script src="bootstrap/assets/js/demo.js"></script>
 </body>
 
 </html>

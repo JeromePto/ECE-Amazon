@@ -140,7 +140,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 					<div class="container">
 						<!-- Titre -->
 						<div class="mb-5 text-center">
-							<h3 class="h6">Notre sélection de vêtments<i class="fas fa-angle-down text-xs ml-3"></i></h3>
+							<h3 class="h6">Notre sélection de vêtements<i class="fas fa-angle-down text-xs ml-3"></i></h3>
 						</div>
 						<!-- Produit -->
 						<div class="row">
@@ -154,7 +154,7 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 										<div class="card card-product">
 											<div class="card-image">
 												<a href=<?php echo("produit.php?id=".$id)?>>
-													<img alt="Image placeholder" src=<?php echo($donnees['PHOTO'])?> class="img-center img-fluid">
+													<img alt="Image placeholder" src=<?php echo('images/'.$donnees['PHOTO'])?> class="img-center img-fluid">
 												</a>
 											</div>
 											<div class="card-body text-center pt-0">
@@ -163,11 +163,6 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=2 ');
 													<?php echo $donnees['DESCRIPTION']; ?> 
 												</p>
 												<span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
-											</div>
-											<div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-												<button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-													<i class="fas fa-shopping-bag"></i>
-												</button>
 											</div>
 										</div>
 									</div>
