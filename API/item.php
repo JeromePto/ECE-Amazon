@@ -26,7 +26,7 @@ function newItem($nom, $vendeur, $stock, $categorie, $prix, $description, $photo
 	}
 
 	if ($photo == NULL || $photo =="defaut") {
-		$photo = "images\defautItem.png";
+		$photo = "defautItem.png";
 	}
 
 	if($variationId != NULL && $variationParam != NULL) {
@@ -156,7 +156,7 @@ function editItem($id, $nom, $categorie, $prix, $description, $photo = NULL, $va
 	}
 
 	if ($photo == NULL || $photo =="defaut") {
-		$photo = "images\defautItem.png";
+		$photo = "defautItem.png";
 	}
 
 	if($variationId != NULL && $variationParam != NULL) {
