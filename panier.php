@@ -22,6 +22,7 @@ if (!isset($_SESSION['id'])) {
   <!-- Font Awesome 5 -->
   <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Purpose CSS -->
   <link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
+  <script type="text/javascript" src="panier.js"></script>
 </head>
 
 <body>
@@ -150,7 +151,7 @@ if (!isset($_SESSION['id'])) {
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
-                    <img alt="Image placeholder" src=<?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?> class="" style="width: 80px;">
+                    <img alt="Image placeholder" src="<?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" class="" style="width: 80px;">
                     <div class="media-body pl-3">
                       <div class="lh-100">
                         <span class="text-dark font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></span>
@@ -168,7 +169,8 @@ if (!isset($_SESSION['id'])) {
                   <span class="text-dark font-weight-bold mb-0">Couleur: bleu</span>
                 </td>
                 <td>
-                  <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>
+                  <!-- <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?> -->
+                  <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="3" onchange="change()">
                 </td>
                 <td class="total">
                   <?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €
@@ -176,10 +178,10 @@ if (!isset($_SESSION['id'])) {
                 <td class="text-right">
                   <!-- Actions -->
                   <div class="actions ml-3">
-                    <a href=<?php echo "Produit.php?id=".getIdByPos($_SESSION['id'], $i);?> class="action-item mr-2" data-toggle="tooltip" title="Voir l'article">
+                    <a href="<?php echo 'Produit.php?id='.getIdByPos($_SESSION['id'], $i);?>" class="action-item mr-2" data-toggle="tooltip" title="Voir l'article">
                       <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <a href=<?php echo "actionPanier.php?action=1&param1=".$i;?>, class="action-item mr-2" data-toggle="tooltip" title="Supprimer du panier">
+                    <a href="<?php echo 'actionPanier.php?action=1&param1='.$i;?>" class="action-item mr-2" data-toggle="tooltip" title="Supprimer du panier">
                       <i class="fas fa-times"></i>
                     </a>
                   </div>

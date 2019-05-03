@@ -113,7 +113,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 
             <div class="ml-auto">
               <ul class="nav">             
-                <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
+                <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
                 <a class="nav-link" href="Compte.php">
                   <i class="fas fa-user-circle"></i>Mon compte
                 </a>
