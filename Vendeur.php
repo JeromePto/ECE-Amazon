@@ -109,7 +109,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               </div>
               <div class="mt-4 pt-4 delimiter-top">
                 <a href=<?php echo("form_modif.php?id=".$donnees['ID'])?> class="btn btn-sm btn-light btn-icon-only">
-                  <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                  <span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
                 </a>
                 <a href=<?php echo("cible6.php?id=".$donnees['ID'])?> class="btn btn-sm btn-danger btn-icon-only">
                   <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>

@@ -180,15 +180,9 @@ $reponse->closeCursor();
               <div class="pl-lg-5">
                 <!-- Nom du produit -->
                 <h5 class="h4"><?php echo $nom; ?></h5>
-                <h6 class="text-sm">Description breve du produit</h6>
                 <!-- Note du produit -->
                 <div class="row align-items-center">
                   <div class="col-6">
-                    <span class="static-rating static-rating-sm d-block"><i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star voted"></i>
-                      <i class="star fas fa-star"></i></span>
                     </div>
                     <div class="col-6 text-right">
                       <ul class="list-inline mb-0">
@@ -256,11 +250,6 @@ $reponse->closeCursor();
                       <div class="col-sm-6 mb-4 mb-sm-0">
                         <span class="d-block h3 mb-0">Prix: <?php echo "".$prix."€"; ?></span> <!--prix-->
                       </div>
-                      <div class="col-sm-6 text-sm-right">
-                        <!-- Add to cart -->
-                        <a class="btn btn-dark" href=<?php echo "actionPanier.php?action=2&param1=".$id;?> role="button">Ajouter au panier</a>                      
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

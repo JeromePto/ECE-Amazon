@@ -164,11 +164,6 @@ $reponse = $bdd->query('SELECT * FROM item WHERE CATEGORIE=1 ');
                         </p>
                         <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
                       </div>
-                      <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                        <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-                          <i class="fas fa-shopping-bag"></i>
-                        </button>
-                      </div>
                     </div>
                   </div>
                   <?php
