@@ -112,14 +112,11 @@ $reponse = $bdd->query('SELECT * FROM item');
             </div>
 
             <div class="ml-auto">
-              <ul class="nav">             
+              <ul class="nav">   
+                <a class="nav-link" href="#"><i class="fa fa-cog"></i>Modifier un produit</a>       
                 <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
-                <a class="nav-link" href="Compte.php">
-                  <i class="fas fa-user-circle"></i>Mon compte
-                </a>
-                <a class="nav-link" href="shop-landing.html">
-                  <i class="fas fa-sign-out-alt"></i>Se deconnecter
-                </a>
+                <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
+                <a class="nav-link" href="shop-landing.html"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
               </ul>
             </div>
           </div>
@@ -140,6 +137,7 @@ $reponse = $bdd->query('SELECT * FROM item');
           <div class="container">
             <!-- Title -->
             <div class="mb-5">
+              <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
               <h3 class="h3">Ventes flash<i class="fas fa-angle-down text-xs ml-3"></i></h3>
             </div>
             <!-- Products -->

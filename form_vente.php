@@ -52,7 +52,7 @@ session_start();
                 <p class="text-muted mb-0">Fait à l'ECE !</p>
               </div>
               <span class="clearfix"></span>                    <!-- identification, son nom, sa/ses photo/s, ses descriptions, sa vidéo (si disponible), sa catégorie et son prix à l’unité -->
-              <form role="form" action="cible4.php" method="post">
+              <form role="form" action="cible4.php" method="post" enctype="multipart/form-data">
                 <label class="form-control-label">Nom</label>
                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="nom" placeholder="Segado" required="">
@@ -62,11 +62,14 @@ session_start();
                   <input type="number" class="form-control" name="stock" placeholder="C'est un super produit !"required="">
                 </div>                
                 <label class="form-control-label">Photo</label>
-                <div class="input-group input-group-merge">
-                  <input type="file" class="form-control" name="photo">
-                </div>                  
-                <label class="form-control-label">Description</label>
-                <div class="input-group input-group-merge">
+                  <table>
+                    <tr>
+                      <td>Sélectionnez le fichier à télécharger:</td>
+                      <td><input type="file" name="fileToUpload"></td>
+                    </tr>
+                   </table>              
+                 <label class="form-control-label">Description</label>
+                 <div class="input-group input-group-merge">
                   <input type="text" class="form-control" name="description" placeholder="C'est un super produit !" required="">
                 </div>
                 <label class="form-control-label">Prix</label>

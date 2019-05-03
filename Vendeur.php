@@ -64,7 +64,7 @@ if (!isset($_SESSION['id'])) {
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
       <h5>Bienvenue <?php echo $_SESSION['prenom'] ?> !</h5>
-      <h4 class="vente" class="blink"><strong>Vos ventes en cours :</strong></h4></li>
+      <h3 class="h3">Vos ventes en cours<i class="fas fa-angle-down text-xs ml-3"></i></h3>
       <style type="text/css">
       h4.vente{
        padding-left:30px; 
