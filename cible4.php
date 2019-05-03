@@ -61,7 +61,7 @@ catch(Exception $e)
 if ($_POST['stock'] > 0 ) {
 
 	if ($_POST['prix'] >= 0) {
-		newitem($_POST['nom'], $_SESSION['id'], $_POST['stock'], $_POST['categorie']-1, $_POST['prix'], $_POST['description'], basename( $_FILES["fileToUpload"]["name"]));
+		newitem($_POST['nom'], $_SESSION['id'], $_POST['stock'], $_POST['categorie']-1, $_POST['prix'], $_POST['description'], 'images/'.basename( $_FILES["fileToUpload"]["name"]));
 	}
 
 	else{

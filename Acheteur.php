@@ -112,8 +112,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             </div>
 
             <div class="ml-auto">
-              <ul class="nav">   
-                <a class="nav-link" href="#"><i class="fa fa-cog"></i>Modifier un produit</a>       
+              <ul class="nav">       
                 <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
                 <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
                 <a class="nav-link" href="shop-landing.html"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
@@ -132,7 +131,7 @@ $reponse = $bdd->query('SELECT * FROM item');
           height:60% !important;  
         }
       </style>
-      <div class="main-content">
+    
         <section class="slice slice-lg delimiter-top" id="sct-products">
           <div class="container">
             <!-- Title -->
@@ -162,11 +161,6 @@ $reponse = $bdd->query('SELECT * FROM item');
                           <?php echo $donnees['DESCRIPTION']; ?> 
                         </p>
                         <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
-                      </div>
-                      <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                        <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Ajouter au panier">
-                          <i class="fas fa-shopping-bag"></i>
-                        </button>
                       </div>
                     </div>
                   </div>
