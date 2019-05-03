@@ -129,7 +129,7 @@ $reponse = $bdd->query('SELECT * FROM item');
     <div class="main-content">
       <!-- Header (v1) -->
       <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-gradient-primary"></div>
+        <div class="section-inner bg-dark"></div>
         <style type="text/css">
         .section-inner{ 
           height:60% !important;  
@@ -186,7 +186,7 @@ $reponse = $bdd->query('SELECT * FROM item');
         </div>
       </div>
       <footer id="footer-main">
-        <div class="footer bg-gradient-primary">
+        <div class="footer footer-dark bg-dark">
           <div class="container">
             <div class="row pt-md">
               <div class="col-lg-4 mb-5 mb-lg-0">
@@ -212,7 +212,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             </div>
             <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
               <div class="col-md-6">
-                <div class="copyright text-sm font-weight-bold text-center ">
+                <div class="copyright text-sm font-weight-bold text-center text-md-left">
                   &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
                 </div>
               </div>
