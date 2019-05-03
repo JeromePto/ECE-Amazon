@@ -40,7 +40,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 		<nav class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-dark" id="navbar-main">
 			<div class="container px-lg-0">
 				<!-- Logo -->
-				<a class="navbar-brand mr-lg-5" href="shop-landing.html">
+				<a class="navbar-brand mr-lg-5" href="shop-landing.php">
 					<img alt="Image placeholder" src="images/white.png" id="navbar-logo" style="height: 50px;">
 				</a>
 				<!-- Navbar collapse trigger -->
@@ -462,7 +462,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 					<div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
 						<h6 class="heading mb-3">A propos</h6>
 						<ul class="list-unstyled text-small">
-							<li><a href="shop-landing.html">Accueil</a></li>
+							<li><a href="shop-landing.php">Accueil</a></li>
 							<li><a href="#contact">Contact</a></li>
 							<li><a href="#avis">Avis</a></li>
 						</ul>

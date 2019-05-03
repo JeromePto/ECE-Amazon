@@ -126,11 +126,26 @@ if (!isset($_SESSION['id'])) {
         }
       </style>
     <!-- Header (account) -->
+    <header class="header-account-page bg-primary d-flex align-items-end">
+      <?php 
+  if (isset($_GET['erreur']))
+  {
+    if ($_GET['erreur']==5) 
+    {
+      ?>
+      <div class="alert alert-danger" role="alert">
+        <strong>Attention !</strong> <a href="#" class="alert-link">Information banquaire incorrect</a>
+      </div>
+      <?php
+    }
+  }
+  ?>  
+    </header>
     <section class="slice">
       <div class="container">
         <div class="row row-grid">
           <div class="col-lg-8">
-            <form>
+            <form role="form" action="actionPaiment.php" method="post">
               <div class="card">
                 <div class="card-header">
                   <div class="row">
@@ -145,7 +160,7 @@ if (!isset($_SESSION['id'])) {
                     <div class="col-md-8">
                       <div class="form-group">
                         <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="0000 0000 0000 0000" placeholder="4789 5697 0541 7546">
+                          <input type="text" class="form-control" data-mask="0000 0000 0000 0000" placeholder="4789 5697 0541 7546" name="numero" required="">
                           <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
                           </div>
@@ -154,11 +169,11 @@ if (!isset($_SESSION['id'])) {
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <select class="form-control" data-toggle="select" title="Type dde carte">
+                        <select class="form-control" data-toggle="select" title="Type de carte" name="type" required="">
                         <option selected disabled>Type de carte</option>
-                        <option value="1">Visa</option>
-                        <option value="2">MasterCard</option>
-                        <option value="3">American Express<option>
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                        <option value="American Express">American Express<option>
                       </select>
                       </div>
                     </div>
@@ -166,21 +181,21 @@ if (!isset($_SESSION['id'])) {
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="control-label">Nom sur la carte</label>
-                        <input type="text" class="form-control" placeholder="Jean-Pierre Segado">
+                        <label class="control-label">Name on card</label>
+                        <input type="text" class="form-control" placeholder="John Doe" name="nom" required="">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label class="control-label">Date d'expiration</label>
-                        <input type="text" class="form-control" data-mask="00/00" placeholder="MM/AA">
+                        <label class="control-label">Expiry date</label>
+                        <input type="text" class="form-control" data-mask="00/00" placeholder="MM/YY" name="date" required="">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label class="control-label">code CVC</label>
                         <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="000" placeholder="746">
+                          <input type="text" class="form-control" data-mask="000" placeholder="746" name="code" required="">
                           <div class="input-group-append" data-toggle="popover" data-container="body" data-placement="top" data-content="It is a three digit code that can be found only on the back of your card. Be carefull so no one sees it." data-title="What is a CVV code?">
                             <span class="input-group-text"><i class="fas fa-question-circle"></i></span>
                           </div>
@@ -192,7 +207,7 @@ if (!isset($_SESSION['id'])) {
               </div>
               <div class="mt-4 text-right">
                 <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à l'accueil</a>
-                <a href="Validation.php"><button type="button" class="btn btn-sm btn-success">Finaliser le paiement</button></a>
+                <button type="submit" class="btn btn-sm btn-success">Complete order</button>
               </div>
             </form>
           </div>
