@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 03 mai 2019 à 09:19
+-- Généré le :  ven. 03 mai 2019 à 15:40
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `banque` (
   `CARTE` enum('Visa','MasterCard','American Express','') NOT NULL,
   `NUMERO` varchar(255) NOT NULL,
   `NOM` varchar(255) NOT NULL,
-  `DATE` date NOT NULL,
+  `DATE` varchar(255) NOT NULL,
   `CODE` int(11) NOT NULL,
   PRIMARY KEY (`NUMERO`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -75,9 +75,9 @@ CREATE TABLE IF NOT EXISTS `banque` (
 --
 
 INSERT INTO `banque` (`CARTE`, `NUMERO`, `NOM`, `DATE`, `CODE`) VALUES
-('Visa', '1111', 'nom1', '2021-05-03', 111),
-('MasterCard', '2222', 'nom2', '2021-05-03', 222),
-('American Express', '3333', 'nom3', '2021-05-03', 333);
+('Visa', '1111', 'nom1', '01/21', 111),
+('MasterCard', '2222', 'nom2', '01/21', 222),
+('American Express', '3333', 'nom3', '01/21', 333);
 
 -- --------------------------------------------------------
 
@@ -146,20 +146,22 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `ADRESSE` varchar(255) NOT NULL,
   `PHOTO` varchar(255) NOT NULL DEFAULT '"\\images\\defautProfil.png"',
   `IMGFOND` varchar(255) NOT NULL DEFAULT '"\\images\\defautBack.png"',
+  `ADMIN` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `MAIL` (`MAIL`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vendeur`
 --
 
-INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES
-(1, 'vn1', 'vp1', 'vm1@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va1', '\"defautProfil.png\"', '\"defautBack.png\"'),
-(2, 'vn2', 'vp2', 'vm2@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va2', '\"defautProfil.png\"', '\"defautBack.png\"'),
-(3, 'vn3', 'vp3', 'vm3@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va3', '\"defautProfil.png\"', '\"defautBack.png\"'),
-(4, 'vn4', 'vp4', 'vm4@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va4', '\"defautProfil.png\"', '\"defautBack.png\"'),
-(5, 'vn5', 'vp5', 'vm5@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va5', '\"defautProfil.png\"', '\"defautBack.png\"');
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`, `ADMIN`) VALUES
+(1, 'vn1', 'vp1', 'vm1@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va1', 'defautProfil.png', 'defautBack.png', 0),
+(2, 'vn2', 'vp2', 'vm2@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va2', 'defautProfil.png', 'defautBack.png', 0),
+(3, 'vn3', 'vp3', 'vm3@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va3', 'defautProfil.png', 'defautBack.png', 0),
+(4, 'vn4', 'vp4', 'vm4@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va4', 'defautProfil.png', 'defautBack.png', 0),
+(5, 'vn5', 'vp5', 'vm5@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va5', 'defautProfil.png', 'defautBack.png', 0),
+(6, 'adminNom', 'adminPrenom', 'admin1@admin.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'adminAdresse', 'defautProfil.png', 'defautBack.png', 1);
 
 --
 -- Contraintes pour les tables déchargées
