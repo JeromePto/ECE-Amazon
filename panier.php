@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 session_start();
 include("API/panier.php");
 include("API/item.php");
 
 if (!isset($_SESSION['id'])) {
-  header("location: shop-landing.php");
+  header("location: shop-landing.html");
 }
 ?>
 
@@ -14,9 +14,8 @@ if (!isset($_SESSION['id'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.">
-  <meta name="author" content="Webpixels">
-  <title>Purpose Website UI Kit - Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.</title>
+  <meta name="author" content="Groupe13">
+  <title>Panier</title>
   <!-- Favicon -->
   <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
   <!-- Font Awesome 5 -->
@@ -108,7 +107,7 @@ if (!isset($_SESSION['id'])) {
                 <a class="nav-link" href="Compte.php">
                   <i class="fas fa-user-circle"></i>Mon compte
                 </a>
-                <a class="nav-link" href="shop-landing.php">
+                <a class="nav-link" href="shop-landing.html">
                   <i class="fas fa-sign-out-alt"></i>Se deconnecter
                 </a>
               </ul>
@@ -210,7 +209,7 @@ if (!isset($_SESSION['id'])) {
                     <i class="fas fa-shopping-cart"></i>
                   </span>
                 </button>
-                <a href="shop-landing.php" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
+                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
               </div>
             </div>
           </div>
@@ -237,7 +236,7 @@ if (!isset($_SESSION['id'])) {
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                 <h6 class="heading mb-3">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.php">Accueil</a></li>
+                  <li><a href="shop-landing.html">Accueil</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li><a href="#avis">Avis</a></li>
                 </ul>

@@ -60,7 +60,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               <a class="nav-link">
                 Bienvenue <?php echo $_SESSION['prenom'] ?> !
               </a>                             
-              <a class="nav-link" href="Compte.php">
+              <a class="nav-link" href="Compte_vendeur.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
               <a class="nav-link" href="Deconnexion.php">
@@ -86,7 +86,7 @@ $reponse = $bdd->query('SELECT * FROM item');
       <div class="container">
         <!-- Titre page -->
         <div class="mb-5">
-          <h3 class="h3">Vos articles en vente<i class="fas fa-angle-down text-xs ml-3"></i></h3>
+          <h4 class="h4">Vos articles en vente<i class="fas fa-angle-down text-xs ml-3"></i></h4>
         </div>
 
         <div class="row">
@@ -96,9 +96,9 @@ $reponse = $bdd->query('SELECT * FROM item');
             if ($vendeur==$donnees['VENDEUR']) 
               {?>
                 <div class="col-xl-3 col-lg-4 col-sm-6">
-                  <div class="card card-product">
+                  <div class="card card-product"> 
                     <div class="card-image">
-                      <a href=<?php echo("produit.php?id=".$donnees['ID'])?>>
+                      <a>
                         <img alt="Image placeholder" src=<?php echo('images/'.$donnees['PHOTO'])?> class="img-center img-fluid">
                       </a>
                     </div>
@@ -133,7 +133,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="container">
               <div class="row pt-md">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                  <a href="bootstrap/index.html">
+                  <a href="Vendeur.php">
                     <img src="images/white.png" alt="Footer logo" style="height: 70px;">
                   </a>
                   <p style="color:white;">ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
@@ -141,15 +141,15 @@ $reponse = $bdd->query('SELECT * FROM item');
                 <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                   <h6 class="heading mb-3" style="color:white;">Compte</h6>
                   <ul class="list-unstyled">
-                    <li><a href="form_inscription.html" style="color:white;">Mon profil</a></li>
+                    <li><a href="Compte_vendeur.php" style="color:white;">Mon profil</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                   <h6 class="heading mb-3" style="color:white;">A propos</h6>
                   <ul class="list-unstyled text-small">
                     <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
-                    <li><a href="#contact" style="color:white;">Contact</a></li>
-                    <li><a href="#avis" style="color:white;">Avis</a></li>
+                    <li><a href="shop-landing.php#contact" style="color:white;">Contact</a></li>
+                    <li><a href="shop-landing.php#avis" style="color:white;">Avis</a></li>
                   </ul>
                 </div>
               </div>

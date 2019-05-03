@@ -23,7 +23,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.">
 	<meta name="author" content="Webpixels">
-	<title>ECE Shop</title>
+	<title>ECE Shop - Accueil</title>
 	<!-- Favicon -->
 	<link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
 	<!-- Font Awesome 5 -->

@@ -314,15 +314,15 @@ $reponse->closeCursor();
               <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                 <h6 class="heading mb-3">Compte</h6>
                 <ul class="list-unstyled">
-                  <li><a href="form_inscription.html">Mon profil</a></li>
+                  <li><a href="Compte.php">Mon profil</a></li>
                 </ul>
               </div>
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                 <h6 class="heading mb-3">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.php">Accueil</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                  <li><a href="#avis">Avis</a></li>
+                  <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
+                  <li><a href="shop-landing.php#contact" style="color:white;">Contact</a></li>
+                  <li><a href="shop-landing.php#avis" style="color:white;">Avis</a></li>
                 </ul>
               </div>
             </div>

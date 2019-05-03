@@ -101,7 +101,6 @@ if (!isset($_SESSION['id'])) {
                 </ul>
               </li>
             </div>
-
             <div class="ml-auto">
               <ul class="nav">             
                 <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
@@ -126,7 +125,7 @@ if (!isset($_SESSION['id'])) {
         }
       </style>
     <!-- Header (account) -->
-    <header class="header-account-page bg-primary d-flex align-items-end">
+    
       <?php 
   if (isset($_GET['erreur']))
   {
@@ -140,7 +139,6 @@ if (!isset($_SESSION['id'])) {
     }
   }
   ?>  
-    </header>
     <section class="slice">
       <div class="container">
         <div class="row row-grid">
@@ -261,54 +259,54 @@ if (!isset($_SESSION['id'])) {
     </section>
   </div>
       <footer id="footer-main">
-      <div class="footer footer-dark bg-dark">
-        <div class="container">
-          <div class="row pt-md">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <a href="bootstrap/index.html">
-                <img src="images/white.png" alt="Footer logo" style="height: 70px;">
-              </a>
-              <p style="color:white;">ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
-            </div>
-            <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-              <h6 class="heading mb-3" style="color:white;">Compte</h6>
-              <ul class="list-unstyled">
-                <li><a href="form_inscription.html" style="color:white;">Mon profil</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-              <h6 class="heading mb-3" style="color:white;">A propos</h6>
-              <ul class="list-unstyled text-small">
-                <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
-                <li><a href="#contact" style="color:white;">Contact</a></li>
-                <li><a href="#avis" style="color:white;">Avis</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-            <div class="col-md-6">
-              <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
+        <div class="footer footer-dark bg-dark">
+          <div class="container">
+            <div class="row pt-md">
+              <div class="col-lg-4 mb-5 mb-lg-0">
+                <a href="Acheteur.php">
+                  <img src="images/white.png" alt="Footer logo" style="height: 70px;">
+                </a>
+                <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
+              </div>
+              <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+                <h6 class="heading mb-3">Compte</h6>
+                <ul class="list-unstyled">
+                  <li><a href="Compte.php">Mon profil</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+                <h6 class="heading mb-3">A propos</h6>
+                <ul class="list-unstyled text-small">
+                  <li><a  href="shop-landing.php" style="color:white;">Accueil</a></li>
+                  <li><a href="shop-landing.php#contact" style="color:white;">Contact</a></li>
+                  <li><a href="shop-landing.php#avis" style="color:white;">Avis</a></li>
+                </ul>
               </div>
             </div>
-            <div class="col-md-6">
-              <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                  </a>
-                </li>
-              </ul>
+            <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+              <div class="col-md-6">
+                <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                  &copy; 2018-2019 <a href="https://webpixels.io" class="font-weight-bold" target="_blank">ECE Shop</a>. Tous droits réservés.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
+                      <i class="fab fa-facebook"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
   <script src="bootstrap/assets/js/purpose.core.js"></script>
   <!-- Page JS -->
