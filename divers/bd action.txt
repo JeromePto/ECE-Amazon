@@ -1,0 +1,26 @@
+
+
+
+
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES (NULL, 'vn1', 'vp1', 'vm1@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va1', '\"defautProfil.png\"', '\"defautBack.png\"');
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES (NULL, 'vn2', 'vp2', 'vm2@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va2', '\"defautProfil.png\"', '\"defautBack.png\"');
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES (NULL, 'vn3', 'vp3', 'vm3@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va3', '\"defautProfil.png\"', '\"defautBack.png\"');
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES (NULL, 'vn4', 'vp4', 'vm4@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va4', '\"defautProfil.png\"', '\"defautBack.png\"');
+INSERT INTO `vendeur` (`ID`, `NOM`, `PRENOM`, `MAIL`, `MDP`, `ADRESSE`, `PHOTO`, `IMGFOND`) VALUES (NULL, 'vn5', 'vp5', 'vm5@a.fr', '$2y$10$qwE3loY36gVWmN5Olk1.f..nl9S2HM8/.hK9djueTw80yYmrM9Si2', 'va5', '\"defautProfil.png\"', '\"defautBack.png\"');
+
+
+
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item1', '1', '100', '0', 'item1desc', '20', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item2', '2', '20', '1', 'item2desc', '105', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item3', '3', '1000', '3', 'item3desc', '12', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item4', '4', '20', '0', 'item4desc', '3', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item5', '5', '30', '2', 'item5desc', '4.65', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item6', '1', '12', '2', 'item6desc', '19.99', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item7', '1', '450', '1', 'item7desc', '16', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item8', '2', '13', '3', 'item8desc', '80.99', 'defautItem', NULL);
+INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`, `PRIX`, `PHOTO`, `VARIATION`) VALUES (NULL, 'item9', '4', '264', '0', 'item9desc', '99.95', 'defautItem', NULL);
+
+
+INSERT INTO `banque` (`CARTE`, `NUMERO`, `NOM`, `DATE`, `CODE`) VALUES ('Visa', '1111', 'nom1', '2021-05-03', '111');
+INSERT INTO `banque` (`CARTE`, `NUMERO`, `NOM`, `DATE`, `CODE`) VALUES ('MasterCard', '2222', 'nom2', '2021-05-03', '222');
+INSERT INTO `banque` (`CARTE`, `NUMERO`, `NOM`, `DATE`, `CODE`) VALUES ('American Express', '3333', 'nom3', '2021-05-03', '333');
