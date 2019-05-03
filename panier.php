@@ -170,7 +170,7 @@ if (!isset($_SESSION['id'])) {
                 </td>
                 <td>
                   <!-- <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?> -->
-                  <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="<?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>" onchange="change()">
+                  <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="<?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>" onchange="<?php echo('change('.$i.','.getItemInfo(getIdByPos($_SESSION['id'], $i))['STOCK'].')');?>">
                 </td>
                 <td class="total">
                   <?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €
@@ -201,7 +201,7 @@ if (!isset($_SESSION['id'])) {
               <div class="col-md-6 order-md-2 mb-4 mb-md-0">
                 <div class="d-flex align-items-center justify-content-md-end">
                   <span class="h6 text-muted d-inline-block mr-3 mb-0">Prix total : </span>
-                  <span class="h4 mb-0">$450.85 USD</span>
+                  <span class="h4 mb-0"><?php echo getTotalPrix($_SESSION['id']);?></span>
                 </div>
               </div>
               <div class="col-md-6 order-md-1">

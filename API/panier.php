@@ -211,4 +211,26 @@ function getItemNumberInPanier($acheteur) {
 	}
 	return $donnees[0];
 }
+
+function getTotalPrix($acheteur) {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$req = $bdd->prepare("SELECT SUM(prixTot.prixLigne) as total FROM ( SELECT panier.ACHETEUR, panier.ITEM, panier.QUANTITE, item.ID, item.PRIX, panier.QUANTITE*item.PRIX as prixLigne FROM `panier` INNER JOIN item ON item.ID = panier.ITEM WHERE `ACHETEUR` = ?) AS prixTot");
+	$req->execute(array($acheteur));
+	$donnees = $req->fetch();
+	$req->closeCursor();
+	if (!$donnees) {
+		echo "Erreur<br>";
+		exit(1);
+	}
+
+	return ceil($donnees[0]*100)/100;
+}
 ?>

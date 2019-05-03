@@ -108,16 +108,12 @@ INSERT INTO `item` (`ID`, `NOM`, `VENDEUR`, `STOCK`, `CATEGORIE`, `DESCRIPTION`,
 (1, 'item1', 1, 20, 0, 'item1desc', 19.6, 'defautItem', NULL),
 (2, 'item2', 2, 20, 1, 'item2desc', 14.32, 'defautItem', NULL),
 (3, 'item3', 3, 1000, 3, 'item3desc', 12.5, 'defautItem', NULL),
-(4, 'item4', 4, 20, 0, 'item4desc', 3, 'defautItem', NULL),
-(5, 'item5', 5, 30, 2, 'item5desc', 4.96, 'defautItem', NULL),
-(7, 'item2', 2, 20, 1, 'item2desc', 105.3, 'defautItem', NULL),
-(8, 'item3', 3, 1000, 3, 'item3desc', 12, 'defautItem', NULL),
-(9, 'item4', 4, 20, 0, 'item4desc', 3, 'defautItem', NULL),
-(10, 'item5', 5, 30, 2, 'item5desc', 5, 'defautItem', NULL),
-(11, 'item6', 1, 12, 2, 'item6desc', 20, 'defautItem', NULL),
-(12, 'item7', 1, 450, 1, 'item7desc', 16.95, 'defautItem', NULL),
-(13, 'item8', 2, 13, 3, 'item8desc', 81.99, 'defautItem', NULL),
-(14, 'item9', 4, 264, 0, 'item9desc', 99.95, 'defautItem', NULL);
+(4, 'item4', 4, 45, 0, 'item4desc', 3.25, 'defautItem', NULL),
+(5, 'item5', 5, 30, 2, 'item5desc', 5, 'defautItem', NULL),
+(6, 'item6', 1, 12, 2, 'item6desc', 20, 'defautItem', NULL),
+(7, 'item7', 1, 450, 1, 'item7desc', 16.95, 'defautItem', NULL),
+(8, 'item8', 2, 13, 3, 'item8desc', 81.99, 'defautItem', NULL),
+(9, 'item9', 4, 264, 0, 'item9desc', 99.95, 'defautItem', NULL);
 
 -- --------------------------------------------------------
 
