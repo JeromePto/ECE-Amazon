@@ -231,6 +231,6 @@ function getTotalPrix($acheteur) {
 		exit(1);
 	}
 
-	return ceil($donnees[0]*100)/100;
+	return floor($donnees[0]*100)/100;
 }
 ?>

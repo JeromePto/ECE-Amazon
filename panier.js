@@ -8,3 +8,7 @@ function change(idPos, maxQuantite) {
 	var str = "actionPanier.php?action=3&param1=" + idPos + "&param2=" + elem;
 	window.location.href = str;
 }
+
+function redirectPaiment() {
+	window.location.href = "checkout-shipping.php";
+}

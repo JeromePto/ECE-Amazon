@@ -151,7 +151,7 @@ if (!isset($_SESSION['id'])) {
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
-                    <img alt="Image placeholder" src="<?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" class="" style="width: 80px;">
+                    <img alt="Image placeholder" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" class="" style="width: 80px;">
                     <div class="media-body pl-3">
                       <div class="lh-100">
                         <span class="text-dark font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></span>
@@ -169,7 +169,6 @@ if (!isset($_SESSION['id'])) {
                   <span class="text-dark font-weight-bold mb-0">Couleur: bleu</span>
                 </td>
                 <td>
-                  <!-- <span type="text" class=" text-center" style="width: 80px;"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?> -->
                   <input type="text" id="<?php echo 'panierElem'.$i;?>" class="form-control form-control-sm text-center" style="width: 80px;" value="<?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'];?>" onchange="<?php echo('change('.$i.','.getItemInfo(getIdByPos($_SESSION['id'], $i))['STOCK'].')');?>">
                 </td>
                 <td class="total">
@@ -201,11 +200,11 @@ if (!isset($_SESSION['id'])) {
               <div class="col-md-6 order-md-2 mb-4 mb-md-0">
                 <div class="d-flex align-items-center justify-content-md-end">
                   <span class="h6 text-muted d-inline-block mr-3 mb-0">Prix total : </span>
-                  <span class="h4 mb-0"><?php echo getTotalPrix($_SESSION['id']);?></span>
+                  <span class="h4 mb-0"><?php echo getTotalPrix($_SESSION['id']).' €';?></span>
                 </div>
               </div>
               <div class="col-md-6 order-md-1">
-                <button type="button" class="btn btn-animated btn-primary btn-animated-y">
+                <button type="button" class="btn btn-animated btn-primary btn-animated-y" onclick="redirectPaiment()">
                   <span class="btn-inner--visible">Paiement</span>
                   <span class="btn-inner--hidden">
                     <i class="fas fa-shopping-cart"></i>
