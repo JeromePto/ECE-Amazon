@@ -42,6 +42,14 @@
   <?php
 
   }
+  elseif ($_GET['erreur']==15) 
+  { ?>
+    <div class="alert alert-danger" role="alert">
+    <strong>Attention !</strong> <a href="#" class="alert-link">Vous n'êtes pas reconnus en tant qu'admin</a>.
+    </div>
+  <?php
+
+  }  
 }
   ?>
   <div class="main-content">
@@ -91,11 +99,10 @@
                   <input type="radio"  name="choix" value="1" required="" >
                   <label for="huey">Acheteur</label>
                 </div>
-
                 <div>
                   <input type="radio"  name="choix" value="2" >
-                  <label for="dewey">Vendeur</label>
-                </div>              
+                  <label for="dewey">Vendeur/Administrateur</label>
+                </div>
                 <div class="mt-4">
                   <button href="Acheteur.html" type="submit" class="btn btn-block btn-primary">Connexion</button></div>
               </form>

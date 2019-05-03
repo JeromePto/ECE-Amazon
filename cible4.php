@@ -74,5 +74,13 @@ else{
 	header("location: form_vente.php?erreur={$erreur}");
 	return 1;
 }
-header("location: Vendeur.php");
+
+if ($donnees['MAIL']!="admin1@admin.fr" && $donnees['MAIL']!="admin2@admin.fr" && $donnees['MAIL']!="admin3@admin.fr")
+{
+	header("location: Vendeur.php");	
+}
+else
+{
+	header("location: Admin.php");
+}
 ?>
