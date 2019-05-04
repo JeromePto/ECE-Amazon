@@ -98,8 +98,8 @@ $reponse = $bdd->query('SELECT * FROM vendeur');
       ?>
           <div class="col-xl-3 col-lg-4 col-sm-6">
             <div class="card card-product">
-              <a href=<?php echo($photo)?> data-fancybox>
-                  <img alt="Image placeholder" src="<?php echo('images/'.$photo)?>" class="img-fluid">
+              <a href=<?php echo($donnees['PHOTO'])?> data-fancybox>
+                  <img alt="Image placeholder" src="<?php echo('images/'.$donnees['PHOTO'])?>" class="img-fluid">
                 </a>
               <div class="card-body text-center pt-0">
                   <?php echo $donnees['NOM']; ?>
