@@ -42,7 +42,7 @@ $reponse = $bdd->query('SELECT * FROM item');
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
             <!-- logo cliquable -->
-            <a class="navbar-brand mr-lg-5" href="<?php echo $_SESSION['home'];?>"
+            <a class="navbar-brand mr-lg-5" href="<?php echo $_SESSION['home'];?>">
               <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
             <!-- bouton gauche de l'en-tete (vendre, vendeurs, articles et ajouter vendeur) --> 
