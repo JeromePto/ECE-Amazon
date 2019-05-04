@@ -23,16 +23,15 @@ $donnees = $reponse->fetch();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.">
-  <meta name="author" content="Webpixels">
+  <meta name="author" content="Groupe13">
   <title>ECE Amazon</title>
-  <!-- Favicon -->
-  <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
+  <!-- Icone onglet -->
+  <link rel="icon" href="images/boutique.png" type="image/png">
   <!-- Font Awesome 5 -->
   <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Purpose CSS -->
   <link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
@@ -106,8 +105,6 @@ $donnees = $reponse->fetch();
     <script src="bootstrap/assets/js/purpose.core.js"></script>
     <!-- Purpose JS -->
     <script src="bootstrap/assets/js/purpose.js"></script>
-    <!-- Demo JS - remove it when starting your project -->
-    <script src="bootstrap/assets/js/demo.js"></script>
   </body>
 
   </html>

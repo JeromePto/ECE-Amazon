@@ -1,22 +1,18 @@
 <?php
-try
-{
+try {
         // On se connecte à MySQL
   $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
 }
-catch(Exception $e)
-{
+catch(Exception $e) {
         // En cas d'erreur, on affiche un message et on arrête tout
 	die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT * FROM item');
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 	<meta charset="utf-8">
@@ -25,9 +21,9 @@ $reponse = $bdd->query('SELECT * FROM item');
 	<meta name="author" content="Webpixels">
 	<title>ECE Shop - Accueil</title>
 	<!-- Icone onglet -->
-	<link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
+	<link rel="icon" href="images/boutique.png" type="image/png">
 	<!-- Font Awesome 5 -->
-	<link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
+	<link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" href="bootstrap/assets/libs/animate.css/animate.min.css">
 	<link rel="stylesheet" href="bootstrap/assets/libs/swiper/dist/css/swiper.min.css">
 	<!-- Purpose CSS -->
@@ -477,8 +473,6 @@ $reponse = $bdd->query('SELECT * FROM item');
 	<script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
 	<!-- Purpose JS -->
 	<script src="bootstrap/assets/js/purpose.js"></script>
-	<!-- Demo JS - remove it when starting your project -->
-	<script src="bootstrap/assets/js/demo.js"></script>
 </body>
 
 </html>

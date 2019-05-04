@@ -9,15 +9,15 @@ if (!isset($_SESSION['id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Groupe13">
   <title>Livraison</title>
-  <!-- Favicon -->
-  <link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
+  <!-- Icone onglet -->
+  <link rel="icon" href="images/boutique.png" type="image/png">
   <!-- Font Awesome 5 -->
   <link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
   <link rel="stylesheet" href="bootstrap/assets/libs/swiper/dist/css/swiper.min.css">
@@ -32,7 +32,7 @@ if (!isset($_SESSION['id'])) {
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
-            <a class="navbar-brand mr-lg-5" href="Acheteur.php">
+            <a class="navbar-brand mr-lg-5" href="<?php echo $_SESSION['home'];?>">
               <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
@@ -289,12 +289,9 @@ if (!isset($_SESSION['id'])) {
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
   <script src="bootstrap/assets/js/purpose.core.js"></script>
   <!-- Page JS -->
-  <script src="bootstrap/assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
-  <script src="bootstrap/assets/libs/select2/dist/js/select2.min.js"></script>
+  <script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
   <!-- Purpose JS -->
   <script src="bootstrap/assets/js/purpose.js"></script>
-  <!-- Demo JS - remove it when starting your project -->
-  <script src="bootstrap/assets/js/demo.js"></script>
 </body>
 
 </html>

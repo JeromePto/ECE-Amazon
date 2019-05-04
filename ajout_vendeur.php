@@ -16,19 +16,16 @@
 
 <body>
   <?php 
-  if (isset($_GET['erreur']))
-  {
-  if ($_GET['erreur']==10) {
-    ?>
-    <div class="alert alert-danger" role="alert">
-      <strong>Attention !</strong> <a href="#" class="alert-link">Cette adresse mail est déjà utilisée</a>, recommencer avec un autre mail.
-    </div>
-    <?php
+  if (isset($_GET['erreur'])) {
+    if ($_GET['erreur']==10) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+        <strong>Attention !</strong> <a href="#" class="alert-link">Cette adresse mail est déjà utilisée</a>, recommencer avec un autre mail.
+      </div>
+      <?php
+    }
   }
-}
   ?>
-
-
   <div class="main-content">
     <div class="container min-vh-100 d-flex align-items-center">
       <div class="col py-5">
@@ -84,8 +81,5 @@
       <script src="bootstrap/assets/js/purpose.core.js"></script>
       <!-- Purpose JS -->
       <script src="bootstrap/assets/js/purpose.js"></script>
-      <!-- Demo JS - remove it when starting your project -->
-      <script src="bootstrap/assets/js/demo.js"></script>
     </body>
-
     </html>
