@@ -44,6 +44,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 				$_SESSION['nom'] = $donnees['NOM'];
 				$_SESSION['prenom'] = $donnees['PRENOM'];
 				$_SESSION['adresse'] = $donnees['ADRESSE'];
+				$_SESSION['home'] = "Acheteur.php";
 
 				// on redirige notre visiteur vers une page de notre section membre
 				header ('location: Acheteur.php');
@@ -86,9 +87,11 @@ if (isset($_POST['mail']) && isset($_POST['mdp']))
 				$_SESSION['adresse'] = $donnees['ADRESSE'];	
 				// on redirige notre visiteur vers une page de notre section membre
 				if ($admin==1) {
+					$_SESSION['home'] = "Admin.php";
 				header ('location: Admin.php');
 				}
 				elseif ($admin==0) {
+					$_SESSION['home'] = "Vendeur.php";
 				header ('location: Vendeur.php');
 				}
 

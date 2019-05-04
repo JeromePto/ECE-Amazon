@@ -60,7 +60,7 @@ $reponse = $bdd->query('SELECT * FROM item');
               <a class="nav-link">
                 Bienvenue <?php echo $_SESSION['prenom'] ?> !
               </a>                             
-              <a class="nav-link" href="Compte_vendeur.php">
+              <a class="nav-link" href="Compte.php">
                 <i class="fas fa-user-circle"></i>Mon compte
               </a>
               <a class="nav-link" href="Deconnexion.php">
@@ -133,7 +133,7 @@ $reponse = $bdd->query('SELECT * FROM item');
                 <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                   <h6 class="heading mb-3" style="color:white;">Compte</h6>
                   <ul class="list-unstyled">
-                    <li><a href="Compte_vendeur.php" style="color:white;">Mon profil</a></li>
+                    <li><a href="Compte.php" style="color:white;">Mon profil</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">

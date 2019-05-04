@@ -2,7 +2,7 @@
 try
 {
         // On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
@@ -32,6 +32,12 @@ $reponse = $bdd->query('SELECT * FROM item');
 	<link rel="stylesheet" href="bootstrap/assets/libs/swiper/dist/css/swiper.min.css">
 	<!-- Purpose CSS -->
 	<link rel="stylesheet" href="bootstrap/assets/css/purpose.css" id="stylesheet">
+	<script type="text/javascript">
+		function message() {
+			alert("message bien envoyer");
+			window.location.replace("shop-landing.php");
+		}
+	</script>
 </head>
 
 <body>
@@ -247,7 +253,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 			</div>
 			<!-- Bouton voir produits -->
 			<div class="mt-4 text-center">
-				<a href="form_connexion.php" class="btn btn-sm btn-white rounded-pill shadow hover-translate-y-n3">Voir tous nos produits</a>
+				<a href="form_inscription.php" class="btn btn-sm btn-white rounded-pill shadow hover-translate-y-n3">Voir tous nos produits</a>
 			</div>
 		</div>
 	</section>
@@ -379,7 +385,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="form-control-label">Email</label>
-										<input class="form-control" type="email" placeholder="email@test.com">
+										<input class="form-control" type="email" placeholder="email@gmail.com">
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -406,7 +412,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 								</div>
 							</div>
 							<div class="text-center mt-4">
-								<button type="button" class="btn btn-dark rounded-pill">Envoyez votre message</button>
+								<button type="button" class="btn btn-dark rounded-pill" onclick="message()">Envoyez votre message</button>
 								<span class="d-block mt-4 text-sm">Nous reviendrons vers vous rapidement !</span>
 							</div>
 						</form>
@@ -420,7 +426,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 			<div class="container">
 				<div class="row pt-md">
 					<div class="col-lg-4 mb-5 mb-lg-0">
-						<a href="bootstrap/index.html">
+						<a href="form_inscription.php">
 							<img src="images/white.png" alt="Footer logo" style="height: 70px;">
 						</a>
 						<p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
@@ -428,7 +434,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 					<div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
 						<h6 class="heading mb-3">Compte</h6>
 						<ul class="list-unstyled">
-							<li><a href="form_inscription.html">Inscription</a></li>
+							<li><a href="form_inscription.php">Inscription</a></li>
 							<li><a href="form_connexion.php">Connexion</a></li>
 						</ul>
 					</div>

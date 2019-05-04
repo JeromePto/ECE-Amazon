@@ -49,6 +49,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 			$_SESSION['nom'] = $_POST['nom'];
 			$_SESSION['prenom'] = $_POST['prenom'];
 			$_SESSION['adresse'] = $_POST['adresse'];
+			$_SESSION['home'] = "Acheteur.php";
 
 			header ('location: Acheteur.php');
 		}
@@ -90,6 +91,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])&& isset($_POST['prenom'])&& is
 			$_SESSION['nom'] = $_POST['nom'];
 			$_SESSION['prenom'] = $_POST['prenom'];
 			$_SESSION['adresse'] = $_POST['adresse'];
+			$_SESSION['home'] = "Vendeur.php";
 			header ('location: Vendeur.php');
 		}
 		else
