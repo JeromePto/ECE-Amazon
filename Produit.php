@@ -172,6 +172,7 @@ $reponse->closeCursor();
               <div class="pl-lg-5">
                 <!-- Nom du produit -->
                 <h5 class="h4"><?php echo $nom; ?></h5>
+                <h6 class="text-sm">En stock</h6>
                 <div class="row align-items-center">
                   <div class="col-6">
                     <!-- affichage de l'id de l'item et du stock restant-->

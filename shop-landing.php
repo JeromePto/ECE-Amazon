@@ -2,12 +2,12 @@
 try
 {
         // On se connecte à MySQL
-  $bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$bdd = new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
         // En cas d'erreur, on affiche un message et on arrête tout
-  die('Erreur : '.$e->getMessage());
+	die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT * FROM item');
@@ -24,7 +24,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 	<meta name="description" content="Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.">
 	<meta name="author" content="Webpixels">
 	<title>ECE Shop - Accueil</title>
-	<!-- Favicon -->
+	<!-- Icone onglet -->
 	<link rel="icon" href="bootstrap/assets/img/brand/favicon.png" type="image/png">
 	<!-- Font Awesome 5 -->
 	<link rel="stylesheet" href="bootstrap/assets/libs/@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
@@ -36,22 +36,17 @@ $reponse = $bdd->query('SELECT * FROM item');
 
 <body>
 	<header class="header header-transparent" id="header-main">
-		<!-- Main navbar -->
+		<!-- En-tête -->
 		<nav class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-dark" id="navbar-main">
 			<div class="container px-lg-0">
-				<!-- Logo -->
+				<!-- Logo cliquable -->
 				<a class="navbar-brand mr-lg-5" href="shop-landing.php">
 					<img alt="Image placeholder" src="images/white.png" id="navbar-logo" style="height: 50px;">
 				</a>
-				<!-- Navbar collapse trigger -->
-				<button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- Navbar nav -->
+
 				<div class="collapse navbar-collapse" id="navbar-main-collapse">
 					<ul class="navbar-nav align-items-lg-center">
-
-						<!-- Pages menu -->
+						<!-- Nos produit - liste deroulante -->
 						<li class="nav-item dropdown dropdown-animate" data-toggle="hover">
 							<a class="nav-link dropdown-toggle" href="form_connexion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos produits</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow p-0">
@@ -59,11 +54,9 @@ $reponse = $bdd->query('SELECT * FROM item');
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="form_inscription.php" class="list-group-item list-group-item-action" role="button">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/livre.jpg" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Livres</h6>
 													<p class="mb-0">Collection de livres et BD</p>
@@ -74,11 +67,9 @@ $reponse = $bdd->query('SELECT * FROM item');
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/musique.png" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Musique</h6>
 													<p class="mb-0">La musique de votre choix</p>
@@ -89,11 +80,9 @@ $reponse = $bdd->query('SELECT * FROM item');
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/vetement.png" class="svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Vetements</h6>
 													<p class="mb-0">Notre collection de vetements</p>
@@ -104,11 +93,9 @@ $reponse = $bdd->query('SELECT * FROM item');
 									<li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
 										<a href="form_inscription.php" class="list-group-item list-group-item-action dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<div class="media d-flex align-items-center">
-												<!-- SVG icon -->
 												<figure style="width: 50px;">
 													<img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/sport.png" class=svg-inject img-fluid" style="height: 50px;">
 												</figure>
-												<!-- Media body -->
 												<div class="media-body ml-3">
 													<h6 class="mb-1">Sports et Loisirs</h6>
 													<p class="mb-0">Notre collection d'equipements sportifs</p>
@@ -142,7 +129,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 </header>
 
 <div class="main-content">
-	<!-- Header (shop) -->
+	<!-- 1ere section (fond bleu) -->
 	<section class="slice slice-xl bg-cover bg-size--cover" data-offset-top="#header-main" style="background-image: url(bootstrap/assets/img/backgrounds/bleu.jpg); background-position: center center;">
 		<span class="mask bg-dark opacity-3"></span>
 		<div class="container py-5 pt-lg-7 position-relative zindex-100">
@@ -164,6 +151,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 					</div>
 				</div>
 			</div>
+			<!--badges de presentation livraison/paiement/satisfaction -->
 			<div class="row row-grid mt-6 d-none d-lg-flex">
 				<div class="col-lg-4">
 					<div class="card bg-dark border-0 hover-shadow-lg hover-translate-y-n10">
@@ -212,54 +200,65 @@ $reponse = $bdd->query('SELECT * FROM item');
 				</div>
 			</div>
 		</div>
+		<!-- forme en vague fond bleu--> 
 		<div class="shape-container" data-shape-position="bottom">
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1000 300" style="enable-background:new 0 0 1000 300;" xml:space="preserve" class="ie-shape-wave-1 fill-section-secondary">
 				<path d="M 0 246.131 C 0 246.131 31.631 250.035 47.487 249.429 C 65.149 248.755 82.784 245.945 99.944 241.732 C 184.214 221.045 222.601 171.885 309.221 166.413 C 369.892 162.581 514.918 201.709 573.164 201.709 C 714.375 201.709 772.023 48.574 910.547 21.276 C 939.811 15.509 1000 24.025 1000 24.025 L 1000 300.559 L -0.002 300.559 L 0 246.131 Z" />
 			</svg>
 		</div>
 	</section>
-	<section class="slice slice-lg delimiter-top" id="sct-products">
+	<section class="slice slice-lg delimiter-top bg-section-secondary" id="sct-products">
 		<div class="container">
-			<!-- Title -->
+			<!-- Presentation des produits -->
+			<div class="mb-5 text-center">
+				<span class="badge badge-soft-info badge-pill badge-lg">
+					Produits
+				</span>
+			</div>
 			<div class="mb-5 text-center">
 				<h3 class="h6">Présentation<i class="fas fa-angle-down text-xs ml-3"></i></h3>
 			</div>
-			<!-- Products -->
 			<div class="row">
-    <?php
-    while ($donnees = $reponse->fetch())
-    { 
-      ?>
-          <div class="col-xl-3 col-lg-4 col-sm-6">
-            <div class="card card-product">
-              <div class="card-image">
-                <a href="form_inscription.php" >
-                  <img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
-                </a>
-              </div>
-              <div class="card-body text-center pt-0">
-                <h6><a href="form_inscription.php" ></a></h6>
-                <p class="text-sm">
-                  <?php echo $donnees['DESCRIPTION']; ?> 
-                </p>
-                <span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
-              </div>
-            </div>
-          </div>                
-          <?php
-        }
-      $reponse->closeCursor();
-      ?>
+				<?php
+				while ($donnees = $reponse->fetch())
+				{ 
+					?>
+					<div class="col-xl-3 col-lg-4 col-sm-6">
+						<div class="card card-product">
+							<div class="card-image">
+								<a href="form_inscription.php" >
+									<img alt="Image placeholder" src=<?php echo("images/".$donnees['PHOTO'])?> class="img-center img-fluid">
+								</a>
+							</div>
+							<div class="card-body text-center pt-0">
+								<h6><a href="form_inscription.php" ></a></h6>
+								<p class="text-sm">
+									<?php echo $donnees['DESCRIPTION']; ?> 
+								</p>
+								<span class="card-price"><?php echo $donnees['PRIX']; ?>€</span>
+							</div>
+						</div>
+					</div>                
+					<?php
+				}
+				$reponse->closeCursor();
+				?>
 
 			</div>
-			<!-- Load more -->
+			<!-- Bouton voir produits -->
 			<div class="mt-4 text-center">
-				<a href="form_inscription.html" class="btn btn-sm btn-white rounded-pill shadow hover-translate-y-n3">Voir tous nos produits</a>
+				<a href="form_connexion.php" class="btn btn-sm btn-white rounded-pill shadow hover-translate-y-n3">Voir tous nos produits</a>
 			</div>
 		</div>
 	</section>
-	<section class="slice slice-lg bg-section-secondary">
+	<!-- Avis clients --> 
+	<section class="slice slice-lg">
 		<div class="container">
+			<div class="mb-5 text-center">
+				<span class="badge badge-soft-info badge-pill badge-lg">
+					Avis clients
+				</span>
+			</div>
 			<div class="mb-5 text-center">
 				<h3 class=" mt-4" id="avis">Ce que disent nos clients</h3>
 				<div class="fluid-paragraph mt-3">
@@ -278,37 +277,14 @@ $reponse = $bdd->query('SELECT * FROM item');
 						<div class="col-xl-8">
 							<div class="swiper-container swiper-container-horizontal" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" style="cursor: grab;">
 								<div class="swiper-wrapper" style="transform: translate3d(-333.5px, 0px, 0px); transition-duration: 0ms;">
-									<div class="swiper-slide p-4 swiper-slide-prev" style="width: 333.5px;">
-										<!-- Avis 1 -->
-										<div class="card">
-											<div class="card-body">
-												<div class="d-flex align-items-center">
-													<div>
-														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
-													</div>
-													<div class="pl-3">
-														<h5 class="h6 mb-0">Jean Pierre</h5>
-														<small class="d-block text-muted">Super professeur</small>
-													</div>
-												</div>
-												<p class="mt-4 lh-180">"Franchement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommande à tous. JP"</p>
-												<span class="static-rating static-rating-sm">
-													<i class="star fas fa-star voted"></i>
-													<i class="star fas fa-star voted"></i>
-													<i class="star fas fa-star voted"></i>
-													<i class="star fas fa-star voted"></i>
-													<i class="star fas fa-star voted"></i>
-												</span>
-											</div>
-										</div>
-									</div>
+									<div class="swiper-slide p-4 swiper-slide-prev" style="width: 333.5px;"></div>
 									<div class="swiper-slide p-4 swiper-slide-active" style="width: 333.5px;">
 										<!-- Avis 2 -->
 										<div class="card">
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar rounded-circle">
+														<img alt="Image placeholder" src="images/profil.png" class="avatar rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Hina</h5>
@@ -332,7 +308,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
+														<img alt="Image placeholder" src="images/profil.png" class="avatar  rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Jean Pierre</h5>
@@ -351,9 +327,6 @@ $reponse = $bdd->query('SELECT * FROM item');
 										</div>
 									</div>
 								</div>
-								<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-								<!-- Add Pagination -->
-								<div class="swiper-pagination w-100 pt-4 d-flex align-items-center justify-content-center swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="1" role="button" aria-label="Go to slide 2"></span></div>
 							</div>
 						</div>
 					</div>
