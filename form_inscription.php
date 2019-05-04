@@ -80,7 +80,7 @@
                   <button type="submit" class="btn btn-block btn-primary">Créer mon compte !</button></div>
                 </form>
                 <div class="mt-4 text-center"><small>Vous avez déjà un compte ?</small>
-                  <a href="form_connexion.html" class="small font-weight-bold">Connectez-vous !</a></div>
+                  <a href="form_connexion.php" class="small font-weight-bold">Connectez-vous !</a></div>
                 </div>
               </div>
             </div>

@@ -143,7 +143,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 							<span class="display-4 font-weight-light">La vente en ligne</span>
 							<span class="d-block">qui vous aide au quotidien.</span>
 						</h2>
-						<p class="lead text-white">Des produits de qualités à des prix abordables, livrés directement chez vous. Ne vous prenez plus la tête.</p>
+						<p class="lead text-white">Des produits de qualité à des prix abordables, livrés directement chez vous. Ne vous prenez plus la tête.</p>
 						<div class="mt-5">
 							<a href="#sct-products" class="btn btn-white rounded-pill hover-translate-y-n3 btn-icon d-none d-xl-inline-block scroll-me">
 								<span class="btn-inner--icon"><i class="fas fa-shopping-bag"></i></span>
@@ -179,7 +179,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 								</div>
 								<div class="icon-text pl-4">
 									<h5 class="ma-0  text-white">Paiement en ligne</h5>
-									<p class="mb-0 text-muted">Vous paierez vous produits via une plateforme de paiement sécurisée. </p>
+									<p class="mb-0 text-muted">Vous paierez vos produits via une plateforme de paiement sécurisée. </p>
 								</div>
 							</div>
 						</div>
