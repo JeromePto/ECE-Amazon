@@ -42,7 +42,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <!-- Topbar -->
     <div id="navbar-top-main" class="navbar-top  navbar-dark bg-dark border-bottom">
       <div class="container px-0">
@@ -82,14 +82,6 @@ $reponse = $bdd->query('SELECT * FROM item');
     </div>
   </header>
   <div class="main-content">
-    <!-- Header (v1) -->
-    <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-      <div class="section-inner bg-dark"></div>
-      <style type="text/css">
-      .section-inner{ 
-        height:100% !important;  
-      }
-    </style>
     <!-- Features (v1) -->
     <section id="sct-page-examples" class="slice bg-section-secondary">
       <h4 class="vente" class="blink"><strong>Tous les produits :</strong></h4></li>

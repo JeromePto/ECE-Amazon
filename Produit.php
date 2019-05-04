@@ -53,7 +53,7 @@ $reponse->closeCursor();
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <!-- En-tete principal -->
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
@@ -131,7 +131,7 @@ $reponse->closeCursor();
             </div>
             <div class="ml-auto">
               <ul class="nav">             
-                <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>          
+                <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>          
                 <a class="nav-link" href="Compte.php">
                   <i class="fas fa-user-circle"></i>Mon compte
                 </a>
@@ -145,14 +145,6 @@ $reponse->closeCursor();
       </div>
     </header>
     <div class="main-content">
-      <!-- en tete coloré -->
-      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-dark"></div>
-        <style type="text/css">
-        .section-inner{ 
-          height:100% !important;  
-        }
-      </style>
       <!-- Presentation complete du produit -->
       <section class="py-2 delimiter-bottom">
         <div class="container">
@@ -168,11 +160,11 @@ $reponse->closeCursor();
           <div class="row row-grid">
             <div class="col-lg-6">
               <div data-toggle="sticky" data-sticky-offset="30">
-                <a href=<?php echo($photo)?> data-fancybox>
+                <a href="<?php echo('images/'.$photo)?>" data-fancybox>
                   <img alt="Image placeholder" src="<?php echo('images/'.$photo)?>" class="img-fluid">
                 </a>
-                <div class="mt-4 text-center">
-                  <a href="" data-fancybox>Voir les images</a>
+                <div class="mt-4" style="margin-left: 120px;">
+                  <a href="<?php echo('images/'.$photo)?>" data-fancybox>Voir les images</a>
                 </div>
               </div>
             </div>
@@ -180,9 +172,9 @@ $reponse->closeCursor();
               <div class="pl-lg-5">
                 <!-- Nom du produit -->
                 <h5 class="h4"><?php echo $nom; ?></h5>
-                <!-- Note du produit -->
                 <div class="row align-items-center">
                   <div class="col-6">
+                    <!-- affichage de l'id de l'item et du stock restant-->
                     </div>
                     <div class="col-6 text-right">
                       <ul class="list-inline mb-0">
@@ -248,7 +240,7 @@ $reponse->closeCursor();
                     </div>-->
                     <div class="row align-items-center">
                       <div class="col-sm-6 mb-4 mb-sm-0">
-                        <span class="d-block h3 mb-0">Prix: <?php echo "".$prix."€"; ?></span> <!--prix-->
+                        <span class="d-block h3 mb-0"><?php echo "".$prix." €"; ?></span> <!--prix-->
                       </div>
                       <div class="col-sm-6 text-sm-right">
                         <!-- Add to cart -->

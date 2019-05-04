@@ -285,7 +285,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 							<div class="swiper-container swiper-container-horizontal" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" style="cursor: grab;">
 								<div class="swiper-wrapper" style="transform: translate3d(-333.5px, 0px, 0px); transition-duration: 0ms;">
 									<div class="swiper-slide p-4 swiper-slide-prev" style="width: 333.5px;">
-										<!-- Testimonial entry 1 -->
+										<!-- Avis 1 -->
 										<div class="card">
 											<div class="card-body">
 												<div class="d-flex align-items-center">
@@ -297,7 +297,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 														<small class="d-block text-muted">Super professeur</small>
 													</div>
 												</div>
-												<p class="mt-4 lh-180">"Franchement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommance à tous. JP"</p>
+												<p class="mt-4 lh-180">"Franchement, je ne pensais pas qu'un service comme celui-ci serait aussi accessible, je le recommande à tous. JP"</p>
 												<span class="static-rating static-rating-sm">
 													<i class="star fas fa-star voted"></i>
 													<i class="star fas fa-star voted"></i>
@@ -309,12 +309,12 @@ $reponse = $bdd->query('SELECT * FROM item');
 										</div>
 									</div>
 									<div class="swiper-slide p-4 swiper-slide-active" style="width: 333.5px;">
-										<!-- Testimonial entry 2 -->
+										<!-- Avis 2 -->
 										<div class="card">
 											<div class="card-body">
 												<div class="d-flex align-items-center">
 													<div>
-														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar  rounded-circle">
+														<img alt="Image placeholder" src="images/defautProfile.png" class="avatar rounded-circle">
 													</div>
 													<div class="pl-3">
 														<h5 class="h6 mb-0">Hina</h5>
@@ -333,7 +333,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 										</div>
 									</div>
 									<div class="swiper-slide p-4 swiper-slide-next" style="width: 333.5px;">
-										<!-- Testimonial entry 3 -->
+										<!-- Avis 3 -->
 										<div class="card">
 											<div class="card-body">
 												<div class="d-flex align-items-center">
@@ -483,22 +483,12 @@ $reponse = $bdd->query('SELECT * FROM item');
 					<div class="col-md-6">
 						<ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
 							<li class="nav-item">
-								<a class="nav-link" href="https://dribbble.com" target="_blank">
-									<i class="fab fa-dribbble"></i>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.instagram.com" target="_blank">
-									<i class="fab fa-instagram"></i>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="https://github.com" target="_blank">
+								<a class="nav-link" href="https://github.com/JeromePto/ECE-Amazon" target="_blank">
 									<i class="fab fa-github"></i>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="https://www.facebook.com" target="_blank">
+								<a class="nav-link" href="https://www.facebook.com/ECE-Paris" target="_blank">
 									<i class="fab fa-facebook"></i>
 								</a>
 							</li>
