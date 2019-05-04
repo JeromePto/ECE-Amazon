@@ -26,7 +26,7 @@ session_start();
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
-            <a class="navbar-brand mr-lg-5" href="Acheteur.php">
+            <a class="navbar-brand mr-lg-5" href="<?php echo $_SESSION['home'];?>">
               <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
             
@@ -56,7 +56,7 @@ session_start();
     <div class="container"><br>
       <h3 class="info"><strong>Votre Profil :</strong></h4><br> 
         <div class="card-image">
-          <img alt="Image placeholder" src="images/profil.png" style="max-width: 20%" img-fluid">
+          <img alt="Image placeholder" src="images/defautProfil.png" style="max-width: 20%" img-fluid">
         </div><br><br>
 
         <h5 class="info">Prenom : <?php echo $_SESSION['prenom'] ?></h5>
