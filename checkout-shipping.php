@@ -26,7 +26,7 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <!-- Topbar -->
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
@@ -117,17 +117,8 @@ if (!isset($_SESSION['id'])) {
         </div>
       </div>
     </header>
-  <div class="main-content">
-    <!-- Header (account) -->
-    <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-dark"></div>
-        <style type="text/css">
-        .section-inner{ 
-          height:60% !important;  
-        }
-      </style>
-      
-      </header>
+    <div class="main-content">
+    </header>
     <section class="slice">
       <div class="container">
         <div class="row row-grid">
@@ -166,13 +157,13 @@ if (!isset($_SESSION['id'])) {
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-control-label">Pays</label>
-                    <input class="form-control" type="text" placeholder="Pays">
+                      <input class="form-control" type="text" placeholder="Pays">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-control-label">Ville</label>
-                    <input class="form-control" type="text" placeholder="Ville">
+                      <input class="form-control" type="text" placeholder="Ville">
                     </div>
                   </div>
                 </div>
@@ -180,7 +171,7 @@ if (!isset($_SESSION['id'])) {
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-control-label">Code postal</label>
-                    <input class="form-control" type="text" placeholder="Code postal">
+                      <input class="form-control" type="text" placeholder="Code postal">
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -212,22 +203,22 @@ if (!isset($_SESSION['id'])) {
                 </div>
                 <div class="card-body">
                   <?php for($i = 0 ; $i < getItemNumberInPanier($_SESSION['id']) ; $i++) {?>
-                  <div class="<?php echo($i==0 ? 'row' : 'row mt-3 pt-3 delimiter-top');?>">
-                    <div class="col-8">
-                      <div class="media align-items-center">
-                        <img alt="Image placeholder" class="mr-2" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" style="width: 42px;">
-                        <div class="media-body">
-                          <div class="text-limit lh-100">
-                            <small class="font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></small>
+                    <div class="<?php echo($i==0 ? 'row' : 'row mt-3 pt-3 delimiter-top');?>">
+                      <div class="col-8">
+                        <div class="media align-items-center">
+                          <img alt="Image placeholder" class="mr-2" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" style="width: 42px;">
+                          <div class="media-body">
+                            <div class="text-limit lh-100">
+                              <small class="font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></small>
+                            </div>
+                            <small class="text-muted"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'].' x '.getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €</small>
                           </div>
-                          <small class="text-muted"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'].' x '.getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €</small>
                         </div>
                       </div>
+                      <div class="col-4 text-right lh-100">
+                        <small class="text-dark"><?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €</small>
+                      </div>
                     </div>
-                    <div class="col-4 text-right lh-100">
-                      <small class="text-dark"><?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €</small>
-                    </div>
-                  </div>
                   <?php }?>
                   <!-- total -->
                   <div class="row mt-3 pt-3 border-top">

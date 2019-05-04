@@ -20,30 +20,28 @@ session_start();
 </head>
 
 <body>
-  <header class="header bg-dark" id="header-main">  
-    <!-- Topbar -->
-    <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
-      <div class="container px-0">
-        <div class="navbar-nav align-items-center">
-          <div class="d-none d-lg-inline-block">
-            <a class="navbar-brand mr-lg-5" href="Acheteur.php">
-              <img src="images/white.png" id="navbar-logo" style="height: 50px;">
-            </a>
-            
-          </div>
-
-          <div class="ml-auto">
-            <ul class="nav">             
-              <a class="nav-link" href="shop-landing.php">
-                <i class="fas fa-sign-out-alt"></i>Se deconnecter
+    <header class="header bg-dark" id="header-main">
+      <!-- Topbar -->
+      <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
+        <div class="container px-0">
+          <div class="navbar-nav align-items-center">
+            <div class="d-none d-lg-inline-block">
+              <a class="navbar-brand mr-lg-5" href="Vendeur.php">
+                <img src="images/white.png" id="navbar-logo" style="height: 50px;">
               </a>
-            </ul>
+              </div>
+              <div class="ml-auto">
+                <ul class="nav">             
+                  <a class="nav-link" href="shop-landing.php">
+                    <i class="fas fa-sign-out-alt"></i>Se deconnecter
+                  </a>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </header>
-  <div class="main-content">
+      </header>
+      <div class="main-content">
     <!-- Features (v1) -->
     <div class="container"><br>
       <h3 class="info text-dark"><strong>Votre Profil :</strong></h4><br> 
@@ -58,12 +56,12 @@ session_start();
         </div>
     </style>
   </div>
-  <footer id="footer-main">
+    <footer id="footer-main">
     <div class="footer footer-dark bg-dark">
       <div class="container">
         <div class="row pt-md">
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <a href="Acheteur.php">
+            <a href="Vendeur.php">
               <img src="images/white.png" alt="Footer logo" style="height: 70px;">
             </a>
             <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
@@ -71,7 +69,7 @@ session_start();
           <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
             <h6 class="heading mb-3">Compte</h6>
             <ul class="list-unstyled">
-              <li><a href="compte.php">Mon profil</a></li>
+              <li><a href="Compte_vendeur.php">Mon profil</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
@@ -107,15 +105,15 @@ session_start();
       </div>
     </div>
   </footer>
-</section>
-<!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-<script src="bootstrap/assets/js/purpose.core.js"></script>
-<!-- Page JS -->
-<script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
-<!-- Purpose JS -->
-<script src="bootstrap/assets/js/purpose.js"></script>
-<!-- Demo JS - remove it when starting your project -->
-<script src="bootstrap/assets/js/demo.js"></script>
+  </section>
+  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+  <script src="bootstrap/assets/js/purpose.core.js"></script>
+  <!-- Page JS -->
+  <script src="bootstrap/assets/libs/swiper/dist/js/swiper.min.js"></script>
+  <!-- Purpose JS -->
+  <script src="bootstrap/assets/js/purpose.js"></script>
+  <!-- Demo JS - remove it when starting your project -->
+  <script src="bootstrap/assets/js/demo.js"></script>
 </body>
 
 </html>

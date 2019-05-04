@@ -26,7 +26,7 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
@@ -116,148 +116,139 @@ if (!isset($_SESSION['id'])) {
         </div>
       </div>
     </header>
-  <div class="main-content">
-     <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-dark"></div>
-        <style type="text/css">
-        .section-inner{ 
-          height:60% !important;  
-        }
-      </style>
-    <!-- Header (account) -->
-    
+    <div class="main-content">
       <?php 
-  if (isset($_GET['erreur']))
-  {
-    if ($_GET['erreur']==5) 
-    {
-      ?>
-      <div class="alert alert-danger" role="alert">
-        <strong>Attention !</strong> <a href="#" class="alert-link">Information banquaire incorrect</a>
-      </div>
-      <?php
-    }
-  }
-  ?>  
-    <section class="slice">
-      <div class="container">
-        <div class="row row-grid">
-          <div class="col-lg-8">
-            <form role="form" action="actionPaiment.php" method="post">
-              <div class="card">
-                <div class="card-header">
-                  <div class="row">
-                    <div class="col-12">
-                      <label class="h6 mb-0 lh-180">Information de paiement</label>
-                      <p class="text-muted mt-2 mb-0">Saisissez vos information de paiment parmis Visa, MasterCard et AmericanExpress</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="row mt-3">
-                    <div class="col-md-8">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="0000 0000 0000 0000" placeholder="4789 5697 0541 7546" name="numero" required="">
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <select class="form-control" data-toggle="select" title="Type de carte" name="type" required="">
-                        <option selected disabled>Type de carte</option>
-                        <option value="Visa">Visa</option>
-                        <option value="MasterCard">MasterCard</option>
-                        <option value="American Express">American Express<option>
-                      </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="control-label">Name on card</label>
-                        <input type="text" class="form-control" placeholder="John Doe" name="nom" required="">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label class="control-label">Expiry date</label>
-                        <input type="text" class="form-control" data-mask="00/00" placeholder="MM/YY" name="date" required="">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label class="control-label">code CVC</label>
-                        <div class="input-group input-group-merge">
-                          <input type="text" class="form-control" data-mask="000" placeholder="746" name="code" required="">
-                          <div class="input-group-append" data-toggle="popover" data-container="body" data-placement="top" data-content="It is a three digit code that can be found only on the back of your card. Be carefull so no one sees it." data-title="What is a CVV code?">
-                            <span class="input-group-text"><i class="fas fa-question-circle"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 text-right">
-                <a href="shop-landing.php" class="btn btn-link text-sm text-dark font-weight-bold">Retour à l'accueil</a>
-                <button type="submit" class="btn btn-sm btn-success">Complete order</button>
-              </div>
-            </form>
+      if (isset($_GET['erreur']))
+      {
+        if ($_GET['erreur']==5) 
+        {
+          ?>
+          <div class="alert alert-danger" role="alert">
+            <strong>Attention !</strong> <a href="#" class="alert-link">Information banquaire incorrect</a>
           </div>
-          <div class="col-lg-4">
-            <div data-toggle="sticky" data-sticky-offset="30">
-              <div class="card" id="card-summary">
-                <div class="card-header py-3">
-                  <div class="row align-items-center">
-                    <div class="col-6">
-                      <span class="h6">Résumé</span>
-                    </div>
-                    <div class="col-6 text-right">
-                      <span class="badge badge-pill badge-soft-success"><?php echo getItemNumberInPanier($_SESSION['id']).' aticles';?></span>
+          <?php
+        }
+      }
+      ?>  
+      <section class="slice">
+        <div class="container">
+          <div class="row row-grid">
+            <div class="col-lg-8">
+              <form role="form" action="actionPaiment.php" method="post">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col-12">
+                        <label class="h6 mb-0 lh-180">Information de paiement</label>
+                        <p class="text-muted mt-2 mb-0">Saisissez vos information de paiment parmis Visa, MasterCard et AmericanExpress</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card-body">
-                  <?php for($i = 0 ; $i < getItemNumberInPanier($_SESSION['id']) ; $i++) {?>
-                  <div class="<?php echo($i==0 ? 'row' : 'row mt-3 pt-3 delimiter-top');?>">
-                    <div class="col-8">
-                      <div class="media align-items-center">
-                        <img alt="Image placeholder" class="mr-2" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" style="width: 42px;">
-                        <div class="media-body">
-                          <div class="text-limit lh-100">
-                            <small class="font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></small>
+                  <div class="card-body">
+                    <div class="row mt-3">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <div class="input-group input-group-merge">
+                            <input type="text" class="form-control" data-mask="0000 0000 0000 0000" placeholder="4789 5697 0541 7546" name="numero" required="">
+                            <div class="input-group-append">
+                              <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                            </div>
                           </div>
-                          <small class="text-muted"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'].' x '.getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €</small>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <select class="form-control" data-toggle="select" title="Type de carte" name="type" required="">
+                            <option selected disabled>Type de carte</option>
+                            <option value="Visa">Visa</option>
+                            <option value="MasterCard">MasterCard</option>
+                            <option value="American Express">American Express<option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Name on card</label>
+                            <input type="text" class="form-control" placeholder="John Doe" name="nom" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label class="control-label">Expiry date</label>
+                            <input type="text" class="form-control" data-mask="00/00" placeholder="MM/YY" name="date" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label class="control-label">code CVC</label>
+                            <div class="input-group input-group-merge">
+                              <input type="text" class="form-control" data-mask="000" placeholder="746" name="code" required="">
+                              <div class="input-group-append" data-toggle="popover" data-container="body" data-placement="top" data-content="It is a three digit code that can be found only on the back of your card. Be carefull so no one sees it." data-title="What is a CVV code?">
+                                <span class="input-group-text"><i class="fas fa-question-circle"></i></span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-4 text-right lh-100">
-                      <small class="text-dark"><?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €</small>
-                    </div>
                   </div>
-                  <?php }?>
-                  <!-- total -->
-                  <div class="row mt-3 pt-3 border-top">
-                    <div class="col-8 text-right">
-                      <small class="text-uppercase font-weight-bold">Total:</small>
+                  <div class="mt-4 text-right">
+                    <a href="shop-landing.php" class="btn btn-link text-sm text-dark font-weight-bold">Retour à l'accueil</a>
+                    <button type="submit" class="btn btn-sm btn-success">Complete order</button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-lg-4">
+                <div data-toggle="sticky" data-sticky-offset="30">
+                  <div class="card" id="card-summary">
+                    <div class="card-header py-3">
+                      <div class="row align-items-center">
+                        <div class="col-6">
+                          <span class="h6">Résumé</span>
+                        </div>
+                        <div class="col-6 text-right">
+                          <span class="badge badge-pill badge-soft-success"><?php echo getItemNumberInPanier($_SESSION['id']).' aticles';?></span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-4 text-right">
-                      <span class="text-sm font-weight-bold"><?php echo getTotalPrix($_SESSION['id']).' €';?></span>
+                    <div class="card-body">
+                      <?php for($i = 0 ; $i < getItemNumberInPanier($_SESSION['id']) ; $i++) {?>
+                        <div class="<?php echo($i==0 ? 'row' : 'row mt-3 pt-3 delimiter-top');?>">
+                          <div class="col-8">
+                            <div class="media align-items-center">
+                              <img alt="Image placeholder" class="mr-2" src="<?php echo 'images/'.getItemInfo(getIdByPos($_SESSION['id'], $i))['PHOTO'];?>" style="width: 42px;">
+                              <div class="media-body">
+                                <div class="text-limit lh-100">
+                                  <small class="font-weight-bold mb-0"><?php echo getItemInfo(getIdByPos($_SESSION['id'], $i))['NOM'];?></small>
+                                </div>
+                                <small class="text-muted"><?php echo getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE'].' x '.getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'];?> €</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4 text-right lh-100">
+                            <small class="text-dark"><?php echo (getItemInfo(getIdByPos($_SESSION['id'], $i))['PRIX'] * getItemInfoPanier($_SESSION['id'], getIdByPos($_SESSION['id'], $i))['QUANTITE']);?> €</small>
+                          </div>
+                        </div>
+                      <?php }?>
+                      <!-- total -->
+                      <div class="row mt-3 pt-3 border-top">
+                        <div class="col-8 text-right">
+                          <small class="text-uppercase font-weight-bold">Total:</small>
+                        </div>
+                        <div class="col-4 text-right">
+                          <span class="text-sm font-weight-bold"><?php echo getTotalPrix($_SESSION['id']).' €';?></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-  </div>
       <footer id="footer-main">
         <div class="footer footer-dark bg-dark">
           <div class="container">
@@ -307,15 +298,15 @@ if (!isset($_SESSION['id'])) {
           </div>
         </div>
       </footer>
-  <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-  <script src="bootstrap/assets/js/purpose.core.js"></script>
-  <!-- Page JS -->
-  <script src="bootstrap/assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
-  <script src="bootstrap/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-  <!-- Purpose JS -->
-  <script src="bootstrap/assets/js/purpose.js"></script>
-  <!-- Demo JS - remove it when starting your project -->
-  <script src="bootstrap/assets/js/demo.js"></script>
-</body>
+      <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+      <script src="bootstrap/assets/js/purpose.core.js"></script>
+      <!-- Page JS -->
+      <script src="bootstrap/assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
+      <script src="bootstrap/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+      <!-- Purpose JS -->
+      <script src="bootstrap/assets/js/purpose.js"></script>
+      <!-- Demo JS - remove it when starting your project -->
+      <script src="bootstrap/assets/js/demo.js"></script>
+    </body>
 
-</html>
+    </html>

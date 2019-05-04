@@ -25,7 +25,7 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
@@ -103,7 +103,7 @@ if (!isset($_SESSION['id'])) {
 
             <div class="ml-auto">
               <ul class="nav">             
-                <a class="nav-link" href="bootstrap/pages/shop/checkout-cart.html"><i class="fas fa-shopping-cart"></i>Panier</a>              
+                <a class="nav-link" href="Panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>              
                 <a class="nav-link" href="Compte.php">
                   <i class="fas fa-user-circle"></i>Mon compte
                 </a>
@@ -117,13 +117,6 @@ if (!isset($_SESSION['id'])) {
       </div>
     </header>
     <div class="main-content">
-      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-dark"></div>
-        <style type="text/css">
-        .section-inner{ 
-          height:100% !important;  
-        }
-      </style>
     <!-- Header (account) -->
     <section class="slice slice-lg">
       <div class="container">
@@ -203,13 +196,13 @@ if (!isset($_SESSION['id'])) {
                 </div>
               </div>
               <div class="col-md-6 order-md-1">
-                <button type="button" class="btn btn-animated btn-primary btn-animated-y" onclick="redirectPaiment()">
+                <button type="button" class="btn btn-animated btn-dark btn-animated-y" onclick="redirectPaiment()">
                   <span class="btn-inner--visible">Paiement</span>
                   <span class="btn-inner--hidden">
                     <i class="fas fa-shopping-cart"></i>
                   </span>
                 </button>
-                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
+                <a href="Acheteur.php" class="btn btn-link text-sm text-dark font-weight-bold">Retour à la boutique</a>
               </div>
             </div>
           </div>
@@ -222,7 +215,7 @@ if (!isset($_SESSION['id'])) {
           <div class="container">
             <div class="row pt-md">
               <div class="col-lg-4 mb-5 mb-lg-0">
-                <a href="bootstrap/index.html">
+                <a href="Acheteur.php">
                   <img src="images/white.png" alt="Footer logo" style="height: 70px;">
                 </a>
                 <p>ECE Shop est la première plateforme de vente en ligne simple, rapide, et proche de ses clients. Nous ne vendons que ce que nous connaissons.</p>
@@ -230,15 +223,15 @@ if (!isset($_SESSION['id'])) {
               <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                 <h6 class="heading mb-3">Compte</h6>
                 <ul class="list-unstyled">
-                  <li><a href="form_inscription.html">Mon profil</a></li>
+                  <li><a href="Compte.php">Mon profil</a></li>
                 </ul>
               </div>
               <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
                 <h6 class="heading mb-3">A propos</h6>
                 <ul class="list-unstyled text-small">
-                  <li><a href="shop-landing.html">Accueil</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                  <li><a href="#avis">Avis</a></li>
+                  <li><a href="shop-landing.php" style="color:white;">Accueil</a></li>
+                  <li><a href="shop-landing.php#contact" style="color:white;">Contact</a></li>
+                  <li><a href="shop-landing.php#avis" style="color:white;">Avis</a></li>
                 </ul>
               </div>
             </div>

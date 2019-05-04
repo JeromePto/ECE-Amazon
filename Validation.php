@@ -34,7 +34,7 @@ $reponse = $bdd->query('SELECT * FROM item');
 </head>
 
 <body>
-  <header class="header header-transparent" id="header-main">
+  <header class="header bg-dark" id="header-main">
     <!-- Topbar -->
     <div id="navbar-top-main" class="navbar-top navbar-dark bg-dark border-bottom">
       <div class="container px-0">
@@ -124,14 +124,6 @@ $reponse = $bdd->query('SELECT * FROM item');
     </header>
     <div class="main-content">
       <!-- Header (v1) -->
-      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main">
-        <div class="section-inner bg-dark"></div>
-        <style type="text/css">
-        .section-inner{ 
-          height:100% !important;  
-        }
-      </style>
-
       <section class="slice slice-lg vh-100 bg-light overflow-hidden" data-offset-top="#header-main">
         <div class="bg-absolute-cover vh-100 overflow-hidden">
         </div>
@@ -140,7 +132,7 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="row justify-content-center">
               <div class="col-lg-7 text-center">
                 <h6 class="h1 mb-5 font-weight-400 text-dark">Votre achat a bien été confirmé !</h6>
-                <a href="shop-landing.php" class="btn btn-white btn-icon rounded-pill hover-translate-y-n3">
+                <a href="Acheteur.php" class="btn btn-dark btn-icon rounded-pill hover-translate-y-n3">
                   <span class="btn-inner--icon"><i class="fas fa-home"></i></span>
                   <span class="btn-inner--text">Accueil</span>
                 </a>
@@ -148,13 +140,9 @@ $reponse = $bdd->query('SELECT * FROM item');
             </div>
           </div>
         </div>
-        <div class="position-absolute bottom-0 right-4 overflow-hidden">
-          <figure class="w-50">
-            <img alt="Image placeholder" src="../../assets/img/svg/illustrations/design-thinking.svg" class="svg-inject opacity-2">
-          </figure>
-        </div>
       </section>
     </div>
+
     <footer id="footer-main">
       <div class="footer footer-dark bg-dark">
         <div class="container">
