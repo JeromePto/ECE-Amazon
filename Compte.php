@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,23 +25,89 @@ session_start();
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
+            <!-- logo cliquable -->
             <a class="navbar-brand mr-lg-5" href="<?php echo $_SESSION['home'];?>">
               <img src="images/white.png" id="navbar-logo" style="height: 50px;">
             </a>
-            
-          </div>
-
-          <div class="ml-auto">
-            <ul class="nav">             
-              <a class="nav-link" href="shop-landing.php">
-                <i class="fas fa-sign-out-alt"></i>Se deconnecter
-              </a>
-            </ul>
+            <!-- menu deroulant "acheter" -->
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="btn btn-sm btn-white rounded-pill btn-icon rounded-pill d-none d-lg-inline-flex" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acheter</a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow p-0">
+                <ul class="list-group list-group-flush">
+                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
+                    <a href="Livre.php" class="list-group-item list-group-item-action" role="button">
+                      <div class="media d-flex align-items-center">
+                        <!-- Icone et titre pour categorie -->
+                        <figure style="width: 50px;">
+                          <img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/livre.jpg" class="svg-inject img-fluid" style="height: 50px;">
+                        </figure>                        
+                        <div class="media-body ml-3">
+                          <h6 class="mb-1">Livres</h6>
+                          <p class="mb-0">Collection de livres et BD</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
+                    <a href="Musique.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
+                      <div class="media d-flex align-items-center">
+                        <figure style="width: 50px;">
+                          <img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/musique.png" class="svg-inject img-fluid" style="height: 50px;">
+                        </figure>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-1">Musique</h6>
+                          <p class="mb-0">La musique de votre choix</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
+                    <a href="Vetement.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
+                      <div class="media d-flex align-items-center">
+                        <figure style="width: 50px;">
+                          <img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/vetement.png" class="svg-inject img-fluid" style="height: 50px;">
+                        </figure>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-1">Vetements</h6>
+                          <p class="mb-0">Notre collection de vetements</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
+                    <a href="Sport.php" class="list-group-item list-group-item-action dropdown-toggle" role="button">
+                      <div class="media d-flex align-items-center">
+                        <figure style="width: 50px;">
+                          <img alt="Image placeholder" src="bootstrap/assets/img/icons/categories/sport.png" class=svg-inject img-fluid" style="height: 50px;">
+                        </figure>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-1">Sports et Loisirs</h6>
+                          <p class="mb-0">Notre collection d'equipements sportifs</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </div>
+            <!-- partie droite de l'en-tete -->
+            <div class="ml-auto">
+              <ul class="nav"> 
+                <!-- message de bienvenue personnalisé --> 
+                <a class="nav-link">Bienvenue <?php echo $_SESSION['prenom'] ?> !</a>   
+                <!-- bouton d'accès au panier -->   
+                <a class="nav-link" href="panier.php"><i class="fas fa-shopping-cart"></i>Panier</a>    
+                <!-- bouton d'acces au profil courant -->           
+                <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
+                <!-- bouton de déconnexion  --> 
+                <a class="nav-link" href="Deconnexion.php"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
+    </header>
   <div class="main-content">
     <div class="container"><br>
       <h3 class="info text-dark"><strong>Votre Profil :</strong></h4><br> 
@@ -78,9 +144,9 @@ session_start();
             <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
               <h6 class="heading mb-3">A propos</h6>
               <ul class="list-unstyled text-small">
-                <li><a href="shop-landing.php">Accueil</a></li>
-                <li><a href="shop-landing.php#contact">Contact</a></li>
-                <li><a href="shop-landing.php#avis">Avis</a></li>
+              <li><a href="cible10.php?page=0" style="color:white;">Accueil</a></li>
+              <li><a href="cible10.php?page=1" style="color:white;">Contact</a></li>
+              <li><a href="cible10.php?page=2" style="color:white;">Avis</a></li>
               </ul>
             </div>
           </div>

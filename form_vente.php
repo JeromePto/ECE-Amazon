@@ -59,7 +59,7 @@ session_start();
                 </div>
                 <label class="form-control-label">Nombre de produits</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="stock" placeholder="C'est un super produit !"required="" min="1">
+                  <input type="number" class="form-control" name="stock" placeholder="3"required="" min="1">
                 </div>                
                 <label class="form-control-label">Photo</label>
                   <table>
@@ -74,12 +74,8 @@ session_start();
                 </div>
                 <label class="form-control-label">Prix</label>
                 <div class="input-group input-group-merge">
-                  <input type="number" class="form-control" name="prix" placeholder="C'est un super produit !" required="" min="0">
-                </div>
-                <label class="form-control-label">Variation</label>
-                <div class="input-group input-group-merge">
-                  <input type="text" class="form-control" name="variation" placeholder="C'est un super produit !">
-                </div>                                                
+                  <input type="number" class="form-control" name="prix" placeholder="100" required="" min="0">
+                </div>                                             
                 Catégorie: 
                 <div>
                   <input type="radio"  name="categorie" value="1" required="" >

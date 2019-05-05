@@ -94,7 +94,7 @@ $reponse = $bdd->query('SELECT * FROM item');
                       </a>
                     </div>
                     <div class="card-body text-center pt-0">
-                      <h6><a href=<?php echo("produit.php?id=".$donnees['ID'])?>><?php echo $donnees['NOM']; ?></a></h6>
+                      <h6><?php echo $donnees['NOM']; ?></a></h6>
                       <p class="text-sm">
                         <?php echo $donnees['DESCRIPTION']; ?> 
                       </p>

@@ -9,7 +9,10 @@ catch(Exception $e)
 			// En cas d'erreur, on affiche un message et on arrête tout
 die('Erreur : '.$e->getMessage());
 }
+
 	$req = $bdd->prepare('DELETE FROM item WHERE ID=?');
 	$req->execute(array($_GET['id']));
-		header ('location: Vendeur.php');
+	
+	header ('location: Vendeur.php');
+
 ?>

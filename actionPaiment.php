@@ -39,7 +39,7 @@ if (isset($_POST['numero']) && isset($_POST['type']) && isset($_POST['nom']) && 
 	deletePanier($_SESSION['id']);
 
 
-	header("location: validation.php");
+	header("location: cible3.php?mail=".$_SESSION['mail']);
 
 } else {
 	echo "Erruer : données<br>";

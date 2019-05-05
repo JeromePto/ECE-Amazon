@@ -9,6 +9,7 @@ catch(Exception $e) {
   die('Erreur : '.$e->getMessage());
 }
 $reponse = $bdd->query('SELECT * FROM item');
+
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +111,7 @@ $reponse = $bdd->query('SELECT * FROM item');
                 <!-- bouton d'acces au profil courant -->           
                 <a class="nav-link" href="Compte.php"><i class="fas fa-user-circle"></i>Mon compte</a>
                 <!-- bouton de déconnexion  --> 
-                <a class="nav-link" href="shop-landing.php"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
+                <a class="nav-link" href="Deconnexion.php"><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
               </ul>
             </div>
           </div>
@@ -192,9 +193,9 @@ $reponse = $bdd->query('SELECT * FROM item');
             <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
               <h6 class="heading mb-3">A propos</h6>
               <ul class="list-unstyled text-small">
-                <li><a href="shop-landing.php">Accueil</a></li>
-                <li><a href="shop-landing.php#contact">Contact</a></li>
-                <li><a href="shop-landing.php#avis">Avis</a></li>
+              <li><a href="cible10.php?page=0" style="color:white;">Accueil</a></li>
+              <li><a href="cible10.php?page=1" style="color:white;">Contact</a></li>
+              <li><a href="cible10.php?page=2" style="color:white;">Avis</a></li>
               </ul>
             </div>
           </div>
